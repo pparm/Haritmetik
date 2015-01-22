@@ -2,13 +2,18 @@
 Peliin tehdään graafinen käyttöliittymä. Pelissä voidaan valita aihealue. Peli arpoo
 tehtävät.
 
+Pelissä on graafinen käyttöliittymä. Pelin tavoitteena on tehdä matematiikan oppimisesta hauskaa.
+
+
+
+Peliä voidaan myöhemmin laajentaa esimerkiksi pitämään kirjaa tuloksista ja rakentaa eri pelaajille profiileja.
+
 **Käyttäjät:** Aritmetiikkaa harjoittelevat pelaajat. Erityinen kohderyhmä esikoulu, ensi- ja toisluokkalaiset. 
 
 **Kaikkien käyttäjien toiminnot:** 
-- Pelin avaaminen
-    - Työpöytäversio
-	 - Testataan
-    - Dokumentoidaan
-**Aihe:** 
 
-**Aihe:** 
+- Pelin avaaminen
+- Aritmetiikka alueen valinta (ynnä, vähennys, kerto)
+- vastauksen syöttö
+	- ilmoitus oliko vastaus oikein vai väärin
+- pelin lopettaminen
