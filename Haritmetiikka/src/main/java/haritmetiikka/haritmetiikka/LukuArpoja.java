@@ -4,20 +4,37 @@
  * and open the template in the editor.
  */
 package haritmetiikka.haritmetiikka;
-import java.util.Random;
+import java.util.*;
 /**
  *
  * @author poplinus
  */
 
-public class lukuArpoja {
+public class LukuArpoja {
 
-    public int luku(){
-  int START = 1;
-  int END = 10;
-  
-  Random arpoja = new Random();
-return 2;
+     LukuArpoja(){
+throw new IllegalArgumentException("LukuArpoja luokkaan ei ole numeroita");
+         
+  }
     
-} 
+    
+    
+  public int arvottuLuku(int alaraja, int ylaraja){
+  
+ 
+      
+      Random arpoja = new Random();
+      if (alaraja > ylaraja) {
+      throw new IllegalArgumentException("Alarajan täytyy olla pienempi kuin ylärajan");
+    }
+    long vali = (long)ylaraja - (long)alaraja + 1;
+    long lisaOsa = (long)(vali * arpoja.nextDouble());
+    int satunnaisluku =  (int)(lisaOsa + alaraja);    
+    return satunnaisluku;
+  
+  }
+    
+ 
+
+
 }

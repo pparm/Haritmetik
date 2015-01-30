@@ -1,13 +1,11 @@
 package haritmetiikka.haritmetiikka;
 
-/**
- * Hello world!
- *
- */
+import haritmetiikka.kayttoliittyma.*;
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        SummaOikeaVastaus koe = new SummaOikeaVastaus();
+        System.out.println(koe.vastaus(3, 1));
     }
 }
