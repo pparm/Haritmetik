@@ -5,6 +5,7 @@
  */
 package haritmetiikka.haritmetiikka;
 
+import haritmetiikka.logiikka.SummaTarkistaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,10 +17,10 @@ import static org.junit.Assert.*;
  *
  * @author poplinus
  */
-public class SummaTarkistusTest {
-SummaTarkistus tarkistus;
+public class SummaTarkistajaTest {
+SummaTarkistaja tarkistus;
     
-    public SummaTarkistusTest() {
+    public SummaTarkistajaTest() {
     }
 
     @BeforeClass
@@ -32,7 +33,7 @@ SummaTarkistus tarkistus;
 
     @Before
     public void setUp() {
-    tarkistus = new SummaTarkistus();
+    tarkistus = new SummaTarkistaja();
   
     
     }
@@ -72,7 +73,7 @@ SummaTarkistus tarkistus;
     public void SummaTarkistusTest5() {
     
     assertEquals(false,tarkistus.summaTarkistus(50,20,3));
-    
+ 
 }
     @Test
     public void SummaTarkistusTest6() {
@@ -92,14 +93,30 @@ SummaTarkistus tarkistus;
     assertEquals(true,tarkistus.summaTarkistus(0,0,0));
     
 }
+     @Test
     public void SummaTarkistusTes9() {
     
     assertEquals(false,tarkistus.summaTarkistus(10,1,4));
     
 }
+    
+     @Test
     public void SummaTarkistusTest10() {
     
     assertEquals(true,tarkistus.summaTarkistus(10,10,20));
     
 }
+// Oikean summauksen testaus    
+     @Test
+    public void oikeaSummaTest() {
+    
+    for(int i = 0; i<=10; i++){
+        
+        assertEquals(i+20,tarkistus.getSumma(i,20));
+    }
+        
+    
+}    
+    
+    
 }

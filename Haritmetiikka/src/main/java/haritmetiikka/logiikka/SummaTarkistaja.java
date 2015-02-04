@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.haritmetiikka;
+package haritmetiikka.logiikka;
 
 /**
  *
  * @author poplinus
  */
-public class SummaTarkistus {
+public class SummaTarkistaja {
    
    
     public boolean summaTarkistus(int ekaLuku, int tokaLuku, int vastausSumma){
@@ -18,5 +18,13 @@ public class SummaTarkistus {
            else return false;
        
      
+   }
+        public int getSumma(int ekaLuku, int tokaLuku){
+       return ekaLuku + tokaLuku;   
+       
+     
    } 
+    
+    
+    
 }

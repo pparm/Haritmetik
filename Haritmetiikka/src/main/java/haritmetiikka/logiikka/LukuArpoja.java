@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.haritmetiikka;
+package haritmetiikka.logiikka;
 import java.util.*;
 /**
  *
@@ -12,11 +12,7 @@ import java.util.*;
 
 public class LukuArpoja {
 
-     LukuArpoja(){
-throw new IllegalArgumentException("LukuArpoja luokkaan ei ole numeroita");
-         
-  }
-    
+
     
     
   public int arvottuLuku(int alaraja, int ylaraja){
