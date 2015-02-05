@@ -159,7 +159,8 @@ Tehtava summaTehtava = new Tehtava();
     }//GEN-LAST:event_uusiLaskuActionPerformed
 
     private void vastaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaActionPerformed
-    new SummaVastausIkkuna().setVisible(true);
+    new SummaVastausIkkuna(summaTehtava).setVisible(true);
+    
     }//GEN-LAST:event_vastaaActionPerformed
 
     /**
@@ -194,6 +195,8 @@ Tehtava summaTehtava = new Tehtava();
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SummaIkkuna().setVisible(true);
+          
+            
             }
         });
     }

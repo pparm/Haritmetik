@@ -4,18 +4,23 @@
  * and open the template in the editor.
  */
 package haritmetiikka.kayttoliittyma;
-
+import haritmetiikka.logiikka.*;
 /**
  *
  * @author poplinus
  */
 public class SummaVastausIkkuna extends javax.swing.JFrame {
 
+    Tehtava summaTehtava;
+    
     /**
      * Creates new form SummaVastausIkkuna
      */
-    public SummaVastausIkkuna() {
+    public SummaVastausIkkuna(Tehtava summaTehtava) {
         initComponents();
+    this.summaTehtava = summaTehtava;
+           jLabel2.setText(String.valueOf(summaTehtava.ekaLuku));
+
     }
 
     /**
@@ -39,6 +44,11 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         jLabel2.setText("jLabel2");
 
         jButton1.setText("Uusi Lasku");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Lopeta");
 
@@ -80,6 +90,12 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          
+                new SummaIkkuna().setVisible(true);
+                this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -110,8 +126,13 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new SummaVastausIkkuna().setVisible(true);
+   //             new SummaVastausIkkuna().setVisible(true);
+            
+            
             }
+          
+
+            
         });
     }
 
