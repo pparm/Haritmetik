@@ -6,11 +6,17 @@
 package haritmetiikka.logiikka;
 
 /**
- *
- * @author poplinus
+ * Luokka tarkistaa summia
  */
 public class SummaTarkistaja {
-   
+   /**
+    * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon
+    * 
+    * @param ekaLuku koknaisluku
+    * @param tokaLuku kokonaisluku
+    * @param vastausSumma lukujen summa
+    * @return totuusarvo onko lukujen summa oikein
+    */
    
     public boolean summaTarkistus(int ekaLuku, int tokaLuku, int vastausSumma){
        if((ekaLuku +tokaLuku) == vastausSumma){
@@ -19,6 +25,12 @@ public class SummaTarkistaja {
        
      
    }
+    /**
+     * Laskee lukujen summan
+     * @param ekaLuku Kokonaisluku
+     * @param tokaLuku Kokonaisluku
+     * @return Kokonaislukujen summa
+     */
         public int getSumma(int ekaLuku, int tokaLuku){
        return ekaLuku + tokaLuku;   
        

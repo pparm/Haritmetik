@@ -6,13 +6,19 @@
 package haritmetiikka.logiikka;
 import java.util.*;
 /**
- *
- * @author poplinus
+ Luokkaa arpoo kokonaislukuja halutulle välille
+ 
  */
 
 public class LukuArpoja {
 
-
+/**
+ * Metodi arpoo kokonaisluvun halutulla välillä
+ * 
+ * @param alaraja Arvottavan kokonaisluvun alaraja
+ * @param ylaraja Arvottavan kokonaisluvun yläraja
+ * @return Arvottu kokonaisluku
+ */
     
     
   public int arvottuLuku(int alaraja, int ylaraja){

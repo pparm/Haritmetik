@@ -14,8 +14,11 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
     private Tehtava summaTehtava;
     private int vastaus;
     /**
-     * Creates new form SummaVastausIkkuna
+     * Metodi rakentaa SummaVastausIkkunan
+     * @param summaTehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
+     * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
      */
+
     public SummaVastausIkkuna(Tehtava summaTehtava,int vastaus) {
         initComponents();
     this.summaTehtava = summaTehtava;
@@ -101,13 +104,20 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+ * Nappi joka sulkee SummaVastausIkkunan ja tekee uuden SummaIkkunan (uusi lasku)
+ * @param evt 
+ */
     private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
           
                 new SummaIkkuna().setVisible(true);
                 this.setVisible(false);
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
-
+/**
+ * Nappi joka sulkee SummaVastausIkkunan
+ * @param evt 
+ */
+    
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
        this.dispose();
        // this.setVisible(false);

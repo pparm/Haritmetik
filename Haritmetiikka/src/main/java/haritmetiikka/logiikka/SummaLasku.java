@@ -8,22 +8,36 @@ package haritmetiikka.logiikka;
 import haritmetiikka.logiikka.LukuArpoja;
 
 /**
- *
- * @author poplinus
+Luokka laskee summia yhteen
  */
 
 
 public class SummaLasku {
     
-    public LukuArpoja arpoja = new LukuArpoja();
-    public SummaTarkistaja summaTarkistaja = new SummaTarkistaja();
-    int ekaLuku = arpoja.arvottuLuku(0, 10);
-    int tokaLuku = arpoja.arvottuLuku(0, 10);
-    int vastaus = 6;
-public boolean getOikein(int ekaLuku,int tokaLuku,int vastaus){
+    private LukuArpoja arpoja = new LukuArpoja();
+    private SummaTarkistaja summaTarkistaja = new SummaTarkistaja();
+    private int ekaLuku = arpoja.arvottuLuku(0, 10);
+    private int tokaLuku = arpoja.arvottuLuku(0, 10);
+    private int vastaus = 6;
+/**
+ * Palauttaa boolean onko käyttäjän syöttömä summa oikein
+ * @param ekaLuku  luku
+ * @param tokaLuku luku
+ * @param vastaus lukujen summa
+ * @return boolean onko lukujen summa oikein
+ */
+    public boolean getOikein(int ekaLuku,int tokaLuku,int vastaus){
    return summaTarkistaja.summaTarkistus(ekaLuku,tokaLuku,vastaus);
 }
-public int getSumma(int ekaLuku,int tokaLuku){
+/**
+ * Laskee kahden luvun summan
+ * 
+ * 
+ * @param ekaLuku kokonaisluku
+ * @param tokaLuku kokonaisluku
+ * @return kokonaislukujen summa
+ */
+    public int getSumma(int ekaLuku,int tokaLuku){
    return summaTarkistaja.getSumma(ekaLuku,tokaLuku);
 }
 

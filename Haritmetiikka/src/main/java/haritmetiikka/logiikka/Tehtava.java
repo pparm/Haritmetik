@@ -15,26 +15,48 @@ import haritmetiikka.logiikka.LukuArpoja;
 public class Tehtava {
 
   LukuArpoja arpoja = new LukuArpoja();
-public int ekaLuku = arpoja.arvottuLuku(0,10);
-public int tokaLuku = arpoja.arvottuLuku(0,10);
+private int ekaLuku = arpoja.arvottuLuku(0,10);
+private int tokaLuku = arpoja.arvottuLuku(0,10);
   SummaLasku summaLasku = new SummaLasku();
-  
+  /**
+   * Palauttaa olion arpoman ensimmäisen kokonaisluvun
+   * @return Arvottu ensimmäinen arvottu kokonaisluku
+   */
   public int getEkaLuku(){
       return ekaLuku;
       
   }
-  
+  /**
+   *Palauttaa olion arpoman toisen kokonaisluvun
+   * @return Arvottu toinen kokonaisluku
+   */
    public int getTokaLuku(){
   return tokaLuku;
   }
   
-  
+  /**
+   * Palauttaa oikean vastauksen
+   * @param tehtavaTyyppi Tehtävätyypin syöttö
+   * @param ekaLuku Ensimmäinen kokonaisluku
+   * @param tokaLuku Toinen kokonaisluku
+   * @return Palauttaa tehtävätyypin oikean vastauksen
+   */
   public int getOikeaVastaus(String tehtavaTyyppi,int ekaLuku,int tokaLuku){
     if (tehtavaTyyppi.equals("summa")){
     return summaLasku.getSumma(ekaLuku,tokaLuku);}
 
 return -1;
 }
+  
+  /**
+   * Palauttaa totuusarvon onko Käyttäjän vastaus oikein
+   * @param tehtavaTyyppi Tehtävän tyyppi
+   * @param ekaLuku Ensimmäinen kokonaisluku
+   * @param tokaLuku Toinen kokonaisluku
+   * @param vastaus Käyttäjän vastaus
+   * @return Totuusarvo oliko käyttäjän vastaus
+   * oikein valitulla tehtävätyypilla
+   */
 public boolean getOikein(String tehtavaTyyppi,int ekaLuku,int tokaLuku, int vastaus){
     if (tehtavaTyyppi.equals("summa")){
     return summaLasku.getOikein(ekaLuku,tokaLuku,vastaus);
