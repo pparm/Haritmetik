@@ -11,16 +11,23 @@ import haritmetiikka.logiikka.*;
  */
 public class SummaVastausIkkuna extends javax.swing.JFrame {
 
-    Tehtava summaTehtava;
-    
+    private Tehtava summaTehtava;
+    private int vastaus;
     /**
      * Creates new form SummaVastausIkkuna
      */
-    public SummaVastausIkkuna(Tehtava summaTehtava) {
+    public SummaVastausIkkuna(Tehtava summaTehtava,int vastaus) {
         initComponents();
     this.summaTehtava = summaTehtava;
-           jLabel2.setText(String.valueOf(summaTehtava.ekaLuku));
-
+    this.vastaus = vastaus;
+         oikeaVastausLabel.setText("Oikea vastaus: "+String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
+         if(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)){
+             vastausOikeinLabel.setText("Vastasit oikein");
+                 
+         }
+         else 
+         vastausOikeinLabel.setText("Vastasit väärin");
+//      vastausOikeinLabel.setText(String.valueOf(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)));
     }
 
     /**
@@ -32,25 +39,30 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        oikeaVastausLabel = new javax.swing.JLabel();
+        vastausOikeinLabel = new javax.swing.JLabel();
+        uusiLaskuButton = new javax.swing.JButton();
+        lopetaButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        oikeaVastausLabel.setText("jLabel1");
 
-        jLabel2.setText("jLabel2");
+        vastausOikeinLabel.setText("jLabel2");
 
-        jButton1.setText("Uusi Lasku");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        uusiLaskuButton.setText("Uusi Lasku");
+        uusiLaskuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                uusiLaskuButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Lopeta");
+        lopetaButton.setText("Kokeile uudelleen");
+        lopetaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lopetaButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -60,14 +72,14 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
+                        .addComponent(lopetaButton))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jLabel1)
+                        .addComponent(oikeaVastausLabel)
                         .addGap(48, 48, 48)
-                        .addComponent(jLabel2)
+                        .addComponent(vastausOikeinLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(jButton1)))
+                        .addComponent(uusiLaskuButton)))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
@@ -77,24 +89,29 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)))
+                            .addComponent(oikeaVastausLabel)
+                            .addComponent(vastausOikeinLabel)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(34, 34, 34)
-                        .addComponent(jButton1)))
+                        .addComponent(uusiLaskuButton)))
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(lopetaButton)
                 .addContainerGap(185, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
           
                 new SummaIkkuna().setVisible(true);
                 this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_uusiLaskuButtonActionPerformed
+
+    private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
+       this.dispose();
+       // this.setVisible(false);
+    }//GEN-LAST:event_lopetaButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,9 +154,9 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton lopetaButton;
+    private javax.swing.JLabel oikeaVastausLabel;
+    private javax.swing.JButton uusiLaskuButton;
+    private javax.swing.JLabel vastausOikeinLabel;
     // End of variables declaration//GEN-END:variables
 }
