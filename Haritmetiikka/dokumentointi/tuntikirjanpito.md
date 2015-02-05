@@ -10,3 +10,5 @@ Tuntikirjanpito
 - 20150129 PIT Asennus ja testaus 3h
 - 20150129 KOODAUS 2h;
 - 20150129 KÄYTTÖLIITTYMÄ 3h;
+- VK4 PIT Korjaus Git korjaus 5h;
+- VK 4 Käyttöliittymä 5h;
