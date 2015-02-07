@@ -1,6 +1,5 @@
 package haritmetiikka.haritmetiikka;
 
-import haritmetiikka.logiikka.*;
 import haritmetiikka.kayttoliittyma.*;
 
 public class App 
@@ -8,7 +7,7 @@ public class App
 public SummaIkkuna summaIkkuna = new SummaIkkuna();
         
     public static void main( String[] args )
-    { new SummaIkkuna().setVisible(true);
+    { new StartIkkuna().setVisible(true);
   
 //    
 //

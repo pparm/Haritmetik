@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package logiikka;
-import haritmetiikka.logiikka.*;
+import haritmetiikka.summalogiikka.Tehtava;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

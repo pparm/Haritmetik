@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.logiikka;
+package haritmetiikka.summalogiikka;
 
-import haritmetiikka.logiikka.SummaLasku;
-import haritmetiikka.logiikka.LukuArpoja;
+import haritmetiikka.summalogiikka.SummaLasku;
+import haritmetiikka.summalogiikka.LukuArpoja;
 
 /**
  *

@@ -5,7 +5,7 @@
  */
 package logiikka;
 
-import haritmetiikka.logiikka.SummaTarkistaja;
+import haritmetiikka.summalogiikka.SummaTarkistaja;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

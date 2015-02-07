@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package haritmetiikka.kayttoliittyma;
-import haritmetiikka.logiikka.*;
+import haritmetiikka.summalogiikka.Tehtava;
 /**
  *
  * @author poplinus
