@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package apuLuokat;
 import java.util.*;
 /**
  Luokkaa arpoo kokonaislukuja halutulle välille

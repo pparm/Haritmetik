@@ -5,7 +5,7 @@
  */
 package haritmetiikka.summalogiikka;
 
-import haritmetiikka.summalogiikka.LukuArpoja;
+import apuLuokat.LukuArpoja;
 
 /**
 Luokka laskee summia yhteen

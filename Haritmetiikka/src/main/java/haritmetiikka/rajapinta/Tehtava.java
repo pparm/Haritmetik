@@ -3,14 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.rajapinta;
 
 import haritmetiikka.summalogiikka.SummaLasku;
-import haritmetiikka.summalogiikka.LukuArpoja;
+import apuLuokat.LukuArpoja;
 
 /**
  *
  * @author poplinus
+ * 
+ * Luokka on graafisen käyttöliittymän ja sovelluslogiikan rajapinta 
+ * 
+ * 
  */
 public class Tehtava {
 
@@ -23,7 +27,8 @@ private int tokaLuku = arpoja.arvottuLuku(0,10);
    * @return Arvottu ensimmäinen arvottu kokonaisluku
    */
   public int getEkaLuku(){
-      return ekaLuku;
+      
+      return this.ekaLuku;
       
   }
   /**
@@ -31,7 +36,7 @@ private int tokaLuku = arpoja.arvottuLuku(0,10);
    * @return Arvottu toinen kokonaisluku
    */
    public int getTokaLuku(){
-  return tokaLuku;
+  return this.tokaLuku;
   }
   
   /**
@@ -41,22 +46,20 @@ private int tokaLuku = arpoja.arvottuLuku(0,10);
    * @param tokaLuku Toinen kokonaisluku
    * @return Palauttaa tehtävätyypin oikean vastauksen
    */
-  public int getOikeaVastaus(String tehtavaTyyppi,int ekaLuku,int tokaLuku){
+   public int getOikeaVastaus(String tehtavaTyyppi,int ekaLuku,int tokaLuku){
     if (tehtavaTyyppi.equals("summa")){
     return summaLasku.getSumma(ekaLuku,tokaLuku);}
 
 return -1;
 }
   
-  /**
-   * Palauttaa totuusarvon onko Käyttäjän vastaus oikein
-   * @param tehtavaTyyppi Tehtävän tyyppi
-   * @param ekaLuku Ensimmäinen kokonaisluku
-   * @param tokaLuku Toinen kokonaisluku
-   * @param vastaus Käyttäjän vastaus
-   * @return Totuusarvo oliko käyttäjän vastaus
-   * oikein valitulla tehtävätyypilla
-   */
+/**
+ * Palauttaa totuusarvon true jos tehtävä oikein ja false jos väärin
+ * @param tehtavaTyyppi summa, miinus tai kerto
+ * @param ekaLuku   ensimmäinen luku laskussa
+ * @param tokaLuku tionen luku laskussa
+ * @return paluuarvo true jos vastaus oikein, false jos väärin
+ */
 public boolean getOikein(String tehtavaTyyppi,int ekaLuku,int tokaLuku, int vastaus){
     if (tehtavaTyyppi.equals("summa")){
     return summaLasku.getOikein(ekaLuku,tokaLuku,vastaus);

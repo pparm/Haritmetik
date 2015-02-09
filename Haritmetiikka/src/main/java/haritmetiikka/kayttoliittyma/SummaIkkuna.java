@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package haritmetiikka.kayttoliittyma;
-import haritmetiikka.summalogiikka.Tehtava;
+import haritmetiikka.rajapinta.Tehtava;
 
 /**
  *
@@ -180,7 +180,9 @@ int vastaus;
     private void vastaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaActionPerformed
   try{  this.vastaus = Integer.parseInt(vastausTextField.getText());}
   catch(Exception e){
+      
       new SyottoVirheIkkuna().setVisible(true);
+      
   }
     new SummaVastausIkkuna(summaTehtava,vastaus).setVisible(true);
     
