@@ -17,7 +17,8 @@ public class SummaTehtava {
     private int ekaLuku = arpoja.arvottuLuku(0, 10);
     private int tokaLuku = arpoja.arvottuLuku(0, 10);
     private int vastaus = 6;
-
+    
+    
     /**
      * Palauttaa boolean onko käyttäjän syöttömä summa oikein
      *
@@ -39,7 +40,8 @@ public class SummaTehtava {
      * @return kokonaislukujen summa
      */
     public int getSumma(int ekaLuku, int tokaLuku) {
+      this.ekaLuku = ekaLuku;
         return summaTarkistaja.getSumma(ekaLuku, tokaLuku);
-    }
+    } 
 
 }

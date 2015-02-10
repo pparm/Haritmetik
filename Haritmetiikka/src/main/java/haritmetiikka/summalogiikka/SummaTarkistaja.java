@@ -6,30 +6,25 @@
 package haritmetiikka.summalogiikka;
 
 /**
- * Luokka tarkistaa summia
+ * Luokka tarkistaa summia.
  */
 public class SummaTarkistaja {
 
     /**
-     * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon
+     * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon.
      *
      * @param ekaLuku koknaisluku
      * @param tokaLuku kokonaisluku
      * @param vastausSumma lukujen summa
      * @return totuusarvo onko lukujen summa oikein
      */
-
     public boolean getOikein(int ekaLuku, int tokaLuku, int vastausSumma) {
-        if ((ekaLuku + tokaLuku) == vastausSumma) {
-            return true;
-        } else {
-            return false;
-        }
 
+        return (ekaLuku + tokaLuku) == vastausSumma;
     }
 
     /**
-     * Laskee lukujen summan
+     * Laskee lukujen summan.
      *
      * @param ekaLuku Kokonaisluku
      * @param tokaLuku Kokonaisluku
