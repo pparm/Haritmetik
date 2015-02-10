@@ -12,3 +12,6 @@ Tuntikirjanpito
 - 20150129 KÄYTTÖLIITTYMÄ 3h;
 - VK4 PIT Korjaus Git korjaus 5h;
 - VK 4 Käyttöliittymä 5h;
+- VK 5 pit, cobertura ja checkstyle asennus ja opettelu 10h;
+- VK 5 ArgoUML luokkakaavio 4h;
+- Check Style koodin putsaus 2h;
