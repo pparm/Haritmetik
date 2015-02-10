@@ -2,14 +2,14 @@ package haritmetiikka.haritmetiikka;
 
 import haritmetiikka.kayttoliittyma.*;
 
-public class App 
-{
-public SummaIkkuna summaIkkuna = new SummaIkkuna();
-        
-    public static void main( String[] args )
-    { new StartIkkuna().setVisible(true);
-  
-//    
+public class App {
+
+    private SummaIkkuna summaIkkuna = new SummaIkkuna();
+
+    public static void main(String[] args) {
+        new StartIkkuna().setVisible(true);
+
+//   
 //
 ////  System.out.println(tehtava.getEkaLuku());
 //  //  System.out.println(tehtava.getTokaLuku());

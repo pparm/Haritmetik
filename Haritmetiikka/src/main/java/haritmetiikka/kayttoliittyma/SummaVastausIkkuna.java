@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package haritmetiikka.kayttoliittyma;
+
 import haritmetiikka.rajapinta.Tehtava;
+
 /**
  *
  * @author poplinus
@@ -13,23 +15,26 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava summaTehtava;
     private int vastaus;
+
     /**
      * Metodi rakentaa SummaVastausIkkunan
-     * @param summaTehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
+     *
+     * @param summaTehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut
+     * luvut
      * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
      */
 
-    public SummaVastausIkkuna(Tehtava summaTehtava,int vastaus) {
+    public SummaVastausIkkuna(Tehtava summaTehtava, int vastaus) {
         initComponents();
-    this.summaTehtava = summaTehtava;
-    this.vastaus = vastaus;
-         oikeaVastausLabel.setText("Oikea vastaus: "+String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
-         if(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)){
-             vastausOikeinLabel.setText("Vastasit oikein");
-                 
-         }
-         else 
-         vastausOikeinLabel.setText("Vastasit väärin");
+        this.summaTehtava = summaTehtava;
+        this.vastaus = vastaus;
+        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
+        if (summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)) {
+            vastausOikeinLabel.setText("Vastasit oikein");
+
+        } else {
+            vastausOikeinLabel.setText("Vastasit väärin");
+        }
 //      vastausOikeinLabel.setText(String.valueOf(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)));
     }
 
@@ -105,22 +110,25 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
- * Nappi joka sulkee SummaVastausIkkunan ja tekee uuden SummaIkkunan (uusi lasku)
- * @param evt 
- */
+     * Nappi joka sulkee SummaVastausIkkunan ja tekee uuden SummaIkkunan (uusi
+     * lasku)
+     *
+     * @param evt
+     */
     private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
-          
-                new SummaIkkuna().setVisible(true);
-                this.setVisible(false);
+
+        new SummaIkkuna().setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
-/**
- * Nappi joka sulkee SummaVastausIkkunan
- * @param evt 
- */
-    
+    /**
+     * Nappi joka sulkee SummaVastausIkkunan
+     *
+     * @param evt
+     */
+
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
-       this.dispose();
-       // this.setVisible(false);
+        this.dispose();
+        // this.setVisible(false);
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     /**
@@ -154,12 +162,9 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
    //             new SummaVastausIkkuna().setVisible(true);
-            
-            
-            }
-          
 
-            
+            }
+
         });
     }
 

@@ -92,18 +92,19 @@ public class StartIkkuna extends javax.swing.JFrame {
     private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
-/**
- * Avaa Yhteenlaskuikknunan
- * @param evt 
- */
+    /**
+     * Avaa Yhteenlaskuikknunan
+     *
+     * @param evt
+     */
     private void yhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yhteenlaskuButtonActionPerformed
- new SummaIkkuna().setVisible(true);
-     this.dispose();
+        new SummaIkkuna().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_yhteenlaskuButtonActionPerformed
 
-    
+
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     /**
@@ -135,6 +136,7 @@ public class StartIkkuna extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new StartIkkuna().setVisible(true);
             }

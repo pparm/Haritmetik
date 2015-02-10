@@ -3,22 +3,23 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package rajapinta;
+package haritmetiikka.summalogiikka;
 
+import haritmetiikka.summalogiikka.SummaTehtava;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
-
 /**
  *
  * @author poplinus
  */
-public class LukuArpojaTest {
+public class SummaLaskuTest {
+    SummaTehtava summaLasku;
     
-    public LukuArpojaTest() {
+    public SummaLaskuTest() {
     }
     
     @BeforeClass
@@ -31,27 +32,27 @@ public class LukuArpojaTest {
     
     @Before
     public void setUp() {
+    summaLasku = new SummaTehtava();
+    
     }
     
     @After
     public void tearDown() {
     }
 
-//     TODO add test methods here.
-//     The methods must be annotated with annotation @Test. For example:
-//    
-//     @Test
-     public void hello() {}
+    // TODO add test methods here.
+    // The methods must be annotated with annotation @Test. For example:
+    //
+     @Test
+    public void summaLaskuTest1() {
+     for(int i = 0; i<10; i++){
+        assertEquals(true,summaLasku.getOikein(3+i,1,4+i));
+     }
+    }
+  public void summaLaskuTest2() {
+     for(int i = 0; i<10; i++){
+        assertEquals(true,summaLasku.getOikein(-1,3+i,4+i));
+     }
+    }
 
-//@Test
-    public void lukuArvotaanOikein(){
- 
-assertEquals(2,2);
-    
-}
-     
-     
-     
-     
-     
 }

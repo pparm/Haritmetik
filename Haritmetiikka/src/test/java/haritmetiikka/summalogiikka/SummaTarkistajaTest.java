@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logiikka;
+package haritmetiikka.summalogiikka;
 
 import haritmetiikka.summalogiikka.SummaTarkistaja;
 import org.junit.After;
@@ -48,62 +48,62 @@ SummaTarkistaja tarkistus;
     @Test
     public void SummaTarkistusTest1() {
     
-    assertEquals(true,tarkistus.summaTarkistus(3,1,4));
+    assertEquals(true,tarkistus.getOikein(3,1,4));
     
 }
     @Test
     public void SummaTarkistusTest2() {
     
-    assertEquals(false,tarkistus.summaTarkistus(3,1,5));
+    assertEquals(false,tarkistus.getOikein(3,1,5));
     
 }
     @Test
     public void SummaTarkistusTest3() {
     
-    assertEquals(false,tarkistus.summaTarkistus(2,1,4));
+    assertEquals(false,tarkistus.getOikein(2,1,4));
     
 }
     @Test
     public void SummaTarkistusTest4() {
     
-    assertEquals(false,tarkistus.summaTarkistus(3,2,4));
+    assertEquals(false,tarkistus.getOikein(3,2,4));
     
 }
     @Test
     public void SummaTarkistusTest5() {
     
-    assertEquals(false,tarkistus.summaTarkistus(50,20,3));
+    assertEquals(false,tarkistus.getOikein(50,20,3));
  
 }
     @Test
     public void SummaTarkistusTest6() {
     
-    assertEquals(true,tarkistus.summaTarkistus(2,0,2));
+    assertEquals(true,tarkistus.getOikein(2,0,2));
     
 }
     @Test
     public void SummaTarkistusTest7() {
     
-    assertEquals(true,tarkistus.summaTarkistus(-2,1,-1));
+    assertEquals(true,tarkistus.getOikein(-2,1,-1));
     
 }
     @Test
     public void SummaTarkistusTest8() {
     
-    assertEquals(true,tarkistus.summaTarkistus(0,0,0));
+    assertEquals(true,tarkistus.getOikein(0,0,0));
     
 }
      @Test
     public void SummaTarkistusTes9() {
     
-    assertEquals(false,tarkistus.summaTarkistus(10,1,4));
+    assertEquals(false,tarkistus.getOikein(10,1,4));
     
 }
     
      @Test
     public void SummaTarkistusTest10() {
     
-    assertEquals(true,tarkistus.summaTarkistus(10,10,20));
+    assertEquals(true,tarkistus.getOikein(10,10,20));
     
 }
 // Oikean summauksen testaus    
