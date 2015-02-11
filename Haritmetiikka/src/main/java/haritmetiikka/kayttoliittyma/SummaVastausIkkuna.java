@@ -13,7 +13,7 @@ import haritmetiikka.rajapinta.Tehtava;
  */
 public class SummaVastausIkkuna extends javax.swing.JFrame {
 
-    private Tehtava summaTehtava;
+    private Tehtava tehtava;
     private int vastaus;
 
     /**
@@ -26,7 +26,7 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
 
     public SummaVastausIkkuna(Tehtava summaTehtava, int vastaus) {
         initComponents();
-        this.summaTehtava = summaTehtava;
+        this.tehtava = summaTehtava;
         this.vastaus = vastaus;
         oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
         if (summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)) {

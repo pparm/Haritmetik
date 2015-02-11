@@ -7,7 +7,7 @@ package haritmetiikka.rajapinta;
 
 import haritmetiikka.summalogiikka.SummaTehtava;
 import apuLuokat.LukuArpoja;
-
+//import haritmetiikka.Koe;
 /**
  *
  * @author poplinus
@@ -17,7 +17,18 @@ import apuLuokat.LukuArpoja;
  *
  */
 public class Tehtava {
-
+    
+    String tyyppi;
+    int tehtavaNro;
+    int vastaus;
+    public Tehtava(){
+        
+    }
+    public Tehtava(String tyyppi, int tehtavaNro, int vastaus){
+        this.tyyppi = tyyppi;
+        this.tehtavaNro = tehtavaNro;
+        this.vastaus = vastaus;
+    }
     /**
      * Luodaan kokonaislukuarpoja olio.
      */
@@ -42,7 +53,7 @@ public class Tehtava {
     /**
      * Luodaan summaLaskuolio.
      */
-    private SummaTehtava summaLasku = new SummaTehtava();
+    private SummaTehtava summaTehtava = new SummaTehtava();
 
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
@@ -74,7 +85,7 @@ public class Tehtava {
      */
     public final int getOikeaVastaus(final String tehtavaTyyppi, final int ekaLuku, final int tokaLuku) {
         if (tehtavaTyyppi.equals("summa")) {
-            return summaLasku.getSumma(ekaLuku, tokaLuku);
+            return summaTehtava.getSumma(ekaLuku, tokaLuku);
         }
 
         return -1;
@@ -89,15 +100,22 @@ public class Tehtava {
      * @param vastaus Pelaajan
      * @return totuusarvo
      */
-    public final boolean getOikein(final String tehtavaTyyppi, final int ekaLuku, final int tokaLuku, final int vastaus) {
+    public final boolean getOikein(String tehtavaTyyppi, final int ekaLuku, final int tokaLuku, final int vastaus) {
         if (tehtavaTyyppi.equals("summa")) {
-            return summaLasku.getOikein(ekaLuku, tokaLuku, vastaus);
+            return summaTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
         System.out.println("Tehtava/getOikein ei toimi");
 
         return false;
-    }
+    }   
+     public void setArvot(String tyyppi, int tehtavaNro, int vastaus){
+      this.tyyppi = tyyppi;
+      this.tehtavaNro = tehtavaNro;
+      this.vastaus = vastaus;
+     
+     }
+    
     
     public int tehtava(String tehtavaTyyppi){
       if(tehtavaTyyppi == "summa"){

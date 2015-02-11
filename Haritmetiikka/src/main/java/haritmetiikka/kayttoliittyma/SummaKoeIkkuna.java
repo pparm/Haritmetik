@@ -5,19 +5,28 @@
  */
 package haritmetiikka.kayttoliittyma;
 
+import haritmetiikka.rajapinta.Tehtava;
+
 /**
  *
  * @author poplinus
  */
 public class SummaKoeIkkuna extends javax.swing.JFrame {
-int tehtavaNro;
-int vastaus;
+
+    Tehtava koeTehtava = new Tehtava();
+    int tehtavaNro;
+    int vastaus;
+ 
 
 /**
      * Creates new form SummaKoeIkkuna
      */
     public SummaKoeIkkuna(int tehtavaNro) {
         initComponents();
+       
+      ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
+      tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
+        
         this.tehtavaNro = tehtavaNro;
     }
 
@@ -30,26 +39,31 @@ int vastaus;
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        ekaLukuLabel = new javax.swing.JLabel();
+        tokaLukuLabel = new javax.swing.JLabel();
+        vastausButton = new javax.swing.JButton();
+        vastausTextField = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("jLabel1");
+        ekaLukuLabel.setText("jLabel1");
 
-        jLabel2.setText("jLabel2");
+        tokaLukuLabel.setText("jLabel2");
 
-        jButton1.setText("Vastaa");
-
-        jTextField1.setText("?");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        vastausButton.setText("Vastaa");
+        vastausButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                vastausButtonActionPerformed(evt);
+            }
+        });
+
+        vastausTextField.setText("?");
+        vastausTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vastausTextFieldActionPerformed(evt);
             }
         });
 
@@ -68,17 +82,17 @@ int vastaus;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(ekaLukuLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel2)
+                        .addComponent(tokaLukuLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel4)
                         .addGap(4, 4, 4)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1)))
+                        .addComponent(vastausButton)))
                 .addGap(109, 109, 109))
         );
         layout.setVerticalGroup(
@@ -88,10 +102,10 @@ int vastaus;
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jButton1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ekaLukuLabel)
+                    .addComponent(tokaLukuLabel)
+                    .addComponent(vastausButton)
+                    .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
                 .addContainerGap(181, Short.MAX_VALUE))
@@ -100,9 +114,22 @@ int vastaus;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-       
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void vastausTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausTextFieldActionPerformed
+  
+    }//GEN-LAST:event_vastausTextFieldActionPerformed
+
+    private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
+     try {
+           this.vastaus = Integer.parseInt(vastausTextField.getText());
+        } catch (Exception e) {
+
+            new SyottoVirheIkkuna().setVisible(true);
+
+        }
+     
+       this.koeTehtava.setArvot("summa", tehtavaNro, vastaus);
+   //  new SummaVastausIkkuna(koeTehtava, vastaus).setVisible(true);
+    }//GEN-LAST:event_vastausButtonActionPerformed
     
     private void uusiTehtava(int tehtavaNro){
     
@@ -146,12 +173,13 @@ int vastaus;
 //    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel ekaLukuLabel;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JLabel tokaLukuLabel;
+    private javax.swing.JButton vastausButton;
+    private javax.swing.JTextField vastausTextField;
     // End of variables declaration//GEN-END:variables
+
 }

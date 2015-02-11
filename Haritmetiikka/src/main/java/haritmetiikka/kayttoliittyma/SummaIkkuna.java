@@ -13,7 +13,7 @@ import haritmetiikka.rajapinta.Tehtava;
  */
 public class SummaIkkuna extends javax.swing.JFrame {
 
-    Tehtava summaTehtava = new Tehtava();
+   public Tehtava summaTehtava = new Tehtava();
     
     int vastaus;
 
@@ -134,9 +134,9 @@ public class SummaIkkuna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lopeta))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
+                        .addGap(31, 31, 31)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(95, 95, 95)
+                        .addGap(81, 81, 81)
                         .addComponent(vastaa)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );

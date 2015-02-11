@@ -10,12 +10,38 @@ package haritmetiikka.koe;
  * @author poplinus
  */
 public class Koe {
- 
-    public int koeTehtava(){
-       
-        return -1; 
+ Koe koe =new Koe();
+ int tehtavaNro;
+ int vastaus,ekaLuku,tokaLuku;
+int oikeinLkm;
+public  Koe(int tehtavaNro, int vastaus){
+    this.tehtavaNro = tehtavaNro;
+    this.vastaus = vastaus;
     }
-            
-    
-    
+   public Koe(){
+   } 
+   
+   public int seuraavaTehtavaNro(int tehtavaNro){
+        this.tehtavaNro = tehtavaNro++;
+        return tehtavaNro;
+   }
+   public int oikeitaVastauksia(int oikeinLkm){
+        this.tehtavaNro = tehtavaNro++;
+        return tehtavaNro;
+   }
+   
+ public int tarkistaTehtava(int ekaLuku,int tokaLuku,int tehtavaNro, int vastaus){
+     this.ekaLuku = ekaLuku;
+     this.tokaLuku = tokaLuku;
+     this.tehtavaNro = tehtavaNro;
+     this.vastaus = vastaus;
+     
+     
+  return -1; 
+  
+ }
+       
+  
 }
+
+
