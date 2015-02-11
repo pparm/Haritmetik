@@ -4,11 +4,11 @@
  * and open the template in the editor.
  */
 package haritmetiikka.summalogiikka;
-
+import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
  * Luokka laskee summia yhteen.
  */
-public class SummaTehtava {
+public class SummaTehtava implements RajapintaTehtava{
 
     /**
      * Luodaan summan tarkastaja.
@@ -38,6 +38,16 @@ public class SummaTehtava {
     public final int getSumma(final int ekaLuku, final int tokaLuku) {
 
         return summaTarkistaja.getSumma(ekaLuku, tokaLuku);
+    }
+
+    @Override
+    public int getSumma() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public int getOikein() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
