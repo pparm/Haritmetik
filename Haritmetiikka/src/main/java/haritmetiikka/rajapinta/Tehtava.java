@@ -98,4 +98,12 @@ public class Tehtava {
 
         return false;
     }
-}
+    
+    public int tehtava(String tehtavaTyyppi){
+      if(tehtavaTyyppi == "summa"){
+       return 15;}
+      return -1;
+      }  
+    }
+    
+

@@ -31,6 +31,9 @@ public class StartIkkuna extends javax.swing.JFrame {
         vahennuslaskuButton = new javax.swing.JButton();
         kertolaskuButton = new javax.swing.JButton();
         lopetaButton = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,20 +60,40 @@ public class StartIkkuna extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Yhteenlaskukoe");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Vähennyslaskukoe");
+
+        jButton3.setText("Kertolaskukoe");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lopetaButton)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(yhteenlaskuButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(vahennuslaskuButton)
-                        .addGap(18, 18, 18)
-                        .addComponent(kertolaskuButton)))
+                        .addGap(157, 157, 157)
+                        .addComponent(lopetaButton))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
+                            .addComponent(yhteenlaskuButton))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(vahennuslaskuButton)
+                            .addComponent(jButton2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(kertolaskuButton)
+                            .addComponent(jButton3))
+                        .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -81,7 +104,12 @@ public class StartIkkuna extends javax.swing.JFrame {
                     .addComponent(yhteenlaskuButton)
                     .addComponent(vahennuslaskuButton)
                     .addComponent(kertolaskuButton))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(lopetaButton)
                 .addGap(62, 62, 62))
         );
@@ -90,7 +118,8 @@ public class StartIkkuna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
-        // TODO add your handling code here:
+       new SummaIkkuna().setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
     /**
      * Avaa Yhteenlaskuikknunan
@@ -107,6 +136,11 @@ public class StartIkkuna extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    new SummaKoeIkkuna().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+ 
     /**
      * @param args the command line arguments
      */
@@ -144,6 +178,9 @@ public class StartIkkuna extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton kertolaskuButton;
     private javax.swing.JButton lopetaButton;
     private javax.swing.JButton vahennuslaskuButton;
