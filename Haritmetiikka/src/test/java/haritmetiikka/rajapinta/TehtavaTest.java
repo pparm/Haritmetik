@@ -91,4 +91,15 @@ public class TehtavaTest {
      assertEquals(1,tehtava.getOikeaVastaus("summa",100,-99));
      
      }
+     
+     @Test
+     public void ekaLukuTest1() {
+     assertEquals(1,tehtava.getOikeaVastaus("summa",-99,-99));
+     
+     }
+     
+     
+     
+     
+     
 }

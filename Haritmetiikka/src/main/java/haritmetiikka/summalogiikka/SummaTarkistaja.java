@@ -18,7 +18,7 @@ public class SummaTarkistaja {
      * @param vastausSumma lukujen summa
      * @return totuusarvo onko lukujen summa oikein
      */
-    public boolean getOikein(int ekaLuku, int tokaLuku, int vastausSumma) {
+    public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastausSumma) {
 
         return (ekaLuku + tokaLuku) == vastausSumma;
     }
@@ -30,8 +30,8 @@ public class SummaTarkistaja {
      * @param tokaLuku Kokonaisluku
      * @return Kokonaislukujen summa
      */
-    public int getSumma(int ekaLuku, int tokaLuku) {
-        return ekaLuku + tokaLuku;
+    public final int getSumma(final int ekaLuku, final int tokaLuku) {
+        return (ekaLuku + tokaLuku);
 
     }
 

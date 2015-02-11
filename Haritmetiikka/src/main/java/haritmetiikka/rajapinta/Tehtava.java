@@ -12,46 +12,67 @@ import apuLuokat.LukuArpoja;
  *
  * @author poplinus
  *
- * Luokka on graafisen käyttöliittymän ja sovelluslogiikan rajapinta
+ * Luokka on graafisen käyttöliittymän ja sovelluslogiikan rajapinta.
  *
  *
  */
 public class Tehtava {
 
-    LukuArpoja arpoja = new LukuArpoja();
-    private int ekaLuku = arpoja.arvottuLuku(0, 10);
-    private int tokaLuku = arpoja.arvottuLuku(0, 10);
-    SummaTehtava summaLasku = new SummaTehtava();
+    /**
+     * Luodaan kokonaislukuarpoja olio.
+     */
+    private LukuArpoja arpoja = new LukuArpoja();
+    /**
+     * Arvottavan luvun alaraja.
+     */
+    static final int ALARAJA = 0;
+    /**
+     * Arvottavan luvun yläraja.
+     */
+    static final int YLARAJA = 10;
+    /**
+     * Arvotaan ensimmäinen kysymyksessä oleva kokonaisluku.
+     */
+
+    private int ekaLuku = arpoja.arvottuLuku(ALARAJA, YLARAJA);
+    /**
+     * Arvotaan ensimmäinen kysymyksessä oleva kokonaisluku.
+     */
+    private int tokaLuku = arpoja.arvottuLuku(ALARAJA, YLARAJA);
+    /**
+     * Luodaan summaLaskuolio.
+     */
+    private SummaTehtava summaLasku = new SummaTehtava();
 
     /**
-     * Palauttaa olion arpoman ensimmäisen kokonaisluvun
+     * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
      *
      * @return Arvottu ensimmäinen arvottu kokonaisluku
      */
-    public int getEkaLuku() {
+    public final int getEkaLuku() {
 
-        return this.ekaLuku;
+        return ekaLuku;
 
     }
 
     /**
-     * Palauttaa olion arpoman toisen kokonaisluvun
+     * Palauttaa olion arpoman toisen kokonaisluvun.
      *
      * @return Arvottu toinen kokonaisluku
      */
-    public int getTokaLuku() {
-        return this.tokaLuku;
+    public final int getTokaLuku() {
+        return tokaLuku;
     }
 
     /**
-     * Palauttaa oikean vastauksen
+     * Palauttaa oikean vastauksen.
      *
      * @param tehtavaTyyppi Tehtävätyypin syöttö
      * @param ekaLuku Ensimmäinen kokonaisluku
      * @param tokaLuku Toinen kokonaisluku
      * @return Palauttaa tehtävätyypin oikean vastauksen
      */
-    public int getOikeaVastaus(String tehtavaTyyppi, int ekaLuku, int tokaLuku) {
+    public final int getOikeaVastaus(final String tehtavaTyyppi, final int ekaLuku, final int tokaLuku) {
         if (tehtavaTyyppi.equals("summa")) {
             return summaLasku.getSumma(ekaLuku, tokaLuku);
         }
@@ -60,14 +81,15 @@ public class Tehtava {
     }
 
     /**
-     * Palauttaa totuusarvon true jos tehtävä oikein ja false jos väärin
+     * Palauttaa totuusarvon onko tehtävätyyppi ratkaistu oikein.
      *
-     * @param tehtavaTyyppi summa, miinus tai kerto
-     * @param ekaLuku ensimmäinen luku laskussa
-     * @param tokaLuku tionen luku laskussa
-     * @return paluuarvo true jos vastaus oikein, false jos väärin
+     * @param tehtavaTyyppi tehtava tyyppi jota ratkaistaan summa/kerto/miinus.
+     * @param ekaLuku Ensimmäinen luku kysymyksessä.
+     * @param tokaLuku Toinen luku kysymyksessä.
+     * @param vastaus Pelaajan
+     * @return totuusarvo
      */
-    public boolean getOikein(String tehtavaTyyppi, int ekaLuku, int tokaLuku, int vastaus) {
+    public final boolean getOikein(final String tehtavaTyyppi, final int ekaLuku, final int tokaLuku, final int vastaus) {
         if (tehtavaTyyppi.equals("summa")) {
             return summaLasku.getOikein(ekaLuku, tokaLuku, vastaus);
 
