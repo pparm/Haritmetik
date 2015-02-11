@@ -31,9 +31,9 @@ public class StartIkkuna extends javax.swing.JFrame {
         vahennuslaskuButton = new javax.swing.JButton();
         kertolaskuButton = new javax.swing.JButton();
         lopetaButton = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        koeYhteenlaskuButton = new javax.swing.JButton();
+        koeVahennyslaskuButton = new javax.swing.JButton();
+        koeKertolaskuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,16 +60,16 @@ public class StartIkkuna extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Yhteenlaskukoe");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        koeYhteenlaskuButton.setText("Yhteenlaskukoe");
+        koeYhteenlaskuButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                koeYhteenlaskuButtonActionPerformed(evt);
             }
         });
 
-        jButton2.setText("Vähennyslaskukoe");
+        koeVahennyslaskuButton.setText("Vähennyslaskukoe");
 
-        jButton3.setText("Kertolaskukoe");
+        koeKertolaskuButton.setText("Kertolaskukoe");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -83,16 +83,16 @@ public class StartIkkuna extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(koeYhteenlaskuButton)
                             .addComponent(yhteenlaskuButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(vahennuslaskuButton)
-                            .addComponent(jButton2))
+                            .addComponent(koeVahennyslaskuButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(kertolaskuButton)
-                            .addComponent(jButton3))
+                            .addComponent(koeKertolaskuButton))
                         .addGap(0, 12, Short.MAX_VALUE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -106,9 +106,9 @@ public class StartIkkuna extends javax.swing.JFrame {
                     .addComponent(kertolaskuButton))
                 .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(koeYhteenlaskuButton)
+                    .addComponent(koeVahennyslaskuButton)
+                    .addComponent(koeKertolaskuButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(lopetaButton)
                 .addGap(62, 62, 62))
@@ -136,52 +136,54 @@ public class StartIkkuna extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    new SummaKoeIkkuna().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
+    new SummaKoeIkkuna(1).setVisible(true);
+   
+    this.dispose();
+        
+    }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
  
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new StartIkkuna().setVisible(true);
-            }
-        });
-    }
+//    /**
+//     * @param args the command line arguments
+//     */
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            @Override
+//            public void run() {
+//                new StartIkkuna().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton kertolaskuButton;
+    private javax.swing.JButton koeKertolaskuButton;
+    private javax.swing.JButton koeVahennyslaskuButton;
+    private javax.swing.JButton koeYhteenlaskuButton;
     private javax.swing.JButton lopetaButton;
     private javax.swing.JButton vahennuslaskuButton;
     private javax.swing.JButton yhteenlaskuButton;
