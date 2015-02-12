@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package haritmetiikka.koe;
-
+import haritmetiikka.rajapinta.Tehtava;
 /**
  *
  * @author poplinus
@@ -30,14 +30,14 @@ public  Koe(int tehtavaNro, int vastaus){
         return tehtavaNro;
    }
    
- public int tarkistaTehtava(int ekaLuku,int tokaLuku,int tehtavaNro, int vastaus){
+ public boolean getKoeTehtavaOikein(int ekaLuku,int tokaLuku,int tehtavaNro, int vastaus){
      this.ekaLuku = ekaLuku;
      this.tokaLuku = tokaLuku;
      this.tehtavaNro = tehtavaNro;
      this.vastaus = vastaus;
-     
-     
-  return -1; 
+      Tehtava koeTehtava = new Tehtava();
+       return koeTehtava.getOikein(null, ekaLuku, tokaLuku, vastaus);
+   
   
  }
        

@@ -3,17 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.kertologiikka;
+import haritmetiikka.summalogiikka.*;
 import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
  * Luokka laskee summia yhteen.
  */
-public class SummaTehtava {
+public class KertoTehtava{
 
     /**
      * Luodaan summan tarkastaja.
      */
-    private SummaTarkistaja summaTarkistaja = new SummaTarkistaja();
+    private KertoTarkistaja kertoTarkistaja = new KertoTarkistaja();
 
     /**
      * Palauttaa boolean onko käyttäjän syöttömä summa oikein.
@@ -24,7 +25,7 @@ public class SummaTehtava {
      * @return boolean onko lukujen summa oikein
      */
     public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastaus) {
-        return summaTarkistaja.getOikein(ekaLuku, tokaLuku, vastaus);
+        return kertoTarkistaja.getOikein(ekaLuku, tokaLuku, vastaus);
     }
 
     /**
@@ -37,7 +38,7 @@ public class SummaTehtava {
      */
     public final int getVastaus(final int ekaLuku, final int tokaLuku) {
 
-        return summaTarkistaja.getVastaus(ekaLuku, tokaLuku);
+        return kertoTarkistaja.getVastaus(ekaLuku, tokaLuku);
     }
-}
-  
+
+} 

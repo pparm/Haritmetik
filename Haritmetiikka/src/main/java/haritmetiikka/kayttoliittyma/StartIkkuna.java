@@ -116,11 +116,6 @@ public class StartIkkuna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
-       new SummaIkkuna().setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
     /**
      * Avaa Yhteenlaskuikknunan
      *
@@ -137,11 +132,16 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-    new SummaKoeIkkuna(1).setVisible(true);
+    new KoeSummaIkkuna(1,0).setVisible(true);
    
     this.dispose();
         
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
+
+    private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
+        new SummaIkkuna().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
  
 //    /**
 //     * @param args the command line arguments

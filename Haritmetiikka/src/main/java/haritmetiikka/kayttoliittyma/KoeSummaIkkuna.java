@@ -11,23 +11,28 @@ import haritmetiikka.rajapinta.Tehtava;
  *
  * @author poplinus
  */
-public class SummaKoeIkkuna extends javax.swing.JFrame {
+public class KoeSummaIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
     int tehtavaNro;
+    int koeTehtaviaOikein;
     int vastaus;
- 
+    
 
-/**
+/*
      * Creates new form SummaKoeIkkuna
      */
-    public SummaKoeIkkuna(int tehtavaNro) {
+    public KoeSummaIkkuna(int tehtavaNro,int koeTehtaviaOikein) {
         initComponents();
-       
-      ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
+       this.tehtavaNro = tehtavaNro;
+       this.koeTehtaviaOikein= koeTehtaviaOikein;
+       ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
       tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
-        
-        this.tehtavaNro = tehtavaNro;
+       tehtavaNroLabel.setText(""+tehtavaNro);
+    }
+    
+    public static int laskuri(int nro){
+       return nro++;
     }
 
     /**
@@ -46,6 +51,7 @@ public class SummaKoeIkkuna extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        tehtavaNroLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,14 +79,19 @@ public class SummaKoeIkkuna extends javax.swing.JFrame {
 
         jLabel5.setText("Yhteenlaskukoe. Yhteensä 10 tehtävää.");
 
+        tehtavaNroLabel.setText("jLabel1");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(29, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(tehtavaNroLabel)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ekaLukuLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -99,7 +110,9 @@ public class SummaKoeIkkuna extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tehtavaNroLabel))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ekaLukuLabel)
@@ -124,19 +137,34 @@ public class SummaKoeIkkuna extends javax.swing.JFrame {
         } catch (Exception e) {
 
             new SyottoVirheIkkuna().setVisible(true);
-
+            
         }
      
-       this.koeTehtava.setArvot("summa", tehtavaNro, vastaus);
-   //  new SummaVastausIkkuna(koeTehtava, vastaus).setVisible(true);
+       
+        this.tehtavaNro++;
+        
+        if(koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(),vastaus)){
+        koeTehtaviaOikein++;    
+        }
+            
+        System.out.println(koeTehtaviaOikein);    
+        if(tehtavaNro<=10){    
+        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein).setVisible(true);
+        this.dispose();}
+        else{new KoeTulosIkkuna(tehtavaNro,koeTehtaviaOikein).setVisible(true);
+            
+            
+        }
+        this.dispose();
+         
     }//GEN-LAST:event_vastausButtonActionPerformed
-    
-    private void uusiTehtava(int tehtavaNro){
-    
+    /*
+        private void uusiTehtava(int tehtavaNro){
+            
         this.tehtavaNro = tehtavaNro;
         
     }
-    
+    */
 //    /**
 //     * @param args the command line arguments
 //     */
@@ -177,6 +205,7 @@ public class SummaKoeIkkuna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel tehtavaNroLabel;
     private javax.swing.JLabel tokaLukuLabel;
     private javax.swing.JButton vastausButton;
     private javax.swing.JTextField vastausTextField;

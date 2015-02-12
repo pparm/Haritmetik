@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.kertologiikka;
 
-import haritmetiikka.summalogiikka.SummaTarkistaja;
+import haritmetiikka.kertologiikka.*;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,10 +17,10 @@ import static org.junit.Assert.*;
  *
  * @author poplinus
  */
-public class SummaTarkistajaTest {
-SummaTarkistaja tarkistus;
+public class KertoTarkistajaTest {
+KertoTarkistaja tarkistus;
     
-    public SummaTarkistajaTest() {
+    public KertoTarkistajaTest() {
     }
 
     @BeforeClass
@@ -33,7 +33,7 @@ SummaTarkistaja tarkistus;
 
     @Before
     public void setUp() {
-    tarkistus = new SummaTarkistaja();
+    tarkistus = new KertoTarkistaja();
   
     
     }
@@ -46,73 +46,73 @@ SummaTarkistaja tarkistus;
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void SummaTarkistusTest1() {
+    public void kertoTarkistajatusTest1() {
     
-    assertEquals(true,tarkistus.getOikein(3,1,4));
-    
-}
-    @Test
-    public void SummaTarkistusTest2() {
-    
-    assertEquals(false,tarkistus.getOikein(3,1,5));
+    assertEquals(true,tarkistus.getOikein(3,1,3));
     
 }
     @Test
-    public void SummaTarkistusTest3() {
+    public void kertoTarkistajatusTest2() {
     
-    assertEquals(false,tarkistus.getOikein(2,1,4));
+    assertEquals(false,tarkistus.getOikein(3,1,4));
     
 }
     @Test
-    public void SummaTarkistusTest4() {
+    public void kertoTarkistajatusTest3() {
+    
+    assertEquals(false,tarkistus.getOikein(2,1,5));
+    
+}
+    @Test
+    public void kertoTarkistajatusTest4() {
     
     assertEquals(false,tarkistus.getOikein(3,2,4));
     
 }
     @Test
-    public void SummaTarkistusTest5() {
+    public void kertoTarkistajatusTest5() {
     
-    assertEquals(false,tarkistus.getOikein(50,20,3));
+    assertEquals(false,tarkistus.getOikein(50,20,100));
  
 }
     @Test
-    public void SummaTarkistusTest6() {
+    public void kertoTarkistajatusTest6() {
     
-    assertEquals(true,tarkistus.getOikein(2,0,2));
-    
-}
-    @Test
-    public void SummaTarkistusTest7() {
-    
-    assertEquals(true,tarkistus.getOikein(-2,1,-1));
+    assertEquals(true,tarkistus.getOikein(2,0,0));
     
 }
     @Test
-    public void SummaTarkistusTest8() {
+    public void kertoTarkistajatusTest7() {
+    
+    assertEquals(true,tarkistus.getOikein(-2,1,-2));
+    
+}
+    @Test
+    public void kertoTarkistajatusTest8() {
     
     assertEquals(true,tarkistus.getOikein(0,0,0));
     
 }
      @Test
-    public void SummaTarkistusTes9() {
+    public void kertoTarkistajatusTes9() {
     
-    assertEquals(false,tarkistus.getOikein(10,1,4));
+    assertEquals(false,tarkistus.getOikein(10,1,40));
     
 }
     
      @Test
-    public void SummaTarkistusTest10() {
+    public void kertoTarkistajatusTest10() {
     
-    assertEquals(true,tarkistus.getOikein(10,10,20));
+    assertEquals(true,tarkistus.getOikein(10,10,100));
     
 }
 // Oikean summauksen testaus    
      @Test
-    public void oikeaSummaTest() {
+    public void oikeaKertoTest() {
     
     for(int i = 0; i<=10; i++){
         
-        assertEquals(i+20,tarkistus.getVastaus(i,20));
+        assertEquals(i*10,tarkistus.getVastaus(i,10));
     }
         
     

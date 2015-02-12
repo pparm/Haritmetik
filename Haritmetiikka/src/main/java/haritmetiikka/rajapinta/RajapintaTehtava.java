@@ -11,7 +11,7 @@ package haritmetiikka.rajapinta;
  * @author poplinus
  */
 public interface RajapintaTehtava {
-    public int getSumma();
+    public int getVastaus();
     public int getOikein();
     
     

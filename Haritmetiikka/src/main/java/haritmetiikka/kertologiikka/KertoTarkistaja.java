@@ -3,24 +3,26 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.kertologiikka;
+
+import haritmetiikka.summalogiikka.*;
 
 /**
  * Luokka tarkistaa summia.
  */
-public class SummaTarkistaja {
+public class KertoTarkistaja {
 
     /**
      * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon.
      *
      * @param ekaLuku koknaisluku
      * @param tokaLuku kokonaisluku
-     * @param vastausSumma lukujen summa
+     * @param vastausKerto lukujen summa
      * @return totuusarvo onko lukujen summa oikein
      */
-    public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastausSumma) {
+    public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastausKerto) {
 
-        return (ekaLuku + tokaLuku) == vastausSumma;
+        return (ekaLuku * tokaLuku) == vastausKerto;
     }
 
     /**
@@ -31,7 +33,7 @@ public class SummaTarkistaja {
      * @return Kokonaislukujen summa
      */
     public final int getVastaus(final int ekaLuku, final int tokaLuku) {
-        return (ekaLuku + tokaLuku);
+        return (ekaLuku * tokaLuku);
 
     }
 

@@ -7,6 +7,7 @@ package haritmetiikka.rajapinta;
 
 import haritmetiikka.summalogiikka.SummaTehtava;
 import apuLuokat.LukuArpoja;
+import haritmetiikka.kertologiikka.KertoTehtava;
 //import haritmetiikka.Koe;
 /**
  *
@@ -19,14 +20,14 @@ import apuLuokat.LukuArpoja;
 public class Tehtava {
     
     String tyyppi;
-    int tehtavaNro;
+   // int tehtavaNro;
     int vastaus;
     public Tehtava(){
         
     }
-    public Tehtava(String tyyppi, int tehtavaNro, int vastaus){
+    public Tehtava(String tyyppi, int vastaus){
         this.tyyppi = tyyppi;
-        this.tehtavaNro = tehtavaNro;
+       // this.tehtavaNro = tehtavaNro;
         this.vastaus = vastaus;
     }
     /**
@@ -54,7 +55,8 @@ public class Tehtava {
      * Luodaan summaLaskuolio.
      */
     private SummaTehtava summaTehtava = new SummaTehtava();
-
+    private KertoTehtava kertoTehtava = new KertoTehtava();
+    
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
      *
@@ -85,8 +87,15 @@ public class Tehtava {
      */
     public final int getOikeaVastaus(final String tehtavaTyyppi, final int ekaLuku, final int tokaLuku) {
         if (tehtavaTyyppi.equals("summa")) {
-            return summaTehtava.getSumma(ekaLuku, tokaLuku);
+            return summaTehtava.getVastaus(ekaLuku, tokaLuku);
         }
+        
+        if (tehtavaTyyppi.equals("kerto")) {
+            return kertoTehtava.getVastaus(ekaLuku, tokaLuku);
+        }
+        
+        
+        
 
         return -1;
     }
@@ -105,23 +114,31 @@ public class Tehtava {
             return summaTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
+        if (tehtavaTyyppi.equals("kerto")) {
+            return kertoTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
+
+        }
+       
+        
+        
         System.out.println("Tehtava/getOikein ei toimi");
 
         return false;
     }   
-     public void setArvot(String tyyppi, int tehtavaNro, int vastaus){
+     public void setArvot(String tyyppi, int vastaus){
       this.tyyppi = tyyppi;
-      this.tehtavaNro = tehtavaNro;
+     // this.tehtavaNro = tehtavaNro;
       this.vastaus = vastaus;
      
      }
     
-    
+ /*   
     public int tehtava(String tehtavaTyyppi){
       if(tehtavaTyyppi == "summa"){
        return 15;}
       return -1;
       }  
+*/  
     }
-    
+   
 

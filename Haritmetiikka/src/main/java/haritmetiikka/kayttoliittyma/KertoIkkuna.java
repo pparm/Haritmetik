@@ -11,20 +11,20 @@ import haritmetiikka.rajapinta.Tehtava;
  *
  * @author poplinus
  */
-public class SummaIkkuna extends javax.swing.JFrame {
+public class KertoIkkuna extends javax.swing.JFrame {
 
-   public Tehtava summaTehtava = new Tehtava();
+   public Tehtava tehtava = new Tehtava();
     
     int vastaus;
 
     /**
      * Tekee käyttöliittymän
      */
-    public SummaIkkuna() {
+    public KertoIkkuna() {
         initComponents();
 
-        ekaLukuLabel.setText(String.valueOf(summaTehtava.getEkaLuku()));
-        tokaLukuLabel.setText(String.valueOf(summaTehtava.getTokaLuku()));
+        ekaLukuLabel.setText(String.valueOf(tehtava.getEkaLuku()));
+        tokaLukuLabel.setText(String.valueOf(tehtava.getTokaLuku()));
         
         
     }
@@ -173,7 +173,7 @@ public class SummaIkkuna extends javax.swing.JFrame {
      */
     private void uusiLaskuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuActionPerformed
 
-        new SummaIkkuna().setVisible(true);
+        new KertoIkkuna().setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_uusiLaskuActionPerformed
@@ -191,7 +191,7 @@ public class SummaIkkuna extends javax.swing.JFrame {
             new SyottoVirheIkkuna().setVisible(true);
 
         }
-        new SummaVastausIkkuna(summaTehtava, vastaus).setVisible(true);
+        new SummaVastausIkkuna(tehtava, vastaus).setVisible(true);
         
 //    this.setVisible(false);
     }//GEN-LAST:event_vastaaActionPerformed
