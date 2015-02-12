@@ -8,6 +8,7 @@ package haritmetiikka.rajapinta;
 import haritmetiikka.summalogiikka.SummaTehtava;
 import apuLuokat.LukuArpoja;
 import haritmetiikka.kertologiikka.KertoTehtava;
+import haritmetiikka.miinuslogiikka.MiinusTehtava;
 //import haritmetiikka.Koe;
 /**
  *
@@ -56,6 +57,7 @@ public class Tehtava {
      */
     private SummaTehtava summaTehtava = new SummaTehtava();
     private KertoTehtava kertoTehtava = new KertoTehtava();
+    private MiinusTehtava miinusTehtava = new MiinusTehtava();
     
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
@@ -94,6 +96,10 @@ public class Tehtava {
             return kertoTehtava.getVastaus(ekaLuku, tokaLuku);
         }
         
+        if (tehtavaTyyppi.equals("miinus")) {
+            return miinusTehtava.getVastaus(ekaLuku, tokaLuku);
+        }
+        
         
         
 
@@ -115,6 +121,11 @@ public class Tehtava {
 
         }
         if (tehtavaTyyppi.equals("kerto")) {
+            return kertoTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
+
+        }
+       
+        if (tehtavaTyyppi.equals("miinus")) {
             return kertoTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
