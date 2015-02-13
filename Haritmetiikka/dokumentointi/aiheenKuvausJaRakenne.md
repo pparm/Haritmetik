@@ -4,6 +4,7 @@ tehtävät.
 
 Pelissä on graafinen käyttöliittymä. Pelin tavoitteena on tehdä matematiikan oppimisesta hauskaa.
 
+Pelin tilaaja halusi laajentaa peliä koeosiolla, jolla mitataan pelaajan osaamista. Kokeeksi valitaan plus,miinus tai kertolasku. Kokeessa on kymmenen kysymystä, jonka jälkeen peli kertoo oikeiden vastausten määrän.
 
 
 Peliä voidaan myöhemmin laajentaa esimerkiksi pitämään kirjaa tuloksista ja rakentaa eri pelaajille profiileja.
