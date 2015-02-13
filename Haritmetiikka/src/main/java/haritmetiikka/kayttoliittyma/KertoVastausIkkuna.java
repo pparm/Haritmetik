@@ -19,23 +19,23 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
     /**
      * Metodi rakentaa SummaVastausIkkunan
      *
-     * @param summaTehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut
+     * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut
      * luvut
      * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
      */
 
-    public KertoVastausIkkuna(Tehtava summaTehtava, int vastaus) {
+    public KertoVastausIkkuna(Tehtava tehtava, int vastaus) {
         initComponents();
-        this.tehtava = summaTehtava;
+        this.tehtava = tehtava;
         this.vastaus = vastaus;
-        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
-        if (summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)) {
+        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
+        if (tehtava.getOikein("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
             vastausOikeinLabel.setText("Vastasit oikein");
 
         } else {
             vastausOikeinLabel.setText("Vastasit väärin");
         }
-//      vastausOikeinLabel.setText(String.valueOf(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)));
+//      vastausOikeinLabel.setText(String.valueOf(tehtava.getOikein("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)));
     }
 
     /**

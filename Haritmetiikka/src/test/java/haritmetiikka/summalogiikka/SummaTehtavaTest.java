@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.kertologiikka;
+package haritmetiikka.summalogiikka;
 
-import haritmetiikka.kertologiikka.*;
-import haritmetiikka.kertologiikka.KertoTehtava;
+import haritmetiikka.summalogiikka.SummaTehtava;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -17,10 +16,10 @@ import static org.junit.Assert.*;
  *
  * @author poplinus
  */
-public class KertoLaskuTest {
-    KertoTehtava kertoLasku;
+public class SummaTehtavaTest {
+    SummaTehtava summaLasku;
     
-    public KertoLaskuTest() {
+    public SummaTehtavaTest() {
     }
     
     @BeforeClass
@@ -33,7 +32,7 @@ public class KertoLaskuTest {
     
     @Before
     public void setUp() {
-    kertoLasku = new KertoTehtava();
+    summaLasku = new SummaTehtava();
     
     }
     
@@ -45,16 +44,15 @@ public class KertoLaskuTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-    public void kertoLaskuTest1() {
+    public void summaLaskuTest1() {
      for(int i = 0; i<10; i++){
-        assertEquals(true,kertoLasku.getOikein(i,i,i*i));
+        assertEquals(true,summaLasku.getOikein(3+i,1,4+i));
      }
     }
-  public void kertoLaskuTest2() {
+  public void summaLaskuTest2() {
      for(int i = 0; i<10; i++){
-        assertEquals(false,kertoLasku.getOikein(-1,3+i,4+i));
+        assertEquals(true,summaLasku.getOikein(-1,3+i,4+i));
      }
     }
-  
 
 }

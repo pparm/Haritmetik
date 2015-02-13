@@ -52,6 +52,11 @@ public class StartIkkuna extends javax.swing.JFrame {
         });
 
         kertolaskuButton.setText("Kertolasku");
+        kertolaskuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kertolaskuButtonActionPerformed(evt);
+            }
+        });
 
         lopetaButton.setText("Lopeta");
         lopetaButton.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +147,11 @@ public class StartIkkuna extends javax.swing.JFrame {
         new SummaIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
+
+    private void kertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kertolaskuButtonActionPerformed
+        new KertoIkkuna().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_kertolaskuButtonActionPerformed
  
 //    /**
 //     * @param args the command line arguments

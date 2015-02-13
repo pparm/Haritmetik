@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.miinuslogiikka;
 
-import haritmetiikka.summalogiikka.SummaTehtava;
+import haritmetiikka.miinuslogiikka.MiinusTehtava;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -16,10 +16,10 @@ import static org.junit.Assert.*;
  *
  * @author poplinus
  */
-public class SummaLaskuTest {
-    SummaTehtava summaLasku;
+public class MiinusTehtavaTest {
+    MiinusTehtava miinusLasku;
     
-    public SummaLaskuTest() {
+    public MiinusTehtavaTest() {
     }
     
     @BeforeClass
@@ -32,7 +32,7 @@ public class SummaLaskuTest {
     
     @Before
     public void setUp() {
-    summaLasku = new SummaTehtava();
+    miinusLasku = new MiinusTehtava();
     
     }
     
@@ -44,14 +44,14 @@ public class SummaLaskuTest {
     // The methods must be annotated with annotation @Test. For example:
     //
      @Test
-    public void summaLaskuTest1() {
+    public void miinusLaskuTest1() {
      for(int i = 0; i<10; i++){
-        assertEquals(true,summaLasku.getOikein(3+i,1,4+i));
+        assertEquals(true,miinusLasku.getOikein(3,i,3-i));
      }
     }
-  public void summaLaskuTest2() {
+  public void miinusLaskuTest2() {
      for(int i = 0; i<10; i++){
-        assertEquals(true,summaLasku.getOikein(-1,3+i,4+i));
+        assertEquals(false,miinusLasku.getOikein(1,3+i,3+i));
      }
     }
 
