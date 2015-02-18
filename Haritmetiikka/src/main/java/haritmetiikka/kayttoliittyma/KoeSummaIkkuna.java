@@ -52,6 +52,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         tehtavaNroLabel = new javax.swing.JLabel();
+        lopetaButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -81,6 +82,13 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
 
         tehtavaNroLabel.setText("jLabel1");
 
+        lopetaButton.setText("Lopeta");
+        lopetaButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lopetaButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -105,6 +113,10 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(vastausButton)))
                 .addGap(109, 109, 109))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(lopetaButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +133,9 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                     .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addComponent(lopetaButton)
+                .addGap(77, 77, 77))
         );
 
         pack();
@@ -135,7 +149,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
      try {
            this.vastaus = Integer.parseInt(vastausTextField.getText());
         } catch (Exception e) {
-
+            
             new SyottoVirheIkkuna().setVisible(true);
             
         }
@@ -144,7 +158,9 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.tehtavaNro++;
         
         if(koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(),vastaus)){
-        koeTehtaviaOikein++;    
+        koeTehtaviaOikein++;
+        
+       
         }
             
         System.out.println(koeTehtaviaOikein);    
@@ -158,6 +174,10 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.dispose();
          
     }//GEN-LAST:event_vastausButtonActionPerformed
+
+    private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
+      this.dispose();
+    }//GEN-LAST:event_lopetaButtonActionPerformed
     /*
         private void uusiTehtava(int tehtavaNro){
             
@@ -205,6 +225,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton lopetaButton;
     private javax.swing.JLabel tehtavaNroLabel;
     private javax.swing.JLabel tokaLukuLabel;
     private javax.swing.JButton vastausButton;

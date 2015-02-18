@@ -16,6 +16,8 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
      */
     public KoeTulosIkkuna(int tehtavaNro,int koeTehtaviaOikein) {
         initComponents();
+        // Vähennetään tehetävänumeroa yhdellä, koska sitä käytetään jo seuraavan laskun numerona
+        tehtavaNro = tehtavaNro-1;
         oikeinLkm.setText("Sait "+koeTehtaviaOikein+" oikein "+tehtavaNro+" tehtavasta.");
     }
 
@@ -47,23 +49,20 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(129, 129, 129)
-                        .addComponent(oKButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(oikeinLkm)))
-                .addContainerGap(171, Short.MAX_VALUE))
+                    .addComponent(oKButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(oikeinLkm))
+                .addContainerGap(225, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(69, Short.MAX_VALUE)
                 .addComponent(oikeinLkm)
-                .addGap(60, 60, 60)
+                .addGap(48, 48, 48)
                 .addComponent(oKButton)
-                .addGap(125, 125, 125))
+                .addGap(137, 137, 137))
         );
 
         pack();
