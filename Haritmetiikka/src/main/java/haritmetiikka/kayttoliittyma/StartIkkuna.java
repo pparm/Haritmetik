@@ -133,13 +133,13 @@ public class StartIkkuna extends javax.swing.JFrame {
 
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
-        this.dispose();
+        this.dispose(); 
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-    new KoeSummaIkkuna(1,0).setVisible(true);
-   
-    this.dispose();
+    KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1,0,"");
+    koeSummaIkkuna.setVisible(true);
+    
         
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
 

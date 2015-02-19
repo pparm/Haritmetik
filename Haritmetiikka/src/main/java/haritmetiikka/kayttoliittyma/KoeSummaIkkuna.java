@@ -6,7 +6,7 @@
 package haritmetiikka.kayttoliittyma;
 
 import haritmetiikka.rajapinta.Tehtava;
-
+import java.lang.Process.*;
 /**
  *
  * @author poplinus
@@ -17,19 +17,24 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     int tehtavaNro;
     int koeTehtaviaOikein;
     int vastaus;
-    
+    String syottoVirheTeksti;
 
 /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro,int koeTehtaviaOikein) {
-        initComponents();
+    public KoeSummaIkkuna(int tehtavaNro,int koeTehtaviaOikein, String syottoVirheTeksti) {
+       initComponents();
        this.tehtavaNro = tehtavaNro;
        this.koeTehtaviaOikein= koeTehtaviaOikein;
+       this.syottoVirheTeksti = syottoVirheTeksti;
        ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
-      tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
-       tehtavaNroLabel.setText(""+tehtavaNro);
+       tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
+       tehtavaNroLabel.setText(this.tehtavaNro+". tehtävä");
+       syottoVirheJLabel.setText(this.syottoVirheTeksti);
+    
+       
     }
+    
     
     public static int laskuri(int nro){
        return nro++;
@@ -53,6 +58,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         tehtavaNroLabel = new javax.swing.JLabel();
         lopetaButton = new javax.swing.JButton();
+        syottoVirheJLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,17 +107,25 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(ekaLukuLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(tokaLukuLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4)
-                        .addGap(4, 4, 4)
-                        .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(vastausButton)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(127, 127, 127)
+                                .addComponent(ekaLukuLabel)
+                                .addGap(27, 27, 27)
+                                .addComponent(tokaLukuLabel)
+                                .addGap(29, 29, 29)
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(37, 37, 37)
+                                .addComponent(jLabel4)
+                                .addGap(76, 76, 76))
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                .addGap(155, 155, 155)
+                                .addComponent(syottoVirheJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                        .addComponent(vastausButton)
+                        .addGap(76, 76, 76)))
                 .addGap(109, 109, 109))
             .addGroup(layout.createSequentialGroup()
                 .addGap(27, 27, 27)
@@ -133,7 +147,9 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                     .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(syottoVirheJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addComponent(lopetaButton)
                 .addGap(77, 77, 77))
         );
@@ -145,39 +161,83 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
   
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
+   private void vaaraSyotto(){
+      
+       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(this.tehtavaNro,this.koeTehtaviaOikein,"virhesyotto");
+       new SyottoVirheIkkuna().setVisible(true);
+       this.dispose();
+       
+   }
+   
+
+    
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
      try {
            this.vastaus = Integer.parseInt(vastausTextField.getText());
-        } catch (Exception e) {
-            
-            new SyottoVirheIkkuna().setVisible(true);
-            
-        }
-     
-       
-        this.tehtavaNro++;
+         System.out.println("väärä paikka");
+                 
+               this.tehtavaNro++;
         
         if(koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(),vastaus)){
         koeTehtaviaOikein++;
         
-       
+            System.out.println("koeTehtaviaOikein laskuri");
         }
             
         System.out.println(koeTehtaviaOikein);    
         if(tehtavaNro<=10){    
-        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein).setVisible(true);
+            System.out.println("uusi tehtava");
+       
+        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Uusi tehtava").setVisible(true);
         this.dispose();}
         else{new KoeTulosIkkuna(tehtavaNro,koeTehtaviaOikein).setVisible(true);
-            
-            
+         this.dispose();          
         }
-        this.dispose();
+     }
+      catch (Exception e) {
+         this.dispose();
+        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Syötä kokonaisluku tai lopeta").setVisible(true);
+          
+          System.out.println("syöttö väärin");
+        // while(Integer.parseInt(vastausTextField.getText())){
+             
+         //}
+    }
+
+
+        //this.dispose();
+         
+         
+       //  new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Syötä kokonailsluku tai lopeta").setVisible(true);  
+     
+      
+        
+     
+     
+   
          
     }//GEN-LAST:event_vastausButtonActionPerformed
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
       this.dispose();
+   
     }//GEN-LAST:event_lopetaButtonActionPerformed
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel ekaLukuLabel;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton lopetaButton;
+    private javax.swing.JLabel syottoVirheJLabel;
+    private javax.swing.JLabel tehtavaNroLabel;
+    private javax.swing.JLabel tokaLukuLabel;
+    private javax.swing.JButton vastausButton;
+    private javax.swing.JTextField vastausTextField;
+    // End of variables declaration//GEN-END:variables
+
+}
+
     /*
         private void uusiTehtava(int tehtavaNro){
             
@@ -220,16 +280,3 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
 //        });
 //    }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ekaLukuLabel;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton lopetaButton;
-    private javax.swing.JLabel tehtavaNroLabel;
-    private javax.swing.JLabel tokaLukuLabel;
-    private javax.swing.JButton vastausButton;
-    private javax.swing.JTextField vastausTextField;
-    // End of variables declaration//GEN-END:variables
-
-}
