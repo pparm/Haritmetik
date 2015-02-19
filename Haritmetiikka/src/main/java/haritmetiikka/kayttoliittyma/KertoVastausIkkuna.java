@@ -17,10 +17,10 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
     private int vastaus;
 
     /**
-     * Metodi rakentaa SummaVastausIkkunan
+     * Metodi rakentaa KertoVastausIkkunan
      *
-     * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
-     * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
+     * @param tehtava KertoIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
+     * @param vastaus KertoIkkunassa käyttäjän antama laskun vastaus
      */
     public KertoVastausIkkuna(Tehtava tehtava, int vastaus) {
         initComponents();
@@ -120,23 +120,23 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
-     * Nappi joka sulkee SummaVastausIkkunan ja tekee uuden SummaIkkunan (uusi
+     * Nappi joka sulkee KertoVastausIkkunan ja tekee uuden KertoIkkunan (uusi
      * lasku)
      *
      * @param evt
      */
     private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
 
-        new SummaIkkuna().setVisible(true);
+        new KertoIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
     /**
-     * Nappi joka sulkee SummaVastausIkkunan
+     * Nappi joka sulkee KertoVastausIkkunan
      *
      * @param evt
      */
     private void kokeileUudelleenJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kokeileUudelleenJButtonActionPerformed
-        new SummaIkkuna(this.tehtava).setVisible(true);
+        new KertoIkkuna(this.tehtava).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kokeileUudelleenJButtonActionPerformed
 

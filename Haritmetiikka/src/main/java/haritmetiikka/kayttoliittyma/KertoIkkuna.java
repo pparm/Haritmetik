@@ -55,7 +55,7 @@ public class KertoIkkuna extends javax.swing.JFrame {
         vastaaJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Summa harjoitus");
+        setTitle("Kerto harjoitus");
 
         uusiLasku.setText("UusiLasku");
         uusiLasku.addActionListener(new java.awt.event.ActionListener() {

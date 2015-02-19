@@ -8,7 +8,7 @@ package haritmetiikka.kayttoliittyma;
 import haritmetiikka.rajapinta.Tehtava;
 
 /**
- *
+ *  
  * @author poplinus
  */
 public class MiinusVastausIkkuna extends javax.swing.JFrame {

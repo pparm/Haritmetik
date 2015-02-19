@@ -49,9 +49,18 @@ public class Tehtava {
 
     private int ekaLuku = arpoja.arvottuLuku(ALARAJA, YLARAJA);
     /**
-     * Arvotaan ensimmäinen kysymyksessä oleva kokonaisluku.
+     * Arvotaan toinen kysymyksessä oleva kokonaisluku.
      */
     private int tokaLuku = arpoja.arvottuLuku(ALARAJA, YLARAJA);
+    
+    /**
+     * Arvotaan miinuslaskua varten toinen luku joka on pienempi kuin ekaluku.
+     * 
+     */
+    private int tokaLukuMiinus = arpoja.arvottuLuku(ALARAJA, this.getEkaLuku());
+    
+    
+  
     /**
      * Luodaan summaLaskuolio.
      */
@@ -78,6 +87,13 @@ public class Tehtava {
     public final int getTokaLuku() {
         return tokaLuku;
     }
+    
+    public final int getMiinusTokaLuku() {
+        System.out.println(tokaLukuMiinus);
+        return tokaLukuMiinus;
+    }
+    
+   
 
     /**
      * Palauttaa oikean vastauksen.

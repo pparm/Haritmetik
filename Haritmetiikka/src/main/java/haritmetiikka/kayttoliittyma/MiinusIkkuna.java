@@ -24,8 +24,8 @@ public class MiinusIkkuna extends javax.swing.JFrame {
     public MiinusIkkuna(Tehtava tehtava) {
         initComponents();
         this.tehtava = tehtava;
-
-        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " - " + tehtava.getTokaLuku() + " = ");
+        
+        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " - " + this.tehtava.getMiinusTokaLuku()+ " = ");
     }
 
     /**
@@ -34,7 +34,9 @@ public class MiinusIkkuna extends javax.swing.JFrame {
     public MiinusIkkuna() {
         initComponents();
 
-        ekaLukuLabel.setText(tehtava.getEkaLuku() + " - " + tehtava.getTokaLuku() + " = ");
+        ekaLukuLabel.setText(tehtava.getEkaLuku() + " - " + tehtava.getMiinusTokaLuku() + " = ");
+   
+     
     }
 
     /**
@@ -55,7 +57,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
         vastaaJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Summa harjoitus");
+        setTitle("Miinus harjoitus");
 
         uusiLasku.setText("UusiLasku");
         uusiLasku.addActionListener(new java.awt.event.ActionListener() {
