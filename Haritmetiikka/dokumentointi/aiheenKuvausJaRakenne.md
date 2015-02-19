@@ -10,7 +10,7 @@ Pelin tilaaja halusi laajentaa peliä koeosiolla, jolla mitataan pelaajan osaami
 Peliä voidaan myöhemmin laajentaa esimerkiksi pitämään kirjaa tuloksista ja rakentaa eri pelaajille profiileja.
 
 **Lisätietoja:** Speksien muutos
-Kesken projektia tilaaja tarkensi toimeksiantoa ja peliin lisättiin koeosio graafisen käyttöliittymän puolelle.
+Kesken projektin tilaaja tarkensi toimeksiantoa ja peliin lisättiin koeosio graafisen käyttöliittymän puolelle.
 
 
 **Käyttäjät:** Aritmetiikkaa harjoittelevat pelaajat. Erityinen kohderyhmä esikoulu, ensi- ja toisluokkalaiset. 
