@@ -15,3 +15,6 @@ Tuntikirjanpito
 - VK 5 pit, cobertura ja checkstyle asennus ja opettelu 10h;
 - VK 5 ArgoUML luokkakaavio 4h;
 - Check Style koodin putsaus 2h;
+- VK 6 testau 2h
+- VK 6 GUI 10 h
+
