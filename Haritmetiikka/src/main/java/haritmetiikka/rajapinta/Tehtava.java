@@ -19,18 +19,20 @@ import haritmetiikka.miinuslogiikka.MiinusTehtava;
  *
  */
 public class Tehtava {
-    
     String tyyppi;
-   // int tehtavaNro;
     int vastaus;
     public Tehtava(){
-        
     }
-    public Tehtava(String tyyppi, int vastaus){
-        this.tyyppi = tyyppi;
-       // this.tehtavaNro = tehtavaNro;
-        this.vastaus = vastaus;
-    }
+/**
+ * Konsistori jolla voidaan 
+ * @param tyyppi
+ * @param vastaus 
+ */
+    
+//    public Tehtava(String tyyppi, int vastaus){
+//        this.tyyppi = tyyppi;
+//        this.vastaus = vastaus;
+//    }
     /**
      * Luodaan kokonaislukuarpoja olio.
      */
@@ -89,8 +91,7 @@ public class Tehtava {
     }
     
     public final int getMiinusTokaLuku() {
-        System.out.println(tokaLukuMiinus);
-        return tokaLukuMiinus;
+       return tokaLukuMiinus;
     }
     
    
@@ -145,23 +146,16 @@ public class Tehtava {
             return miinusTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
-       
-        
-        
-        System.out.println("Tehtava/getOikein ei toimi");
 
         return false;
     }   
-    //**
-    //
-    
-    
+    /* ei tarvetta tällä hetkellä asetta arvoja olioon
      public void setArvot(String tyyppi, int vastaus){
       this.tyyppi = tyyppi;
-     // this.tehtavaNro = tehtavaNro;
       this.vastaus = vastaus;
      
      }
+    */
     
  /*   
     public int tehtava(String tehtavaTyyppi){

@@ -92,11 +92,104 @@ public class TehtavaTest {
      
      }
      
+       @Test
+     public void tehtavaTestKerto1() {
+     assertEquals(true,tehtava.getOikein("kerto",10,10,100));
+     
+     }
+       @Test
+     public void tehtavaTestKerto2() {
+     assertEquals(false,tehtava.getOikein("kerto",10,1,100));
+     
+     }
+       @Test
+     public void tehtavaTestKerto3() {
+     assertEquals(100,tehtava.getOikeaVastaus("kerto",10,10));
+     
+     }
+     
+       @Test
+     public void tehtavaTestMiinus1() {
+     assertEquals(true,tehtava.getOikein("miinus",10,10,0));
+     
+     }
+       @Test
+     public void tehtavaTestMiinus2() {
+     assertEquals(false,tehtava.getOikein("miinus",10,1,8));
+     
+     }
+       @Test
+     public void tehtavaTestMiinus3() {
+     assertEquals(1,tehtava.getOikeaVastaus("miinus",10,9));
+     
+     }
+        @Test
+     public void tehtavaTestTyhja1() {
+     assertEquals(-1,tehtava.getOikeaVastaus("ha",10,9));
+     
+     }
+        @Test
+     public void tehtavaTestTyhja2() {
+     assertEquals(false,tehtava.getOikein("ha",10,9,2));
+     
+     }
+     public void tehtavaTestGetEkaluku() {
+     assertEquals(tehtava.getEkaLuku(),tehtava.getEkaLuku());
+     
+     }
+     public void tehtavaTestGetTokaluku() {
+     assertEquals(tehtava.getTokaLuku(),tehtava.getTokaLuku());
+     
+     }
+     public void tehtavaTestGetMiinusluku() {
+     assertEquals(tehtava.getMiinusTokaLuku(),tehtava.getMiinusTokaLuku());
+     
+     }
+    
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
      @Test
      public void ekaLukuTest1() {
      assertEquals(-198,tehtava.getOikeaVastaus("summa",-99,-99));
      
      }
+     
+      @Test
+     
+      
+      public void ekaLukuTest() {
+     
+          assertEquals(true,tehtava.getEkaLuku()<=10 && tehtava.getEkaLuku()>=0);
+     
+     }
+      
+      @Test
+     public void tokaLukuTest() {
+     assertEquals(true,tehtava.getTokaLuku()<=10 && tehtava.getTokaLuku()>=0);
+     
+     }
+     
      
      
      
