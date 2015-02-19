@@ -1,6 +1,7 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+koodi on kaikkien vapaassa käytössä
  */
+/*rajaintaluokkapaketti, jonka. Luokka Tehtava on ohjausluokka, jonka kautta
+graafinen käyttöliittymää ohjaa muita luokkia.
+*/
 package haritmetiikka.rajapinta;

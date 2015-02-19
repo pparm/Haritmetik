@@ -6,7 +6,7 @@
 package haritmetiikka.summalogiikka;
 import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
- * Luokka laskee summia yhteen.
+ * Luokka laskee summia yhteen ja tarkistaa onko kahden luvun summa oikein.
  */
 public class SummaTehtava {
 
@@ -18,8 +18,8 @@ public class SummaTehtava {
     /**
      * Palauttaa boolean onko käyttäjän syöttömä summa oikein.
      *
-     * @param ekaLuku luku
-     * @param tokaLuku luku
+     * @param ekaLuku tarkistettava luku
+     * @param tokaLuku tarkistettava luku
      * @param vastaus lukujen summa
      * @return boolean onko lukujen summa oikein
      */
@@ -31,8 +31,8 @@ public class SummaTehtava {
      * Laskee kahden luvun summan.
      *
      *
-     * @param ekaLuku kokonaisluku
-     * @param tokaLuku kokonaisluku
+     * @param ekaLuku 1. laskettava kokonaisluku
+     * @param tokaLuku 2. laskettava kokonaisluku
      * @return kokonaislukujen summa
      */
     public final int getVastaus(final int ekaLuku, final int tokaLuku) {

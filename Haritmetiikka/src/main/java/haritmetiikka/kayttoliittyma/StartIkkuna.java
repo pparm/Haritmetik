@@ -10,7 +10,7 @@ package haritmetiikka.kayttoliittyma;
  * @author poplinus
  */
 public class StartIkkuna extends javax.swing.JFrame {
-
+SummaIkkuna summaIkkuna;
     /**
      * Creates new form StartIkkuna
      */
@@ -127,8 +127,9 @@ public class StartIkkuna extends javax.swing.JFrame {
      * @param evt
      */
     private void yhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yhteenlaskuButtonActionPerformed
-        new SummaIkkuna().setVisible(true);
-        this.dispose();
+      summaIkkuna = new SummaIkkuna();
+      summaIkkuna.setVisible(true);
+      this.dispose();
     }//GEN-LAST:event_yhteenlaskuButtonActionPerformed
 
 

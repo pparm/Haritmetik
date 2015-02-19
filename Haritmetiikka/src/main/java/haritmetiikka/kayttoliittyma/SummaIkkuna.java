@@ -13,20 +13,28 @@ import haritmetiikka.rajapinta.Tehtava;
  */
 public class SummaIkkuna extends javax.swing.JFrame {
 
-   public Tehtava summaTehtava = new Tehtava();
-    
+    public Tehtava summaTehtava = new Tehtava();
+
     int vastaus;
 
     /**
-     * Tekee käyttöliittymän
+     * Konstruktori joka muotoilee SummaVastausIkkunan johon tuodaan olemassa
+     * oleva Tehtava-luokka.
+     */
+    public SummaIkkuna(Tehtava summaTehtava) {
+        initComponents();
+        this.summaTehtava = summaTehtava;
+
+        ekaLukuLabel.setText(this.summaTehtava.getEkaLuku() + " + " + summaTehtava.getTokaLuku() + " = ");
+    }
+
+    /**
+     * Konsistori joka muotoilee SuommaVastausIkkunan.
      */
     public SummaIkkuna() {
         initComponents();
 
-        ekaLukuLabel.setText(String.valueOf(summaTehtava.getEkaLuku()));
-        tokaLukuLabel.setText(String.valueOf(summaTehtava.getTokaLuku()));
-        
-        
+        ekaLukuLabel.setText(summaTehtava.getEkaLuku() + " + " + summaTehtava.getTokaLuku() + " = ");
     }
 
     /**
@@ -38,25 +46,16 @@ public class SummaIkkuna extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        vastaa = new javax.swing.JButton();
         uusiLasku = new javax.swing.JButton();
         lopeta = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         ekaLukuLabel = new javax.swing.JLabel();
-        tokaLukuLabel = new javax.swing.JLabel();
-        plusmerkki = new java.awt.Label();
-        label1 = new java.awt.Label();
         vastausTextField = new javax.swing.JTextField();
+        syottoVirheJLabel = new javax.swing.JLabel();
+        vastaaJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Summa harjoitus");
-
-        vastaa.setText("Vastaa");
-        vastaa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                vastaaActionPerformed(evt);
-            }
-        });
 
         uusiLasku.setText("UusiLasku");
         uusiLasku.addActionListener(new java.awt.event.ActionListener() {
@@ -74,16 +73,19 @@ public class SummaIkkuna extends javax.swing.JFrame {
 
         ekaLukuLabel.setText("ekaLuku");
 
-        tokaLukuLabel.setText("tokaLuku");
-
-        plusmerkki.setText("+");
-
-        label1.setText("=");
-
         vastausTextField.setText("?");
         vastausTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vastausTextFieldActionPerformed(evt);
+            }
+        });
+
+        syottoVirheJLabel.setForeground(new java.awt.Color(255, 0, 0));
+
+        vastaaJButton.setText("Vastaa");
+        vastaaJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                vastaaJButtonActionPerformed(evt);
             }
         });
 
@@ -92,35 +94,31 @@ public class SummaIkkuna extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(ekaLukuLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(plusmerkki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
-                .addComponent(tokaLukuLabel)
-                .addGap(19, 19, 19)
-                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
-                .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(252, 252, 252)
+                        .addComponent(syottoVirheJLabel))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(ekaLukuLabel)
+                        .addGap(26, 26, 26)
+                        .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59)
+                        .addComponent(vastaaJButton)))
+                .addContainerGap(186, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(9, 9, 9)
-                                .addComponent(plusmerkki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(ekaLukuLabel)
-                                .addComponent(tokaLukuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(55, Short.MAX_VALUE))
+                    .addComponent(vastausTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(ekaLukuLabel)
+                        .addComponent(vastaaJButton)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(syottoVirheJLabel)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -136,10 +134,8 @@ public class SummaIkkuna extends javax.swing.JFrame {
                         .addComponent(lopeta))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(81, 81, 81)
-                        .addComponent(vastaa)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -148,25 +144,15 @@ public class SummaIkkuna extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(uusiLasku)
                     .addComponent(lopeta))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(vastaa))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(148, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void vastausTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausTextFieldActionPerformed
-
-
-    }//GEN-LAST:event_vastausTextFieldActionPerformed
     /**
-     * Metodi avaa uuden summaikkunan ja sulkee aikaisemman. Näin alkaa uusi
+     * Metodi avaa uuden summaikkunan ja sulkee olemassa olevan. Näin alkaa uusi
      * lasku.
      *
      * @param evt
@@ -178,25 +164,28 @@ public class SummaIkkuna extends javax.swing.JFrame {
 
     }//GEN-LAST:event_uusiLaskuActionPerformed
     /**
-     * Metodi avaa SummaVastausIkkunan ja vie sinne summaTehtava olion ja
-     * Käyttäjän vastauksen
+     * Metodi avaa uuden SummaVastausIkkunan ja vie siihen olemassa olevan
+     * Tehtava-luokan olion.
      *
      * @param evt
      */
-    private void vastaaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaActionPerformed
+    private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
+            new SummaVastausIkkuna(this.summaTehtava, this.vastaus).setVisible(true);
+
+            //  new SummaIkkuna().setVisible(true);
+//    
+            this.dispose();
         } catch (Exception e) {
 
-            new SyottoVirheIkkuna().setVisible(true);
+            this.syottoVirheJLabel.setText("Syötä kokonaisluku tai lopeta");
 
         }
-        new SummaVastausIkkuna(summaTehtava, vastaus).setVisible(true);
-        
-//    this.setVisible(false);
-    }//GEN-LAST:event_vastaaActionPerformed
+
+    }//GEN-LAST:event_vastaaJButtonActionPerformed
     /**
-     * Metodi lopettaa ohjelman
+     * Metodi lopettaa Yhteenlaskuharjoituksen.
      *
      * @param evt
      */
@@ -205,52 +194,18 @@ public class SummaIkkuna extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_lopetaActionPerformed
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SummaIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SummaIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SummaIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SummaIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SummaIkkuna().setVisible(true);
-//
-//            }
-//        });
-//    }
+    private void vastausTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausTextFieldActionPerformed
+
+    }//GEN-LAST:event_vastausTextFieldActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ekaLukuLabel;
     private javax.swing.JPanel jPanel1;
-    private java.awt.Label label1;
     private javax.swing.JButton lopeta;
-    private java.awt.Label plusmerkki;
-    private javax.swing.JLabel tokaLukuLabel;
+    private javax.swing.JLabel syottoVirheJLabel;
     private javax.swing.JButton uusiLasku;
-    private javax.swing.JButton vastaa;
+    private javax.swing.JButton vastaaJButton;
     private javax.swing.JTextField vastausTextField;
     // End of variables declaration//GEN-END:variables
 }
