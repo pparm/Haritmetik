@@ -9,6 +9,10 @@ Pelin tilaaja halusi laajentaa peliä koeosiolla, jolla mitataan pelaajan osaami
 
 Peliä voidaan myöhemmin laajentaa esimerkiksi pitämään kirjaa tuloksista ja rakentaa eri pelaajille profiileja.
 
+**Lisätietoja:** Speksien muutos
+Kesken projektia tilaaja tarkensi toimeksiantoa ja peliin lisättiin koeosio graafisen käyttöliittymän puolelle.
+
+
 **Käyttäjät:** Aritmetiikkaa harjoittelevat pelaajat. Erityinen kohderyhmä esikoulu, ensi- ja toisluokkalaiset. 
 
 **Kaikkien käyttäjien toiminnot:** 
@@ -17,4 +21,6 @@ Peliä voidaan myöhemmin laajentaa esimerkiksi pitämään kirjaa tuloksista ja
 - Aritmetiikka alueen valinta (ynnä, vähennys, kerto)
 - vastauksen syöttö
 	- ilmoitus oliko vastaus oikein vai väärin
+
 - pelin lopettaminen
+- Ynnä, vähennys ja kertokokeet
