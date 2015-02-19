@@ -10,7 +10,9 @@ package haritmetiikka.kayttoliittyma;
  * @author poplinus
  */
 public class StartIkkuna extends javax.swing.JFrame {
-SummaIkkuna summaIkkuna;
+
+    SummaIkkuna summaIkkuna;
+
     /**
      * Creates new form StartIkkuna
      */
@@ -127,25 +129,21 @@ SummaIkkuna summaIkkuna;
      * @param evt
      */
     private void yhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_yhteenlaskuButtonActionPerformed
-      summaIkkuna = new SummaIkkuna();
-      summaIkkuna.setVisible(true);
-      this.dispose();
+        summaIkkuna = new SummaIkkuna();
+        summaIkkuna.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_yhteenlaskuButtonActionPerformed
-
-
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
-        this.dispose(); 
+        this.dispose();
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-    KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1,0,"");
-    koeSummaIkkuna.setVisible(true);
-    
-        
+        KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1, 0, "");
+        koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
 
     private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
-        new SummaIkkuna().setVisible(true);
+        new MiinusIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
 
@@ -153,42 +151,6 @@ SummaIkkuna summaIkkuna;
         new KertoIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
- 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(StartIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            @Override
-//            public void run() {
-//                new StartIkkuna().setVisible(true);
-//            }
-//        });
-//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton kertolaskuButton;

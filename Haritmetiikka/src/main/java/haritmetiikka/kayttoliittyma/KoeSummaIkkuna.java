@@ -7,6 +7,7 @@ package haritmetiikka.kayttoliittyma;
 
 import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
+
 /**
  *
  * @author poplinus
@@ -19,25 +20,23 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     int vastaus;
     String syottoVirheTeksti;
 
-/*
+    /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro,int koeTehtaviaOikein, String syottoVirheTeksti) {
-       initComponents();
-       this.tehtavaNro = tehtavaNro;
-       this.koeTehtaviaOikein= koeTehtaviaOikein;
-       this.syottoVirheTeksti = syottoVirheTeksti;
-       ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
-       tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
-       tehtavaNroLabel.setText(this.tehtavaNro+". tehtävä");
-       syottoVirheJLabel.setText(this.syottoVirheTeksti);
-    
-       
+    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+        initComponents();
+        this.tehtavaNro = tehtavaNro;
+        this.koeTehtaviaOikein = koeTehtaviaOikein;
+        this.syottoVirheTeksti = syottoVirheTeksti;
+        ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
+        tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
+        tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
+        syottoVirheJLabel.setText(this.syottoVirheTeksti);
+
     }
-    
-    
-    public static int laskuri(int nro){
-       return nro++;
+
+    public static int laskuri(int nro) {
+        return nro++;
     }
 
     /**
@@ -158,69 +157,45 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void vastausTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausTextFieldActionPerformed
-  
+
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
-   private void vaaraSyotto(){
-      
-       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(this.tehtavaNro,this.koeTehtaviaOikein,"virhesyotto");
-       new SyottoVirheIkkuna().setVisible(true);
-       this.dispose();
-       
-   }
-   
-
-    
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
-     try {
-           this.vastaus = Integer.parseInt(vastausTextField.getText());
-         System.out.println("väärä paikka");
-                 
-               this.tehtavaNro++;
-        
-        if(koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(),vastaus)){
-        koeTehtaviaOikein++;
-        
-            System.out.println("koeTehtaviaOikein laskuri");
-        }
-            
-        System.out.println(koeTehtaviaOikein);    
-        if(tehtavaNro<=10){    
-            System.out.println("uusi tehtava");
-       
-        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Uusi tehtava").setVisible(true);
-        this.dispose();}
-        else{new KoeTulosIkkuna(tehtavaNro,koeTehtaviaOikein).setVisible(true);
-         this.dispose();          
-        }
-     }
-      catch (Exception e) {
-         this.dispose();
-        new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Syötä kokonaisluku tai lopeta").setVisible(true);
-          
-          System.out.println("syöttö väärin");
-        // while(Integer.parseInt(vastausTextField.getText())){
-             
-         //}
-    }
+        try {
+            this.vastaus = Integer.parseInt(vastausTextField.getText());
+            System.out.println("väärä paikka");
 
+            this.tehtavaNro++;
 
-        //this.dispose();
-         
-         
-       //  new KoeSummaIkkuna(tehtavaNro,koeTehtaviaOikein,"Syötä kokonailsluku tai lopeta").setVisible(true);  
-     
-      
+            if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
+                koeTehtaviaOikein++;
+
+                System.out.println("koeTehtaviaOikein laskuri");
+            }
+
+            System.out.println(koeTehtaviaOikein);
+            if (tehtavaNro <= 10) {
+              
+                new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
+                this.dispose();
+            } else {
+                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein).setVisible(true);
+                this.dispose();
+            }
+        } catch (Exception e) {
+            this.dispose();
+            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
+
+            System.out.println("syöttö väärin");
         
+        }
+
      
-     
-   
-         
     }//GEN-LAST:event_vastausButtonActionPerformed
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
-      this.dispose();
-   
+        this.dispose();
+
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -237,46 +212,4 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 }
-
-    /*
-        private void uusiTehtava(int tehtavaNro){
-            
-        this.tehtavaNro = tehtavaNro;
-        
-    }
-    */
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SummaKoeIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SummaKoeIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SummaKoeIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SummaKoeIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//                new SummaKoeIkkuna().setVisible(true);
-//            }
-//        });
-//    }
 

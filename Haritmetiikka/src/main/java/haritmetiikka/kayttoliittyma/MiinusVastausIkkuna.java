@@ -11,29 +11,28 @@ import haritmetiikka.rajapinta.Tehtava;
  *
  * @author poplinus
  */
-public class KertoVastausIkkuna extends javax.swing.JFrame {
+public class MiinusVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava tehtava;
     private int vastaus;
 
     /**
-     * Metodi rakentaa SummaVastausIkkunan
+     * Metodi rakentaa MiinusVastausIkkunan
      *
-     * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
-     * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
+     * @param tehtava MiinusIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
+     * @param vastaus MiinusIkkunassa käyttäjän antama laskun vastaus
      */
-    public KertoVastausIkkuna(Tehtava tehtava, int vastaus) {
+    public MiinusVastausIkkuna(Tehtava tehtava, int vastaus) {
         initComponents();
         this.tehtava = tehtava;
         this.vastaus = vastaus;
-        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
-        if (tehtava.getOikein("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
+        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("miinus", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
+        if (tehtava.getOikein("miinus", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
             vastausOikeinLabel.setText("Vastasit oikein");
-
         } else {
             vastausOikeinLabel.setText("Vastasit väärin");
         }
-//      vastausOikeinLabel.setText(String.valueOf(tehtava.getOikein("kerto", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)));
+//      vastausOikeinLabel.setText(String.valueOf(tehtava.getOikein("miinus", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)));
     }
 
     /**
@@ -112,31 +111,31 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
                         .addComponent(uusiLaskuButton)))
                 .addGap(18, 18, 18)
                 .addComponent(kokeileUudelleenJButton)
-                .addGap(27, 27, 27)
+                .addGap(34, 34, 34)
                 .addComponent(lopetaJButton)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 /**
-     * Nappi joka sulkee SummaVastausIkkunan ja tekee uuden SummaIkkunan (uusi
+     * Nappi joka sulkee MiinusVastausIkkunan ja tekee uuden MiinusIkkunan (uusi
      * lasku)
      *
      * @param evt
      */
     private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
-
-        new SummaIkkuna().setVisible(true);
+        new MiinusIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
     /**
-     * Nappi joka sulkee SummaVastausIkkunan
+     * Nappi joka sulkee MiinusVastausIkkunan
      *
      * @param evt
      */
+
     private void kokeileUudelleenJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kokeileUudelleenJButtonActionPerformed
-        new SummaIkkuna(this.tehtava).setVisible(true);
+        new MiinusIkkuna(this.tehtava).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kokeileUudelleenJButtonActionPerformed
 
@@ -144,6 +143,7 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
         new StartIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_lopetaJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton kokeileUudelleenJButton;

@@ -19,23 +19,20 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
     /**
      * Metodi rakentaa SummaVastausIkkunan
      *
-     * @param summaTehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut
-     * luvut
+     * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
      * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
      */
-
-    public SummaVastausIkkuna(Tehtava summaTehtava, int vastaus) {
+    public SummaVastausIkkuna(Tehtava tehtava, int vastaus) {
         initComponents();
-        this.tehtava = summaTehtava;
+        this.tehtava = tehtava;
         this.vastaus = vastaus;
-        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(summaTehtava.getOikeaVastaus("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku())));
-        if (summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)) {
+        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
+        if (tehtava.getOikein("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
             vastausOikeinLabel.setText("Vastasit oikein");
-
         } else {
             vastausOikeinLabel.setText("Vastasit väärin");
         }
-//      vastausOikeinLabel.setText(String.valueOf(summaTehtava.getOikein("summa", summaTehtava.getEkaLuku(), summaTehtava.getTokaLuku(), vastaus)));
+//      vastausOikeinLabel.setText(String.valueOf(tehtava.getOikein("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)));
     }
 
     /**
@@ -51,6 +48,7 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         vastausOikeinLabel = new javax.swing.JLabel();
         uusiLaskuButton = new javax.swing.JButton();
         kokeileUudelleenJButton = new javax.swing.JButton();
+        lopetaJButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,6 +70,13 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
             }
         });
 
+        lopetaJButton.setText("Lopeta");
+        lopetaJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lopetaJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -79,15 +84,17 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(kokeileUudelleenJButton))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(oikeaVastausLabel)
                         .addGap(48, 48, 48)
                         .addComponent(vastausOikeinLabel)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
-                        .addComponent(uusiLaskuButton)))
+                        .addComponent(uusiLaskuButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lopetaJButton)
+                            .addComponent(kokeileUudelleenJButton))))
                 .addGap(65, 65, 65))
         );
         layout.setVerticalGroup(
@@ -104,7 +111,9 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
                         .addComponent(uusiLaskuButton)))
                 .addGap(18, 18, 18)
                 .addComponent(kokeileUudelleenJButton)
-                .addContainerGap(185, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(lopetaJButton)
+                .addContainerGap(122, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,13 +125,8 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
      * @param evt
      */
     private void uusiLaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuButtonActionPerformed
-      
         new SummaIkkuna().setVisible(true);
-        
         this.dispose();
-      
-    // this.setVisible(false);
-        
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
     /**
      * Nappi joka sulkee SummaVastausIkkunan
@@ -131,51 +135,19 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
      */
 
     private void kokeileUudelleenJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kokeileUudelleenJButtonActionPerformed
-       new SummaIkkuna(this.tehtava).setVisible(true);
-        
-       this.dispose();
-        
+        new SummaIkkuna(this.tehtava).setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_kokeileUudelleenJButtonActionPerformed
 
-//    /**
-//     * @param args the command line arguments
-//     */
-//    public static void main(String args[]) {
-//        /* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//         */
-//        try {
-//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//                if ("Nimbus".equals(info.getName())) {
-//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//                    break;
-//                }
-//            }
-//        } catch (ClassNotFoundException ex) {
-//            java.util.logging.Logger.getLogger(SummaVastausIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            java.util.logging.Logger.getLogger(SummaVastausIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            java.util.logging.Logger.getLogger(SummaVastausIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//            java.util.logging.Logger.getLogger(SummaVastausIkkuna.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//        }
-//        //</editor-fold>
-//
-//        /* Create and display the form */
-//        java.awt.EventQueue.invokeLater(new Runnable() {
-//            public void run() {
-//   //             new SummaVastausIkkuna().setVisible(true);
-//
-//            }
-//
-//        });
-//    }
+    private void lopetaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaJButtonActionPerformed
+        new StartIkkuna().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_lopetaJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton kokeileUudelleenJButton;
+    private javax.swing.JButton lopetaJButton;
     private javax.swing.JLabel oikeaVastausLabel;
     private javax.swing.JButton uusiLaskuButton;
     private javax.swing.JLabel vastausOikeinLabel;

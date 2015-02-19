@@ -11,30 +11,30 @@ import haritmetiikka.rajapinta.Tehtava;
  *
  * @author poplinus
  */
-public class SummaIkkuna extends javax.swing.JFrame {
+public class MiinusIkkuna extends javax.swing.JFrame {
 
     public Tehtava tehtava = new Tehtava();
 
     int vastaus;
 
     /**
-     * Konstruktori joka muotoilee SummaVastausIkkunan johon tuodaan olemassa
+     * Konstruktori joka muotoilee MiinusVastausIkkunan johon tuodaan olemassa
      * oleva Tehtava-luokka.
      */
-    public SummaIkkuna(Tehtava tehtava) {
+    public MiinusIkkuna(Tehtava tehtava) {
         initComponents();
         this.tehtava = tehtava;
 
-        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " + " + tehtava.getTokaLuku() + " = ");
+        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " - " + tehtava.getTokaLuku() + " = ");
     }
 
     /**
      * Konsistori joka muotoilee SuommaVastausIkkunan.
      */
-    public SummaIkkuna() {
+    public MiinusIkkuna() {
         initComponents();
 
-        ekaLukuLabel.setText(tehtava.getEkaLuku() + " + " + tehtava.getTokaLuku() + " = ");
+        ekaLukuLabel.setText(tehtava.getEkaLuku() + " - " + tehtava.getTokaLuku() + " = ");
     }
 
     /**
@@ -159,12 +159,12 @@ public class SummaIkkuna extends javax.swing.JFrame {
      */
     private void uusiLaskuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuActionPerformed
 
-        new SummaIkkuna().setVisible(true);
+        new MiinusIkkuna().setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_uusiLaskuActionPerformed
     /**
-     * Metodi avaa uuden SummaVastausIkkunan ja vie siihen olemassa olevan
+     * Metodi avaa uuden MiinusVastausIkkunan ja vie siihen olemassa olevan
      * Tehtava-luokan olion.
      *
      * @param evt
@@ -172,9 +172,9 @@ public class SummaIkkuna extends javax.swing.JFrame {
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            new SummaVastausIkkuna(this.tehtava, this.vastaus).setVisible(true);
+            new MiinusVastausIkkuna(this.tehtava, this.vastaus).setVisible(true);
 
-            //  new SummaIkkuna().setVisible(true);
+            //  new MiinusIkkuna().setVisible(true);
 //    
             this.dispose();
         } catch (Exception e) {

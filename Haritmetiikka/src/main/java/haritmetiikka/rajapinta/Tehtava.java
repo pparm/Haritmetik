@@ -126,7 +126,7 @@ public class Tehtava {
         }
        
         if (tehtavaTyyppi.equals("miinus")) {
-            return kertoTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
+            return miinusTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
        
@@ -136,20 +136,17 @@ public class Tehtava {
 
         return false;
     }   
-    /** Asettaa 
-     * 
-     * @param tyyppi
-     * @param vastaus 
-     */
+    //**
+    //
     
-    /*
+    
      public void setArvot(String tyyppi, int vastaus){
       this.tyyppi = tyyppi;
      // this.tehtavaNro = tehtavaNro;
       this.vastaus = vastaus;
      
      }
-    */
+    
  /*   
     public int tehtava(String tehtavaTyyppi){
       if(tehtavaTyyppi == "summa"){
