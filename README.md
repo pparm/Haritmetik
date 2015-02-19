@@ -1,10 +1,10 @@
 # Haritmetik
 
-
-- Testejä kirjoitettu suht. koht. kattavasti.
-- PIT toimii ja rivikatttavuus kohtuullinen, rajapinnat vielä kesken.
+- Viikolla 6 keskityttiin graafiseen käyttöliittymään, joka toimii yhteen, kerto ja vähennyslaskuille sekä Yhteenlaskukokeelle. Yhteenlaskukokeen logiikasta osa on graafisen käyttöliittymän puolella. Tätä asiaa voisi kommentoida. Oikeaoppisesti pitäisi sijoittaa logiikan puollelle.
+- Graafisen käyttöliittymän luokat ovat yhdessä paketissa. Rakennetta tullaan selkeyttämään pakettijaolla
+- Jokaiselle laskutyypille on tarkoituksella tehty omat ikkunat. Tällä hetkellä erittäin samankaltaisia ja koodissa paljon toistoa, mutta tällä ratkaisulla ikkunamoduulit ovat itsenäisiä ja niitä voi helposti muokata.
+- Pit testit kattavia. Ohjelman riveistä 95% graafisella puolella joita EI tarvitse testata.
 -Java Doc ja koodin puhtaus pitkällä joissakin luokissa. Koodi tulee käydä läpi.
-- JavaDocia alettu tekemään, uusissa osioissa vielä kesken ja joissakin kohdissa tulee vielä tarkentaa.
 - Asiakas tilasi kokeen peliin. Summalaskujen versio on graaffisen käyttöliittymän puolella. Kaikille laskutyypille
 tullaan tekemään koe sovelluksen logiikka-puolelle.
 
