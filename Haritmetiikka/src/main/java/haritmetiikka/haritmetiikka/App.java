@@ -1,5 +1,6 @@
 package haritmetiikka.haritmetiikka;
 
+import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.*;
 
 public class App {

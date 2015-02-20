@@ -5,6 +5,11 @@
  */
 package haritmetiikka.kayttoliittyma;
 
+import haritmetiikka.kayttoliittyma.kerto.KertoIkkuna;
+import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
+import haritmetiikka.kayttoliittyma.summa.KoeSummaIkkuna;
+import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
+
 /**
  *
  * @author poplinus

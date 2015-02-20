@@ -5,6 +5,8 @@
  */
 package haritmetiikka.kayttoliittyma;
 
+import haritmetiikka.kayttoliittyma.StartIkkuna;
+
 /**
  *
  * @author poplinus
