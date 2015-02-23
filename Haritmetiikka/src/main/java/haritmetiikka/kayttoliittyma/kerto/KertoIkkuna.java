@@ -23,9 +23,9 @@ public class KertoIkkuna extends javax.swing.JFrame {
      */
     public KertoIkkuna(Tehtava tehtava) {
         initComponents();
+        vastausTextField.requestFocus();
         this.tehtava = tehtava;
-
-        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
+         syottoJLabel.setText(this.tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
     }
 
     /**
@@ -33,8 +33,8 @@ public class KertoIkkuna extends javax.swing.JFrame {
      */
     public KertoIkkuna() {
         initComponents();
-
-        ekaLukuLabel.setText(tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
+        vastausTextField.requestFocus();
+        syottoJLabel.setText(tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
     }
 
     /**
@@ -49,10 +49,10 @@ public class KertoIkkuna extends javax.swing.JFrame {
         uusiLasku = new javax.swing.JButton();
         lopeta = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        ekaLukuLabel = new javax.swing.JLabel();
         vastausTextField = new javax.swing.JTextField();
         syottoVirheJLabel = new javax.swing.JLabel();
         vastaaJButton = new javax.swing.JButton();
+        syottoJLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Kerto harjoitus");
@@ -71,9 +71,6 @@ public class KertoIkkuna extends javax.swing.JFrame {
             }
         });
 
-        ekaLukuLabel.setText("ekaLuku");
-
-        vastausTextField.setText("?");
         vastausTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vastausTextFieldActionPerformed(evt);
@@ -89,6 +86,8 @@ public class KertoIkkuna extends javax.swing.JFrame {
             }
         });
 
+        syottoJLabel.setText("ekaLuku");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -99,9 +98,9 @@ public class KertoIkkuna extends javax.swing.JFrame {
                         .addGap(252, 252, 252)
                         .addComponent(syottoVirheJLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(ekaLukuLabel)
-                        .addGap(26, 26, 26)
+                        .addContainerGap()
+                        .addComponent(syottoJLabel)
+                        .addGap(83, 83, 83)
                         .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59)
                         .addComponent(vastaaJButton)))
@@ -112,10 +111,10 @@ public class KertoIkkuna extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(vastausTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ekaLukuLabel)
-                        .addComponent(vastaaJButton)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(vastausTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                        .addComponent(syottoJLabel))
+                    .addComponent(vastaaJButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(syottoVirheJLabel)
                 .addContainerGap())
@@ -126,27 +125,25 @@ public class KertoIkkuna extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(uusiLasku)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lopeta))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(25, Short.MAX_VALUE))
+                    .addComponent(lopeta)
+                    .addComponent(uusiLasku))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(uusiLasku)
-                    .addComponent(lopeta))
-                .addGap(18, 18, 18)
+                .addGap(27, 27, 27)
+                .addComponent(uusiLasku)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(lopeta)
+                .addContainerGap(101, Short.MAX_VALUE))
         );
 
         pack();
@@ -198,9 +195,9 @@ public class KertoIkkuna extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ekaLukuLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton lopeta;
+    private javax.swing.JLabel syottoJLabel;
     private javax.swing.JLabel syottoVirheJLabel;
     private javax.swing.JButton uusiLasku;
     private javax.swing.JButton vastaaJButton;

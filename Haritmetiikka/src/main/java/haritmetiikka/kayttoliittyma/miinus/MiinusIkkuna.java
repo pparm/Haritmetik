@@ -23,9 +23,10 @@ public class MiinusIkkuna extends javax.swing.JFrame {
      */
     public MiinusIkkuna(Tehtava tehtava) {
         initComponents();
+        vastausTextField.requestFocus();
         this.tehtava = tehtava;
         
-        ekaLukuLabel.setText(this.tehtava.getEkaLuku() + " - " + this.tehtava.getMiinusTokaLuku()+ " = ");
+        kysymys.setText(this.tehtava.getEkaLuku() + " - " + this.tehtava.getMiinusTokaLuku()+ " = ");
     }
 
     /**
@@ -33,10 +34,8 @@ public class MiinusIkkuna extends javax.swing.JFrame {
      */
     public MiinusIkkuna() {
         initComponents();
-
-        ekaLukuLabel.setText(tehtava.getEkaLuku() + " - " + tehtava.getMiinusTokaLuku() + " = ");
-   
-     
+        vastausTextField.requestFocus();
+        kysymys.setText(tehtava.getEkaLuku() + " - " + tehtava.getMiinusTokaLuku() + " = ");
     }
 
     /**
@@ -51,7 +50,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
         uusiLasku = new javax.swing.JButton();
         lopeta = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
-        ekaLukuLabel = new javax.swing.JLabel();
+        kysymys = new javax.swing.JLabel();
         vastausTextField = new javax.swing.JTextField();
         syottoVirheJLabel = new javax.swing.JLabel();
         vastaaJButton = new javax.swing.JButton();
@@ -73,9 +72,8 @@ public class MiinusIkkuna extends javax.swing.JFrame {
             }
         });
 
-        ekaLukuLabel.setText("ekaLuku");
+        kysymys.setText("ekaLuku");
 
-        vastausTextField.setText("?");
         vastausTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 vastausTextFieldActionPerformed(evt);
@@ -102,7 +100,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
                         .addComponent(syottoVirheJLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
-                        .addComponent(ekaLukuLabel)
+                        .addComponent(kysymys)
                         .addGap(26, 26, 26)
                         .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(59, 59, 59)
@@ -116,7 +114,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(vastausTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(ekaLukuLabel)
+                        .addComponent(kysymys)
                         .addComponent(vastaaJButton)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addComponent(syottoVirheJLabel)
@@ -130,25 +128,25 @@ public class MiinusIkkuna extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(uusiLasku)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lopeta))
+                    .addComponent(uusiLasku)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(lopeta)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(uusiLasku)
-                    .addComponent(lopeta))
+                .addComponent(uusiLasku)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(148, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lopeta)
+                .addContainerGap(113, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,8 +200,8 @@ public class MiinusIkkuna extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ekaLukuLabel;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel kysymys;
     private javax.swing.JButton lopeta;
     private javax.swing.JLabel syottoVirheJLabel;
     private javax.swing.JButton uusiLasku;
