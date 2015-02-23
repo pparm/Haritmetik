@@ -30,7 +30,6 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.koeTehtaviaOikein = koeTehtaviaOikein;
         this.syottoVirheTeksti = syottoVirheTeksti;
         ekaLukuLabel.setText(String.valueOf(koeTehtava.getEkaLuku()));
-        tokaLukuLabel.setText(String.valueOf(koeTehtava.getTokaLuku()));
         tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
 
@@ -50,11 +49,8 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     private void initComponents() {
 
         ekaLukuLabel = new javax.swing.JLabel();
-        tokaLukuLabel = new javax.swing.JLabel();
         vastausButton = new javax.swing.JButton();
         vastausTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         tehtavaNroLabel = new javax.swing.JLabel();
         lopetaButton = new javax.swing.JButton();
@@ -63,8 +59,6 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         ekaLukuLabel.setText("jLabel1");
-
-        tokaLukuLabel.setText("jLabel2");
 
         vastausButton.setText("Vastaa");
         vastausButton.addActionListener(new java.awt.event.ActionListener() {
@@ -79,10 +73,6 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                 vastausTextFieldActionPerformed(evt);
             }
         });
-
-        jLabel3.setText("+");
-
-        jLabel4.setText("=");
 
         jLabel5.setText("Yhteenlaskukoe. Yhteensä 10 tehtävää.");
 
@@ -111,15 +101,9 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(127, 127, 127)
                                 .addComponent(ekaLukuLabel)
-                                .addGap(27, 27, 27)
-                                .addComponent(tokaLukuLabel)
-                                .addGap(29, 29, 29)
-                                .addComponent(jLabel3)
-                                .addGap(18, 18, 18)
+                                .addGap(131, 131, 131)
                                 .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(37, 37, 37)
-                                .addComponent(jLabel4)
-                                .addGap(76, 76, 76))
+                                .addGap(121, 121, 121))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGap(155, 155, 155)
                                 .addComponent(syottoVirheJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -142,11 +126,8 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ekaLukuLabel)
-                    .addComponent(tokaLukuLabel)
                     .addComponent(vastausButton)
-                    .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4))
+                    .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(syottoVirheJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
@@ -201,13 +182,10 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ekaLukuLabel;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JButton lopetaButton;
     private javax.swing.JLabel syottoVirheJLabel;
     private javax.swing.JLabel tehtavaNroLabel;
-    private javax.swing.JLabel tokaLukuLabel;
     private javax.swing.JButton vastausButton;
     private javax.swing.JTextField vastausTextField;
     // End of variables declaration//GEN-END:variables
