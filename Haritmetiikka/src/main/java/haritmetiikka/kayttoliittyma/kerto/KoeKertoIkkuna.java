@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.kayttoliittyma.summa;
+package haritmetiikka.kayttoliittyma.kerto;
 
+import haritmetiikka.kayttoliittyma.summa.*;
 import haritmetiikka.kayttoliittyma.KoeTulosIkkuna;
 import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
@@ -13,7 +14,7 @@ import java.lang.Process.*;
  *
  * @author poplinus
  */
-public class KoeSummaIkkuna extends javax.swing.JFrame {
+public class KoeKertoIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
     int tehtavaNro;
@@ -24,12 +25,12 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+    public KoeKertoIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
         this.koeTehtaviaOikein = koeTehtaviaOikein;
         this.syottoVirheTeksti = syottoVirheTeksti;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
+        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" * " +koeTehtava.getTokaLuku()+" ="));
         tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
 
@@ -151,7 +152,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
 
             this.tehtavaNro++;
 
-            if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
+            if (koeTehtava.getOikein("kerto", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
                 koeTehtaviaOikein++;
 
                 System.out.println("koeTehtaviaOikein laskuri");
@@ -160,7 +161,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             System.out.println(koeTehtaviaOikein);
             if (tehtavaNro <= 10) {
               
-                new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
+                new KoeKertoIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
                 this.dispose();
             } else {
                 new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein).setVisible(true);
@@ -168,7 +169,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             this.dispose();
-            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
+            new KoeKertoIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
 
             System.out.println("syöttö väärin");
         

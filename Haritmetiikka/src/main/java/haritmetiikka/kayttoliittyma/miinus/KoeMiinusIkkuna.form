@@ -112,7 +112,7 @@
           <Font name="Ubuntu" size="15" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="2"/>
-        <Property name="text" type="java.lang.String" value="Yhteenlaskukoe. Yhteens&#xe4; 10 teht&#xe4;v&#xe4;&#xe4;."/>
+        <Property name="text" type="java.lang.String" value="V&#xe4;hennyslaskukoe. Yhteens&#xe4; 10 teht&#xe4;v&#xe4;&#xe4;."/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="tehtavaNroLabel">

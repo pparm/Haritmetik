@@ -119,11 +119,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="V&#xe4;hennyslaskukoe"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="koeVahennyslaskuButtonActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="koeKertolaskuButton">
       <Properties>
         <Property name="text" type="java.lang.String" value="Kertolaskukoe"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="koeKertolaskuButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

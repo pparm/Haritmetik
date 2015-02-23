@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.kayttoliittyma.summa;
+package haritmetiikka.kayttoliittyma.miinus;
 
+import haritmetiikka.kayttoliittyma.summa.*;
 import haritmetiikka.kayttoliittyma.KoeTulosIkkuna;
 import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
@@ -13,7 +14,7 @@ import java.lang.Process.*;
  *
  * @author poplinus
  */
-public class KoeSummaIkkuna extends javax.swing.JFrame {
+public class KoeMiinusIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
     int tehtavaNro;
@@ -24,12 +25,12 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+    public KoeMiinusIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
         this.koeTehtaviaOikein = koeTehtaviaOikein;
         this.syottoVirheTeksti = syottoVirheTeksti;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
+        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" - " +koeTehtava.getMiinusTokaLuku()+" ="));
         tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
 
@@ -75,7 +76,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
 
         otsikkoJLabel.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         otsikkoJLabel.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        otsikkoJLabel.setText("Yhteenlaskukoe. Yhteensä 10 tehtävää.");
+        otsikkoJLabel.setText("Vähennyslaskukoe. Yhteensä 10 tehtävää.");
 
         tehtavaNroLabel.setText("jLabel1");
 
@@ -145,22 +146,21 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
+        
+        System.out.println("koetehtäviä oikein" + this.koeTehtaviaOikein);
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            System.out.println("väärä paikka");
-
             this.tehtavaNro++;
 
-            if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
+            if (koeTehtava.getOikein("miinus", koeTehtava.getEkaLuku(), koeTehtava.getMiinusTokaLuku(), vastaus)) {
                 koeTehtaviaOikein++;
 
-                System.out.println("koeTehtaviaOikein laskuri");
             }
 
             System.out.println(koeTehtaviaOikein);
             if (tehtavaNro <= 10) {
               
-                new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
+                new KoeMiinusIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
                 this.dispose();
             } else {
                 new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein).setVisible(true);
@@ -168,7 +168,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             }
         } catch (Exception e) {
             this.dispose();
-            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
+            new KoeMiinusIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
 
             System.out.println("syöttö väärin");
         

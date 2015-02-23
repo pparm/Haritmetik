@@ -6,9 +6,12 @@
 package haritmetiikka.kayttoliittyma;
 
 import haritmetiikka.kayttoliittyma.kerto.KertoIkkuna;
+import haritmetiikka.kayttoliittyma.kerto.KoeKertoIkkuna;
+import haritmetiikka.kayttoliittyma.miinus.KoeMiinusIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 import haritmetiikka.kayttoliittyma.summa.KoeSummaIkkuna;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
+import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 
 /**
  *
@@ -80,8 +83,18 @@ public class StartIkkuna extends javax.swing.JFrame {
         });
 
         koeVahennyslaskuButton.setText("Vähennyslaskukoe");
+        koeVahennyslaskuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                koeVahennyslaskuButtonActionPerformed(evt);
+            }
+        });
 
         koeKertolaskuButton.setText("Kertolaskukoe");
+        koeKertolaskuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                koeKertolaskuButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -156,6 +169,17 @@ public class StartIkkuna extends javax.swing.JFrame {
         new KertoIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
+
+    private void koeVahennyslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeVahennyslaskuButtonActionPerformed
+        KoeMiinusIkkuna koeMiinusIkkuna = new KoeMiinusIkkuna(1, 0, "");
+        koeMiinusIkkuna.setVisible(true);
+    }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
+
+    private void koeKertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeKertolaskuButtonActionPerformed
+        KoeKertoIkkuna koeKertoIkkuna = new KoeKertoIkkuna(1, 0, "");
+        koeKertoIkkuna.setVisible(true);
+ 
+    }//GEN-LAST:event_koeKertolaskuButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton kertolaskuButton;
