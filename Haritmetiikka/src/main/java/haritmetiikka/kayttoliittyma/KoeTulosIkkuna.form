@@ -27,7 +27,7 @@
               <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="oKButton" min="-2" pref="100" max="-2" attributes="0"/>
-                  <Component id="oikeinLkm" min="-2" max="-2" attributes="0"/>
+                  <Component id="oikeinLkmJLabel" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
               <Component id="vastauksetJLabel" min="-2" pref="539" max="-2" attributes="0"/>
@@ -41,7 +41,7 @@
               <EmptySpace pref="49" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Component id="oikeinLkm" min="-2" max="-2" attributes="0"/>
+                      <Component id="oikeinLkmJLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
                       <Component id="oKButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="137" max="-2" attributes="0"/>
@@ -64,7 +64,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oKButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="oikeinLkm">
+    <Component class="javax.swing.JLabel" name="oikeinLkmJLabel">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>

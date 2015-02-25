@@ -158,8 +158,8 @@ public class StartIkkuna extends javax.swing.JFrame {
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
         // Luodaan tyhjä ArrayDeque, jotta saadaan KoeSummaIkkuna käynnistettyä.
-        ArrayDeque<String> adTyhja = new ArrayDeque<String>();
-        KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1, 0, "",adTyhja);
+       // ArrayDeque<String> adTyhja = new ArrayDeque<String>();
+       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1,0,"","");
         
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
