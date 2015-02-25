@@ -42,7 +42,7 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
         vastauksetJLabel.setText(this.vastaukset);
         // vastauksetJLabel.setText("<html>"+vastaustenJonoArrayDeque.pollLast()+"<br>"+vastaustenJonoArrayDeque.pollLast()+"</html>");
           
-        tehtavaNro = tehtavaNro-1;
+        tehtavaNro = tehtavaNro;
         oikeinLkmJLabel.setText("Sait "+koeTehtaviaOikein+" oikein "+tehtavaNro+" tehtavasta.");
     }
 

@@ -10,7 +10,6 @@ import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
 import java.util.ArrayDeque;
 
-
 /**
  *
  * @author poplinus
@@ -18,58 +17,46 @@ import java.util.ArrayDeque;
 public class KoeSummaIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
-   // Tehtava vastausJono = new Tehtava();
+    // Tehtava vastausJono = new Tehtava();
     int tehtavaNro;
     int koeTehtaviaOikein;
     int vastaus;
+    int tehtavienMaara;
     String syottoVirheTeksti, vastaukset;
     ArrayDeque<String> vastaustenJonoArrayDeque = new ArrayDeque<>();
-    
-  
+
     /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti, String vastaukset) {
+    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, int tehtavienMaara, String syottoVirheTeksti, String vastaukset) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
         this.koeTehtaviaOikein = koeTehtaviaOikein;
+        this.tehtavienMaara = tehtavienMaara;
         this.syottoVirheTeksti = syottoVirheTeksti;
         this.vastaukset = vastaukset;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
-        tehtavaNroLabel.setText(this.tehtavaNro+1 + ". tehtävä");
+        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku() + " + " + koeTehtava.getTokaLuku() + " ="));
+        tehtavaNroLabel.setText(this.tehtavaNro + 1 + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
-      //  System.out.println(kysymysJLabel.getText());
-       
-        
+        //  System.out.println(kysymysJLabel.getText());
+
     }
-      public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti, String vastaukset, Tehtava koeTehtava) {
+
+    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, int tehtavienMaara, String syottoVirheTeksti, String vastaukset, Tehtava koeTehtava) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
         this.koeTehtaviaOikein = koeTehtaviaOikein;
+        this.tehtavienMaara = tehtavienMaara;
         this.syottoVirheTeksti = syottoVirheTeksti;
         this.vastaukset = vastaukset;
         this.koeTehtava = koeTehtava;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
-        tehtavaNroLabel.setText(this.tehtavaNro+1 + ". tehtävä");
+        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku() + " + " + koeTehtava.getTokaLuku() + " ="));
+        tehtavaNroLabel.setText(this.tehtavaNro + 1 + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
-      //  System.out.println(kysymysJLabel.getText());
-       
-        
-    }
-    
-    
+        //  System.out.println(kysymysJLabel.getText());
 
-  /*  public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
-     this.tehtavaNro = tehtavaNro;
-     this.koeTehtaviaOikein = koeTehtaviaOikein;
-     this.syottoVirheTeksti = syottoVirheTeksti;
     }
-    */
-   
-    
-    
 
-   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -176,75 +163,44 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
-      
-        //  System.out.print(" "+kysymysJLabel.getText());
-          //System.out.print(" oikea vastaus"+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
-   
-        // vastaustenJonoArrayDeque.add("tehtävän " + (this.tehtavaNro)+". kysymys on "+kysymysJLabel.getText()+"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
-   
+
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-
-            
-            this.tehtavaNro++;
 
             if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
                 koeTehtaviaOikein++;
 
-         //       System.out.println("koeTehtaviaOikein laskuri");
             }
 
-           // System.out.println(koeTehtaviaOikein);
-            if (tehtavaNro < 10) {
-            //    vastaustenJonoArrayDeque.add("tehtävän " + (this.tehtavaNro)+". kysymys on "+kysymysJLabel.getText()+"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
-                String uusiVastaus = this.tehtavaNro+". tehtävä oli "+ kysymysJLabel.getText() +"<br>"; 
-                this.vastaukset = this.vastaukset+ uusiVastaus;
-                System.out.println("tehtävänumeroita oikein " + this.tehtavaNro);    
-               new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein,"",this.vastaukset).setVisible(true);
-                System.out.println("loopin sisällä"+tehtavaNro);    
-            System.out.println(vastaukset);
+            if (tehtavaNro < tehtavienMaara) {
+                this.tehtavaNro++;
+                if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus) == false) {
+                    vastaukset = vastaukset + "<font color=red>" + "X  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "</font><br>";
+                }
+                if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
+                    String vastaus = "%  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "<br>";
+                    this.vastaukset = this.vastaukset + vastaus;
+                }
+                new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein, this.tehtavienMaara, "", this.vastaukset).setVisible(true);
+                System.out.println(this.vastaukset);
                 this.dispose();
-            
-                
-            } 
-            else {
-                String uusiVastaus = this.tehtavaNro+". tehtävä oli "+ kysymysJLabel.getText() +"<br>"; 
-                this.vastaukset = this.vastaukset+ uusiVastaus;
-                
-            this.vastaukset = "<html>"+this.vastaukset+"</html>";
-                System.out.println("LOPULLINEN VASTAUKSET"+vastaukset);
-                
-                new KoeTulosIkkuna(tehtavaNro+1, koeTehtaviaOikein,this.vastaukset).setVisible(true);
-                this.dispose();
-            
-            
-            
-                
-          //      vastaustenJonoArrayDeque.add("tehtävän " + (this.tehtavaNro)+". kysymys on "+kysymysJLabel.getText()+"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
-            //    this.vastaukset = vastaustenJonoArrayDeque.pollFirst()+"<br>";
-        //for(int i = 0; i < 10; i++){  
-            
-            //this.vastaukset = this.vastaukset+ "tehtävän " + this.tehtavaNro+". kysymys on "+ kysymysJLabel.getText() +"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku())+"<br>";
-       
-        }
-                
-                
-                
             }
-            
-         
-        catch (Exception e) {
+            if (tehtavaNro == tehtavienMaara) {
+               // String uusiVastaus = this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "<br>";
+                // this.vastaukset = this.vastaukset + uusiVastaus;
+                this.vastaukset = "<html>" + this.vastaukset + "</html>";
+                System.out.println(this.vastaukset);
+                //  System.out.println("LOPULLINEN VASTAUKSET" + vastaukset);
+
+                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein, this.vastaukset).setVisible(true);
+                this.dispose();
+            }
+
+        } catch (Exception e) {
             this.dispose();
-            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta",this.vastaukset,this.koeTehtava).setVisible(true);
+            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, this.tehtavienMaara, "Syötä kokonaisluku tai lopeta", this.vastaukset, this.koeTehtava).setVisible(true);
         }
-          
- /*       if(tehtavaNro == 11){
-              for(int i = 0; i<10;i++){
-              System.out.println(koeTehtava.getVastausJono());    
-          }}
-   */       
-          
-          
+
     }//GEN-LAST:event_vastausButtonActionPerformed
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
@@ -263,4 +219,3 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
 }
-
