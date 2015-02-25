@@ -18,7 +18,7 @@ import java.util.ArrayDeque;
 public class KoeSummaIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
-    Tehtava vastausJono = new Tehtava();
+   // Tehtava vastausJono = new Tehtava();
     int tehtavaNro;
     int koeTehtaviaOikein;
     int vastaus;
@@ -36,7 +36,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.syottoVirheTeksti = syottoVirheTeksti;
         this.vastaukset = vastaukset;
         kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
-        tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
+        tehtavaNroLabel.setText(this.tehtavaNro+1 + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
       //  System.out.println(kysymysJLabel.getText());
        
@@ -49,8 +49,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
      this.syottoVirheTeksti = syottoVirheTeksti;
     }
     
-     
-    
+   
     
     
 
@@ -176,23 +175,26 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
                 koeTehtaviaOikein++;
 
-                System.out.println("koeTehtaviaOikein laskuri");
+         //       System.out.println("koeTehtaviaOikein laskuri");
             }
 
            // System.out.println(koeTehtaviaOikein);
             if (tehtavaNro < 10) {
             //    vastaustenJonoArrayDeque.add("tehtävän " + (this.tehtavaNro)+". kysymys on "+kysymysJLabel.getText()+"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
-                System.out.println("if sisällä");
-                String uusiVastaus = this.tehtavaNro + "<br>"; 
-                this.vastaukset = this.vastaukset+ uusiVastaus; 
+                String uusiVastaus = this.tehtavaNro+". tehtävä oli "+ kysymysJLabel.getText() +"<br>"; 
+                this.vastaukset = this.vastaukset+ uusiVastaus;
                 System.out.println("tehtävänumeroita oikein " + this.tehtavaNro);    
-            new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein,"",this.vastaukset).setVisible(true);
+               new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein,"",this.vastaukset).setVisible(true);
                 System.out.println("loopin sisällä"+tehtavaNro);    
             System.out.println(vastaukset);
                 this.dispose();
             
+                
             } 
             else {
+                String uusiVastaus = this.tehtavaNro+". tehtävä oli "+ kysymysJLabel.getText() +"<br>"; 
+                this.vastaukset = this.vastaukset+ uusiVastaus;
+                
             this.vastaukset = "<html>"+this.vastaukset+"</html>";
                 System.out.println("LOPULLINEN VASTAUKSET"+vastaukset);
                 
