@@ -1,7 +1,9 @@
 package haritmetiikka.haritmetiikka;
 
+import haritmetiikka.apuLuokat.TekstiYhdistaja;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.*;
+import haritmetiikka.rajapinta.Tehtava;
 
 public class App {
 
@@ -9,7 +11,8 @@ public class App {
 
     public static void main(String[] args) {
         new StartIkkuna().setVisible(true);
-
+       // System.out.println(Tehtava.yhdistaTeksti("a", "b"));
+        
 //   
 //
 ////  System.out.println(tehtava.getEkaLuku());

@@ -12,6 +12,7 @@ import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 import haritmetiikka.kayttoliittyma.summa.KoeSummaIkkuna;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
+import java.util.ArrayDeque;
 
 /**
  *
@@ -156,7 +157,10 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-        KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1, 0, "");
+        // Luodaan tyhjä ArrayDeque, jotta saadaan KoeSummaIkkuna käynnistettyä.
+        ArrayDeque<String> adTyhja = new ArrayDeque<String>();
+        KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(1, 0, "",adTyhja);
+        
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
 

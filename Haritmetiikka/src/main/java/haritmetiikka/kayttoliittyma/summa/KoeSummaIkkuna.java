@@ -8,6 +8,8 @@ package haritmetiikka.kayttoliittyma.summa;
 import haritmetiikka.kayttoliittyma.KoeTulosIkkuna;
 import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
+import java.util.ArrayDeque;
+
 
 /**
  *
@@ -16,29 +18,43 @@ import java.lang.Process.*;
 public class KoeSummaIkkuna extends javax.swing.JFrame {
 
     Tehtava koeTehtava = new Tehtava();
+    Tehtava vastausJono = new Tehtava();
     int tehtavaNro;
     int koeTehtaviaOikein;
     int vastaus;
     String syottoVirheTeksti;
-
+    ArrayDeque<String> vastaustenJonoArrayDeque = new ArrayDeque<>();
+    
+  
     /*
      * Creates new form SummaKoeIkkuna
      */
-    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti, ArrayDeque<String> vastaustenJonoArrayDeque) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
         this.koeTehtaviaOikein = koeTehtaviaOikein;
         this.syottoVirheTeksti = syottoVirheTeksti;
+        this.vastaustenJonoArrayDeque = vastaustenJonoArrayDeque;
         kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
         tehtavaNroLabel.setText(this.tehtavaNro + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
-
+      //  System.out.println(kysymysJLabel.getText());
+       
+        
     }
 
-    public static int laskuri(int nro) {
-        return nro++;
+    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+     this.tehtavaNro = tehtavaNro;
+     this.koeTehtaviaOikein = koeTehtaviaOikein;
+     this.syottoVirheTeksti = syottoVirheTeksti;
     }
+    
+     
+    
+    
+    
 
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -145,36 +161,46 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
+      
+        //  System.out.print(" "+kysymysJLabel.getText());
+          //System.out.print(" oikea vastaus"+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
+        
+        
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            System.out.println("väärä paikka");
+          //  System.out.println("väärä paikka");
 
             this.tehtavaNro++;
 
             if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
                 koeTehtaviaOikein++;
 
-                System.out.println("koeTehtaviaOikein laskuri");
+            //    System.out.println("koeTehtaviaOikein laskuri");
             }
 
-            System.out.println(koeTehtaviaOikein);
+           // System.out.println(koeTehtaviaOikein);
             if (tehtavaNro <= 10) {
-              
-                new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "").setVisible(true);
-                this.dispose();
+                vastaustenJonoArrayDeque.add("tehtävän " + (this.tehtavaNro-1)+". kysymys on "+kysymysJLabel.getText()+"?, jonka oikea vastaus on "+ koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku()));
+                new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "",this.vastaustenJonoArrayDeque).setVisible(true);
+             this.dispose();
             } else {
-                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein).setVisible(true);
+                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein,vastaustenJonoArrayDeque).setVisible(true);
                 this.dispose();
             }
         } catch (Exception e) {
             this.dispose();
-            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta").setVisible(true);
-
+            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta",this.vastaustenJonoArrayDeque).setVisible(true);
             System.out.println("syöttö väärin");
         
         }
-
-     
+          
+ /*       if(tehtavaNro == 11){
+              for(int i = 0; i<10;i++){
+              System.out.println(koeTehtava.getVastausJono());    
+          }}
+   */       
+          
+          
     }//GEN-LAST:event_vastausButtonActionPerformed
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed

@@ -6,9 +6,12 @@
 package haritmetiikka.rajapinta;
 
 import haritmetiikka.summalogiikka.SummaTehtava;
-import apuLuokat.LukuArpoja;
+import haritmetiikka.apuLuokat.ApuJono;
+import haritmetiikka.apuLuokat.LukuArpoja;
+import haritmetiikka.apuLuokat.TekstiYhdistaja;
 import haritmetiikka.kertologiikka.KertoTehtava;
 import haritmetiikka.miinuslogiikka.MiinusTehtava;
+import java.util.ArrayDeque;
 //import haritmetiikka.Koe;
 /**
  *
@@ -21,6 +24,8 @@ import haritmetiikka.miinuslogiikka.MiinusTehtava;
 public class Tehtava {
     String tyyppi;
     int vastaus;
+    ArrayDeque<String> vastausArrayDeque= new ArrayDeque<String>();
+    String vastauslause;
     public Tehtava(){
     }
 /**
@@ -29,10 +34,12 @@ public class Tehtava {
  * @param vastaus 
  */
     
-//    public Tehtava(String tyyppi, int vastaus){
-//        this.tyyppi = tyyppi;
-//        this.vastaus = vastaus;
-//    }
+    public Tehtava(String tyyppi, int vastaus){
+        this.tyyppi = tyyppi;
+        this.vastaus = vastaus;
+    }
+ 
+    
     /**
      * Luodaan kokonaislukuarpoja olio.
      */
@@ -69,7 +76,7 @@ public class Tehtava {
     private SummaTehtava summaTehtava = new SummaTehtava();
     private KertoTehtava kertoTehtava = new KertoTehtava();
     private MiinusTehtava miinusTehtava = new MiinusTehtava();
-    
+    private ApuJono apuJono = new ApuJono();
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
      *
@@ -148,7 +155,26 @@ public class Tehtava {
         }
 
         return false;
-    }   
+    }
+    
+    public void setVastausJono(String vastauslause){
+        this.vastauslause = vastauslause;
+        apuJono.setString(vastauslause);
+        
+    }
+    
+        public String getVastausJono(){
+        return apuJono.getString();
+    }
+    
+         public static String yhdistaTeksti(String tekstiAlku, String tekstiLoppu){
+      
+         return TekstiYhdistaja.yhdistaTeksti(tekstiAlku, tekstiLoppu);
+          
+    }  
+        
+    
+    
     /* ei tarvetta tällä hetkellä asetta arvoja olioon
      public void setArvot(String tyyppi, int vastaus){
       this.tyyppi = tyyppi;
