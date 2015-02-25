@@ -42,13 +42,29 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
        
         
     }
+      public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti, String vastaukset, Tehtava koeTehtava) {
+        initComponents();
+        this.tehtavaNro = tehtavaNro;
+        this.koeTehtaviaOikein = koeTehtaviaOikein;
+        this.syottoVirheTeksti = syottoVirheTeksti;
+        this.vastaukset = vastaukset;
+        this.koeTehtava = koeTehtava;
+        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku()+" + " +koeTehtava.getTokaLuku()+" ="));
+        tehtavaNroLabel.setText(this.tehtavaNro+1 + ". tehtävä");
+        syottoVirheJLabel.setText(this.syottoVirheTeksti);
+      //  System.out.println(kysymysJLabel.getText());
+       
+        
+    }
+    
+    
 
-    public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
+  /*  public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, String syottoVirheTeksti) {
      this.tehtavaNro = tehtavaNro;
      this.koeTehtaviaOikein = koeTehtaviaOikein;
      this.syottoVirheTeksti = syottoVirheTeksti;
     }
-    
+    */
    
     
     
@@ -198,7 +214,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             this.vastaukset = "<html>"+this.vastaukset+"</html>";
                 System.out.println("LOPULLINEN VASTAUKSET"+vastaukset);
                 
-                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein,this.vastaukset).setVisible(true);
+                new KoeTulosIkkuna(tehtavaNro+1, koeTehtaviaOikein,this.vastaukset).setVisible(true);
                 this.dispose();
             
             
@@ -219,7 +235,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
          
         catch (Exception e) {
             this.dispose();
-            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta","").setVisible(true);
+            new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, "Syötä kokonaisluku tai lopeta",this.vastaukset,this.koeTehtava).setVisible(true);
         }
           
  /*       if(tehtavaNro == 11){
