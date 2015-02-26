@@ -137,14 +137,7 @@ public class TehtavaTest {
      assertEquals(tehtava.getEkaLuku(),tehtava.getEkaLuku());
      
      }
-     public void tehtavaTestGetTokaluku() {
-     assertEquals(tehtava.getTokaLuku(),tehtava.getTokaLuku());
-     
-     }
-     public void tehtavaTestGetMiinusluku() {
-     assertEquals(tehtava.getMiinusTokaLuku(),tehtava.getMiinusTokaLuku());
-     
-     }
+   
     
      
      

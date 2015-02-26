@@ -29,8 +29,8 @@ public class MiinusVastausIkkuna extends javax.swing.JFrame {
         initComponents();
         this.tehtava = tehtava;
         this.vastaus = vastaus;
-        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("miinus", tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku())));
-        if (tehtava.getOikein("miinus", tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku(), vastaus)) {
+        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("miinus", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
+        if (tehtava.getOikein("miinus", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
             vastausOikeinLabel.setForeground(Color.green);
             vastausOikeinLabel.setText("%" + " Vastasit oikein");
         

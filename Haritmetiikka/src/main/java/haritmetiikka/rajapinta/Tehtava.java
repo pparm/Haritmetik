@@ -5,13 +5,12 @@
  */
 package haritmetiikka.rajapinta;
 
+import haritmetiikka.apuLuokat.KysymysTekstiYhdistaja;
 import haritmetiikka.summalogiikka.SummaTehtava;
-import haritmetiikka.apuLuokat.ApuJono;
 import haritmetiikka.apuLuokat.LukuArpoja;
 import haritmetiikka.apuLuokat.TekstiYhdistaja;
 import haritmetiikka.kertologiikka.KertoTehtava;
 import haritmetiikka.miinuslogiikka.MiinusTehtava;
-import java.util.ArrayDeque;
 //import haritmetiikka.Koe;
 /**
  *
@@ -24,7 +23,6 @@ import java.util.ArrayDeque;
 public class Tehtava {
     String tyyppi;
     int vastaus;
-    ArrayDeque<String> vastausArrayDeque= new ArrayDeque<String>();
     String vastauslause;
     public Tehtava(){
     }
@@ -76,7 +74,6 @@ public class Tehtava {
     private SummaTehtava summaTehtava = new SummaTehtava();
     private KertoTehtava kertoTehtava = new KertoTehtava();
     private MiinusTehtava miinusTehtava = new MiinusTehtava();
-    private ApuJono apuJono = new ApuJono();
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
      *
@@ -100,6 +97,15 @@ public class Tehtava {
     public final int getMiinusTokaLuku() {
        return tokaLukuMiinus;
     }
+    public final int getKoeTokaLuku(String laskuTyyppi){
+        if(laskuTyyppi.equals("summa")||laskuTyyppi.equals("kerto")){
+           return tokaLuku; 
+        }
+        if(laskuTyyppi.equals("miinus")){
+           return tokaLukuMiinus; 
+        }
+        return -1;
+            }
     
    
 
@@ -157,39 +163,24 @@ public class Tehtava {
         return false;
     }
     
-    public void setVastausJono(String vastauslause){
-        this.vastauslause = vastauslause;
-        apuJono.setString(vastauslause);
-        
-    }
     
-        public String getVastausJono(){
-        return apuJono.getString();
-    }
     
-         public static String yhdistaTeksti(String tekstiAlku, String tekstiLoppu){
+    
+         public static String yhdistaTeksti(String tehtavaTyyppi,String tekstiAlku, String tekstiLoppu){
       
          return TekstiYhdistaja.yhdistaTeksti(tekstiAlku, tekstiLoppu);
           
     }  
-        
-    
-    
-    /* ei tarvetta tällä hetkellä asetta arvoja olioon
-     public void setArvot(String tyyppi, int vastaus){
-      this.tyyppi = tyyppi;
-      this.vastaus = vastaus;
-     
-     }
-    */
-    
- /*   
-    public int tehtava(String tehtavaTyyppi){
-      if(tehtavaTyyppi == "summa"){
-       return 15;}
-      return -1;
-      }  
-*/  
-    }
-   
+         
+         public String kysymysTekstiYhdista(int ekaLuku, int tokaLuku, String tehtavaTyyppi){
+             
+          KysymysTekstiYhdistaja kysymysTekstiYhdistaja =   new haritmetiikka.apuLuokat.KysymysTekstiYhdistaja(ekaLuku, tokaLuku, tehtavaTyyppi);
+          return kysymysTekstiYhdistaja.getYhdistettyTeksti(ekaLuku, tokaLuku, tehtavaTyyppi);
+         
+                  }
 
+         
+         
+}    
+         
+         

@@ -157,8 +157,8 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","");
-        
+       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","summa");
+       
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
 
@@ -173,14 +173,15 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
 
     private void koeVahennyslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeVahennyslaskuButtonActionPerformed
-        KoeMiinusIkkuna koeMiinusIkkuna = new KoeMiinusIkkuna(1, 0, "");
-        koeMiinusIkkuna.setVisible(true);
+       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","miinus");
+       
+        koeSummaIkkuna.setVisible(true);  
     }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
 
     private void koeKertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeKertolaskuButtonActionPerformed
-        KoeKertoIkkuna koeKertoIkkuna = new KoeKertoIkkuna(1, 0, "");
-        koeKertoIkkuna.setVisible(true);
- 
+       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","kerto");
+       
+        koeSummaIkkuna.setVisible(true);  
     }//GEN-LAST:event_koeKertolaskuButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
