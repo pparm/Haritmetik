@@ -162,7 +162,9 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_vastausTextFieldActionPerformed
 
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
-
+        int koeTehtavaTulos = koeTehtava.getOikeaVastaus("summa", koeTehtava.getEkaLuku(),koeTehtava.getTokaLuku());
+        Boolean koeTehtavaOikein = koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus);
+       
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
 
@@ -173,13 +175,14 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
             
             System.out.println("tehtavaNro enen IF" + tehtavaNro);
            // if (tehtavaNro < tehtavienMaara) {
-               this.tehtavaNro++; 
+            
+            this.tehtavaNro++; 
                 if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus) == false) {
-                    vastaukset = vastaukset + "<font color=red>" + "X  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "</font><br>";
+                    vastaukset = vastaukset + "<font color=red>" + "X  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() +" " +koeTehtavaTulos+".  Vastauksesi oli "+vastaus+"."+"</font><br>";
                 }
                 
                 if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
-                    String vastaus = "%  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "<br>";
+                    String vastaus = "%  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() +" "+koeTehtavaTulos+"<br>";
                     this.vastaukset = this.vastaukset + vastaus;}
                 
                 if (tehtavaNro < tehtavienMaara) {

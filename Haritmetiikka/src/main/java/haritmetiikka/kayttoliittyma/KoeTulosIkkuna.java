@@ -32,7 +32,7 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
         vastauksetJLabel.setText(this.vastaukset);
 
         tehtavaNro = tehtavaNro;
-        oikeinLkmJLabel.setText("Sait " + koeTehtaviaOikein + " oikein " + tehtavaNro + " tehtavasta.");
+        oikeinLkmJLabel.setText("Sait " + koeTehtaviaOikein + " oikein " + tehtavaNro + " tehtävästa.");
     }
 
     /**
