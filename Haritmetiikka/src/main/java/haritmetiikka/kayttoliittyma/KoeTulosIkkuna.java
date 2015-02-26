@@ -7,43 +7,32 @@ package haritmetiikka.kayttoliittyma;
 
 import haritmetiikka.kayttoliittyma.StartIkkuna;
 import haritmetiikka.kayttoliittyma.summa.KoeSummaIkkuna;
-import java.util.ArrayDeque;
+
 /**
  *
  * @author poplinus
  */
 public class KoeTulosIkkuna extends javax.swing.JFrame {
-        String vastaukset = null;
-       
-    
+
+    String vastaukset = null;
+
     /**
      * Creates new form koeTulosIkkuna
      */
-     public KoeTulosIkkuna(int tehtavaNro,int koeTehtaviaOikein){
-             initComponents();
-             tehtavaNro = tehtavaNro-1;
-             oikeinLkmJLabel.setText("Sait "+koeTehtaviaOikein+" oikein "+tehtavaNro+" tehtavasta.");
-     }
-    public KoeTulosIkkuna(int tehtavaNro,int koeTehtaviaOikein, String vastaukset) {
-        //this.vast = vast;
-            initComponents();
-            this.vastaukset = vastaukset;
-        // Vähennetään tehetävänumeroa yhdellä, koska sitä käytetään jo seuraavan laskun numerona
-   //    "<html>First line<br>Second line</html>"
-    /*    this.vastaukset = vastaustenJonoArrayDeque.pollFirst()+"<br>";
-        for(int i = 0; i < 10; i++){  
-            
-            this.vastaukset = vastaukset + vastaustenJonoArrayDeque.pollFirst()+"<br>";
-            System.out.println(this.vastaukset);   
-        }
-      */
-        //vastauksetJLabel.setText("<html>This is<br>a multi-line string");
-        System.out.println("vastausikkuna"+this.vastaukset);
+    public KoeTulosIkkuna(int tehtavaNro, int koeTehtaviaOikein) {
+        initComponents();
+        tehtavaNro = tehtavaNro - 1;
+        oikeinLkmJLabel.setText("Sait " + koeTehtaviaOikein + " oikein " + tehtavaNro + " tehtavasta.");
+    }
+
+    public KoeTulosIkkuna(int tehtavaNro, int koeTehtaviaOikein, String vastaukset) {
+        initComponents();
+        this.vastaukset = vastaukset;
+        System.out.println("vastausikkuna" + this.vastaukset);
         vastauksetJLabel.setText(this.vastaukset);
-        // vastauksetJLabel.setText("<html>"+vastaustenJonoArrayDeque.pollLast()+"<br>"+vastaustenJonoArrayDeque.pollLast()+"</html>");
-          
+
         tehtavaNro = tehtavaNro;
-        oikeinLkmJLabel.setText("Sait "+koeTehtaviaOikein+" oikein "+tehtavaNro+" tehtavasta.");
+        oikeinLkmJLabel.setText("Sait " + koeTehtaviaOikein + " oikein " + tehtavaNro + " tehtavasta.");
     }
 
     /**
@@ -104,8 +93,7 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void oKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oKButtonActionPerformed
-    new StartIkkuna().setVisible(true);
-    this.dispose();
+        this.dispose();
     }//GEN-LAST:event_oKButtonActionPerformed
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton oKButton;

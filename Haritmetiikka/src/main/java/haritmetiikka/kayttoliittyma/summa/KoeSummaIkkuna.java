@@ -23,11 +23,10 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
     int vastaus;
     int tehtavienMaara;
     String syottoVirheTeksti, vastaukset;
-    ArrayDeque<String> vastaustenJonoArrayDeque = new ArrayDeque<>();
-
     /*
      * Creates new form SummaKoeIkkuna
      */
+
     public KoeSummaIkkuna(int tehtavaNro, int koeTehtaviaOikein, int tehtavienMaara, String syottoVirheTeksti, String vastaukset) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
@@ -171,36 +170,38 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
                 koeTehtaviaOikein++;
 
             }
-
-            if (tehtavaNro < tehtavienMaara) {
-                this.tehtavaNro++;
+            
+            System.out.println("tehtavaNro enen IF" + tehtavaNro);
+           // if (tehtavaNro < tehtavienMaara) {
+               this.tehtavaNro++; 
                 if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus) == false) {
                     vastaukset = vastaukset + "<font color=red>" + "X  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "</font><br>";
                 }
+                
                 if (koeTehtava.getOikein("summa", koeTehtava.getEkaLuku(), koeTehtava.getTokaLuku(), vastaus)) {
                     String vastaus = "%  " + this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "<br>";
-                    this.vastaukset = this.vastaukset + vastaus;
+                    this.vastaukset = this.vastaukset + vastaus;}
+                
+                if (tehtavaNro < tehtavienMaara) {
+                    new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein, this.tehtavienMaara, "", this.vastaukset).setVisible(true);
+                    this.dispose();
+                    System.out.println("täällä jos nro <= 3    "+tehtavaNro);
                 }
-                new KoeSummaIkkuna(this.tehtavaNro, koeTehtaviaOikein, this.tehtavienMaara, "", this.vastaukset).setVisible(true);
-                System.out.println(this.vastaukset);
-                this.dispose();
-            }
-            if (tehtavaNro == tehtavienMaara) {
-               // String uusiVastaus = this.tehtavaNro + ". tehtävä oli " + kysymysJLabel.getText() + "<br>";
-                // this.vastaukset = this.vastaukset + uusiVastaus;
+                
+                else{
                 this.vastaukset = "<html>" + this.vastaukset + "</html>";
                 System.out.println(this.vastaukset);
-                //  System.out.println("LOPULLINEN VASTAUKSET" + vastaukset);
+                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein, this.vastaukset).setVisible(true);}
 
-                new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein, this.vastaukset).setVisible(true);
-                this.dispose();
-            }
+             
+            this.dispose();
 
         } catch (Exception e) {
             this.dispose();
             new KoeSummaIkkuna(tehtavaNro, koeTehtaviaOikein, this.tehtavienMaara, "Syötä kokonaisluku tai lopeta", this.vastaukset, this.koeTehtava).setVisible(true);
         }
 
+        
     }//GEN-LAST:event_vastausButtonActionPerformed
 
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
