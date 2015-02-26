@@ -35,7 +35,8 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.syottoVirheTeksti = syottoVirheTeksti;
         this.vastaukset = vastaukset;
         this.tehtavaTyyppi = tehtavaTyyppi;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku() + " + " + koeTehtava.getKoeTokaLuku(tehtavaTyyppi) + " ="));
+        kysymysJLabel.setText(String.valueOf(koeTehtava.kysymysTekstiYhdista(koeTehtava.getEkaLuku(), koeTehtava.getKoeTokaLuku(tehtavaTyyppi), tehtavaTyyppi)));
+     //   kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku() + " + " + koeTehtava.getKoeTokaLuku(tehtavaTyyppi) + " ="));
         tehtavaNroLabel.setText(this.tehtavaNro + 1 + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
         //  System.out.println(kysymysJLabel.getText());
@@ -51,7 +52,7 @@ public class KoeSummaIkkuna extends javax.swing.JFrame {
         this.vastaukset = vastaukset;
         this.koeTehtava = koeTehtava;
         this.tehtavaTyyppi = tehtavaTyyppi;
-        kysymysJLabel.setText(String.valueOf(koeTehtava.getEkaLuku() + " + " + koeTehtava.getKoeTokaLuku(tehtavaTyyppi) + " ="));
+        kysymysJLabel.setText(String.valueOf(koeTehtava.kysymysTekstiYhdista(koeTehtava.getEkaLuku(), koeTehtava.getKoeTokaLuku(tehtavaTyyppi), tehtavaTyyppi)));
         tehtavaNroLabel.setText(this.tehtavaNro + 1 + ". tehtävä");
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
         //  System.out.println(kysymysJLabel.getText());
