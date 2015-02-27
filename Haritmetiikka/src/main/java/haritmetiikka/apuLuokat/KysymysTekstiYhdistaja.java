@@ -52,6 +52,6 @@ public class KysymysTekstiYhdistaja {
         if (tehtavaTyyppi.equals("kerto")) {
             return ekaLuku + " * " + tokaLuku + " =";
         }
-        return virhePaluuArvo;
+        return "X";
     }
 }
