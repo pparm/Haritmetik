@@ -17,7 +17,7 @@ import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
  */
 public class StartIkkuna extends javax.swing.JFrame {
 
-    SummaIkkuna summaIkkuna;
+    private SummaIkkuna summaIkkuna;
 
     /**
      * Luo uuden aloitusikkunan.
@@ -158,7 +158,7 @@ public class StartIkkuna extends javax.swing.JFrame {
      * @param evt
      */
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "summa");
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 10, "", "", "summa");
 
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
@@ -171,32 +171,20 @@ public class StartIkkuna extends javax.swing.JFrame {
         new MiinusIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
-    /**
-     * Avaa kertolaskuikkunan.
-     *
-     * @param evt
-     */
+   
     private void kertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kertolaskuButtonActionPerformed
         new KertoIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
-    /**
-     * Avaa kokeen, jonka parametrina on miinuslasku.
-     *
-     * @param evt
-     */
+
     private void koeVahennyslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeVahennyslaskuButtonActionPerformed
-        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "miinus");
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 10, "", "", "miinus");
 
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
-    /**
-     * Avaa kokeen, jonka parametrina on kertolasku.
-     *
-     * @param evt
-     */
+
     private void koeKertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeKertolaskuButtonActionPerformed
-        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "kerto");
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 10, "", "", "kerto");
 
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeKertolaskuButtonActionPerformed

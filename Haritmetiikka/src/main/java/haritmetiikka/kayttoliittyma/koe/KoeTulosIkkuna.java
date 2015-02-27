@@ -14,7 +14,7 @@ import haritmetiikka.kayttoliittyma.koe.KoeIkkuna;
  */
 public class KoeTulosIkkuna extends javax.swing.JFrame {
 
-    String vastaukset = null;
+    private String vastaukset = null;
 
     /**
      * Konstruktori, joka luo kokeen tulosikkunan.
@@ -38,7 +38,6 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
     public KoeTulosIkkuna(int tehtavaNro, int koeTehtaviaOikein, String vastaukset) {
         initComponents();
         this.vastaukset = vastaukset;
-        System.out.println("vastausikkuna" + this.vastaukset);
         vastauksetJLabel.setText(this.vastaukset);
 
         tehtavaNro = tehtavaNro;

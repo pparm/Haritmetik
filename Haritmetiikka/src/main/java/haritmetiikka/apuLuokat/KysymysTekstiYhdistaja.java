@@ -11,10 +11,10 @@ package haritmetiikka.apuLuokat;
  */
 public class KysymysTekstiYhdistaja {
 
-    int ekaLuku;
-    int tokaLuku;
-    String tehtavaTyyppi;
-    String virhePaluuArvo;
+   private int ekaLuku;
+   private int tokaLuku;
+   private String tehtavaTyyppi;
+   private String virhePaluuArvo;
 
     /**
      * Konsistori.
@@ -36,7 +36,7 @@ public class KysymysTekstiYhdistaja {
      * @param ekaLuku
      * @param tokaLuku
      * @param tehtavaTyyppi
-     * @return
+     * @return String lauseke esimerkiksi 1 + 2 = tai 1 - 2 =
      */
     public String getYhdistettyTeksti(int ekaLuku, int tokaLuku, String tehtavaTyyppi) {
         this.ekaLuku = ekaLuku;

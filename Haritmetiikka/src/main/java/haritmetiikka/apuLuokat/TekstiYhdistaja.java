@@ -16,7 +16,7 @@ public class TekstiYhdistaja {
      *
      * @param tekstiAlku
      * @param tekstiLoppu
-     * @return
+     * @return Yhdistetty teksti.
      */
     public static String yhdistaTeksti(String tekstiAlku, String tekstiLoppu) {
         tekstiAlku = tekstiAlku + tekstiLoppu;

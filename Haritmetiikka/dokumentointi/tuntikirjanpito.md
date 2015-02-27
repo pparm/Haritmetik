@@ -17,4 +17,9 @@ Tuntikirjanpito
 - Check Style koodin putsaus 2h;
 - VK 6 testau 2h
 - VK 6 GUI 10 h
+- VK 7 Demo 2h
+- VK 7 Dokumentointi 8 h
+- VK 7 Logiikka 13 h
+- VK 7 Testaus 4 h
+- Ohjeet ja testausdokumentti 1 h
 

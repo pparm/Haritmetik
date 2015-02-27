@@ -7,7 +7,10 @@ import haritmetiikka.apuLuokat.TekstiYhdistaja;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.*;
 import haritmetiikka.rajapinta.Tehtava;
-
+/**
+ * 
+ * metodi käynnistää ohjelman
+ */
 public class App {
 
     private SummaIkkuna summaIkkuna = new SummaIkkuna();

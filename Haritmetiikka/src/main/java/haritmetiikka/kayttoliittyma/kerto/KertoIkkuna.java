@@ -12,8 +12,8 @@ import haritmetiikka.rajapinta.Tehtava;
  * Kertoikkuna-luokka ikkuna kysyy laskutoimituksen ja siihen syötetään vastaus.
  */
 public class KertoIkkuna extends javax.swing.JFrame {
-public Tehtava tehtava = new Tehtava();
-   int vastaus;  
+  private Tehtava tehtava = new Tehtava();
+   private int vastaus;  
     /**
     /**
      * Konstruktori joka muotoilee KertoVastausIkkunan johon tuodaan olemassa
@@ -146,24 +146,13 @@ public Tehtava tehtava = new Tehtava();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    /**
-     * Metodi avaa uuden kertoikkunan ja sulkee olemassa olevan. Näin alkaa uusi
-     * lasku.
-     *
-     * @param evt
-     */
+
     private void uusiLaskuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_uusiLaskuActionPerformed
 
         new KertoIkkuna().setVisible(true);
         this.dispose();
 
     }//GEN-LAST:event_uusiLaskuActionPerformed
-    /**
-     * Metodi avaa uuden KertoVastausIkkunan ja vie siihen olemassa olevan
-     * Tehtava-luokan olion.
-     *
-     * @param evt
-     */
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
@@ -177,11 +166,6 @@ public Tehtava tehtava = new Tehtava();
         }
 
     }//GEN-LAST:event_vastaaJButtonActionPerformed
-    /**
-     * Metodi lopettaa Yhteenlaskuharjoituksen.
-     *
-     * @param evt
-     */
     private void lopetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaActionPerformed
         // javax.swing.WindowConstants.EXIT_ON_CLOSE;
         this.dispose();

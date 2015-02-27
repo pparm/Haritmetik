@@ -15,12 +15,12 @@ import java.lang.Process.*;
  */
 public class KoeIkkuna extends javax.swing.JFrame {
 
-    Tehtava koeTehtava = new Tehtava();
-    int tehtavaNro;
-    int koeTehtaviaOikein;
-    int vastaus;
-    int tehtavienMaara;
-    String syottoVirheTeksti, vastaukset, tehtavaTyyppi;
+   private Tehtava koeTehtava = new Tehtava();
+   private int tehtavaNro;
+   private int koeTehtaviaOikein;
+   private int vastaus;
+   private int tehtavienMaara;
+   private String syottoVirheTeksti, vastaukset, tehtavaTyyppi;
 
     /**
      * Konstruktori rakentaa koeikkunan.
@@ -122,6 +122,8 @@ public class KoeIkkuna extends javax.swing.JFrame {
             }
         });
 
+        syottoVirheJLabel.setForeground(new java.awt.Color(239, 0, 0));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -213,7 +215,6 @@ public class KoeIkkuna extends javax.swing.JFrame {
                 this.vastaukset = "<html>" + this.vastaukset + "</html>";
                 new KoeTulosIkkuna(tehtavaNro, koeTehtaviaOikein, this.vastaukset).setVisible(true);
             }
-            System.out.println(vastaukset);
             this.dispose();
 
         } catch (Exception e) {
