@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package haritmetiikka.logiikka.summa;
-import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
  * Luokka laskee summia yhteen ja tarkistaa onko kahden luvun summa oikein.
  */

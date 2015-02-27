@@ -7,24 +7,29 @@ package haritmetiikka.apuLuokat;
 
 /**
  *
- * @author poplinus
+ * Luokkaa yhdistää kaksi String tekstiä toisiinsa.
  */
-   public class TekstiYhdistaja {
- 
-   public static String yhdistaTeksti(String tekstiAlku, String tekstiLoppu){
-      tekstiAlku = tekstiAlku + tekstiLoppu;
-      return tekstiAlku;
-  
-    }  
-    
-/*    
-    public String getYhdistaTeksti(String tekstiAlku, String tekstiLoppu){
-        
-      tekstiAlku = tekstiAlku + tekstiLoppu; 
-        
-       return tekstiAlku;
+public class TekstiYhdistaja {
+
+    /**
+     * Metodi palauttaa yhdistetyn Stringin kahdesta Stringistä.
+     *
+     * @param tekstiAlku
+     * @param tekstiLoppu
+     * @return
+     */
+    public static String yhdistaTeksti(String tekstiAlku, String tekstiLoppu) {
+        tekstiAlku = tekstiAlku + tekstiLoppu;
+        return tekstiAlku;
+
     }
-  */  
-    
-    
+
+    /*    
+     public String getYhdistaTeksti(String tekstiAlku, String tekstiLoppu){
+        
+     tekstiAlku = tekstiAlku + tekstiLoppu; 
+        
+     return tekstiAlku;
+     }
+     */
 }

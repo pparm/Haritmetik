@@ -11,39 +11,43 @@ import haritmetiikka.rajapinta.Tehtava;
 import java.awt.Color;
 
 /**
- *  
- * @author poplinus
+ *
+ * Luokka on Vähennyslaskuvastausikkuna. Luokka tarkistaa tuloksen ja ilmoittaa
+ * näyttää sen.
  */
 public class MiinusVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava tehtava;
     private int vastaus;
     String kysymysTeksti;
-    String oikeaVastaus;   
+    String oikeaVastaus;
+
     /**
-     * Metodi rakentaa MiinusVastausIkkunan
+     * Metodi rakentaa MiinusVastausIkkunan.
      *
-     * @param tehtava MiinusIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
-     * @param vastaus MiinusIkkunassa käyttäjän antama laskun vastaus
+     * @param tehtava Tehtava-luokan olio, joka pitää sisällään tarvittavat arvot.
+     * @param vastaus MiinusIkkunasta tuotu vastaus.
+     * @param kysymysTyyppi Kysymystyyppi, jota käytetään parametrina
+     * metodeille.
      */
-    public MiinusVastausIkkuna(Tehtava tehtava, int vastaus,String kysymysTyyppi) {
+    public MiinusVastausIkkuna(Tehtava tehtava, int vastaus, String kysymysTyyppi) {
         initComponents();
-        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi),kysymysTyyppi);   
-        this.oikeaVastaus =  String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku()));
+        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), kysymysTyyppi);
+        this.oikeaVastaus = String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku()));
         this.tehtava = tehtava;
         this.vastaus = vastaus;
         if (tehtava.getOikein(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), vastaus)) {
-            oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". ");
+            oikeaVastausLabel.setText("Tehtävän oli " + kysymysTeksti + " " + oikeaVastaus + ". ");
             vastausOikeinLabel.setForeground(Color.green);
             vastausOikeinLabel.setText("%");
-        
+
         } else {
-     vastausOikeinLabel.setForeground(Color.red);
-           
-     oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". "+ "Vastauksesi oli "+vastaus+".");
-           
-     vastausOikeinLabel.setText("X");
-               }
+            vastausOikeinLabel.setForeground(Color.red);
+
+            oikeaVastausLabel.setText("Tehtävän oli " + kysymysTeksti + " " + oikeaVastaus + ". " + "Vastauksesi oli " + vastaus + ".");
+
+            vastausOikeinLabel.setText("X");
+        }
 
     }
 
@@ -145,7 +149,11 @@ public class MiinusVastausIkkuna extends javax.swing.JFrame {
         new MiinusIkkuna(this.tehtava).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kokeileUudelleenJButtonActionPerformed
-
+    /**
+     * Nappi sulkee vähennyslaskuharjoitusikkunan.
+     *
+     * @param evt
+     */
     private void lopetaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaJButtonActionPerformed
         new StartIkkuna().setVisible(true);
         this.dispose();

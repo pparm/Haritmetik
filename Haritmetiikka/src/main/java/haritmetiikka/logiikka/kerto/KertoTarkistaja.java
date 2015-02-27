@@ -6,17 +6,18 @@
 package haritmetiikka.logiikka.kerto;
 
 /**
- * Luokka tarkistaa summia.
+ * Luokka tarkistaa ja laskee tuloja.
+ * 
  */
 public class KertoTarkistaja {
 
     /**
      * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon.
      *
-     * @param ekaLuku koknaisluku
-     * @param tokaLuku kokonaisluku
-     * @param vastausKerto lukujen summa
-     * @return totuusarvo onko lukujen summa oikein
+     * @param ekaLuku koknaisluku.
+     * @param tokaLuku kokonaisluku.
+     * @param vastausKerto pelaajan vastaus.
+     * @return totuusarvo onko lukujen oikein.
      */
     public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastausKerto) {
 
@@ -24,11 +25,11 @@ public class KertoTarkistaja {
     }
 
     /**
-     * Laskee lukujen summan.
+     * Laskee kahden luvun tulon.
      *
-     * @param ekaLuku Kokonaisluku
-     * @param tokaLuku Kokonaisluku
-     * @return Kokonaislukujen summa
+     * @param ekaLuku Kokonaisluku.
+     * @param tokaLuku Kokonaisluku.
+     * @return Kokonaislukujen tulo
      */
     public final int getVastaus(final int ekaLuku, final int tokaLuku) {
         return (ekaLuku * tokaLuku);

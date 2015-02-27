@@ -4,19 +4,15 @@
  * and open the template in the editor.
  */
 package haritmetiikka.logiikka.kerto;
-import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
- * Luokka laskee summia yhteen.
+ * Luokka .
  */
 public class KertoTehtava{
 
-    /**
-     * Luodaan summan tarkastaja.
-     */
     private KertoTarkistaja kertoTarkistaja = new KertoTarkistaja();
 
     /**
-     * Palauttaa boolean onko käyttäjän syöttömä summa oikein.
+     * Palauttaa boolean onko käyttäjän syöttömä vastaus oikein.
      *
      * @param ekaLuku luku
      * @param tokaLuku luku
@@ -28,7 +24,7 @@ public class KertoTehtava{
     }
 
     /**
-     * Laskee kahden luvun summan.
+     * Laskee kahden luvun tulon.
      *
      *
      * @param ekaLuku kokonaisluku

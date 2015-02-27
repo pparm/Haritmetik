@@ -9,17 +9,16 @@ package haritmetiikka.apuLuokat;
  *
  * @author poplinus
  */
-
 import java.util.Random;
 
 /**
- * Luokkaa arpoo kokonaislukuja halutulle välille
+ * Luokkaa arpoo kokonaislukuja valitulle välille.
  *
  */
 public class LukuArpoja {
 
     /**
-     * Metodi arpoo kokonaisluvun halutulla välillä
+     * Metodi arpoo kokonaisluvun valitulle välillä.
      *
      * @param alaraja Arvottavan kokonaisluvun alaraja
      * @param ylaraja Arvottavan kokonaisluvun yläraja

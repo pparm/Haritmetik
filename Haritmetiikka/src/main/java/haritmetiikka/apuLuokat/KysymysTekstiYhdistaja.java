@@ -6,34 +6,52 @@
 package haritmetiikka.apuLuokat;
 
 /**
+ * Luokka yhdistää luvuista kysymyslausekkeen.
  *
- * @author poplinus
  */
 public class KysymysTekstiYhdistaja {
- int ekaLuku;
- int tokaLuku;
- String tehtavaTyyppi;
- String virhePaluuArvo;        
-   public KysymysTekstiYhdistaja(int ekaLuku,int tokaLuku, String tehtavaTyyppi){
-    this.ekaLuku = ekaLuku;
-    this.tokaLuku = tokaLuku;
-    this.tehtavaTyyppi = tehtavaTyyppi;
-    
-}
-   public String getYhdistettyTeksti(int ekaLuku,int tokaLuku, String tehtavaTyyppi){
-    this.ekaLuku = ekaLuku;
-    this.tokaLuku = tokaLuku;
-    this.tehtavaTyyppi = tehtavaTyyppi;
-   if (tehtavaTyyppi.equals("summa")){
-   return ekaLuku+" + "+tokaLuku+" =";
-   
-   }
-   if (tehtavaTyyppi.equals("miinus")){
-   return ekaLuku+" - "+tokaLuku+" =";
-   }
-   if (tehtavaTyyppi.equals("kerto")){
-   return ekaLuku+" * "+tokaLuku+" =";
-   }
-   return virhePaluuArvo;
-   }  
+
+    int ekaLuku;
+    int tokaLuku;
+    String tehtavaTyyppi;
+    String virhePaluuArvo;
+
+    /**
+     * Konsistori.
+     *
+     * @param ekaLuku ensimmäinen luku
+     * @param tokaLuku toinen luku
+     * @param tehtavaTyyppi tehtävä tyyppi. Summa, Miinus tai Kerto.
+     */
+    public KysymysTekstiYhdistaja(int ekaLuku, int tokaLuku, String tehtavaTyyppi) {
+        this.ekaLuku = ekaLuku;
+        this.tokaLuku = tokaLuku;
+        this.tehtavaTyyppi = tehtavaTyyppi;
+
+    }
+
+    /**
+     * Metodi tuo yhdistetyn lausekkeen.
+     *
+     * @param ekaLuku
+     * @param tokaLuku
+     * @param tehtavaTyyppi
+     * @return
+     */
+    public String getYhdistettyTeksti(int ekaLuku, int tokaLuku, String tehtavaTyyppi) {
+        this.ekaLuku = ekaLuku;
+        this.tokaLuku = tokaLuku;
+        this.tehtavaTyyppi = tehtavaTyyppi;
+        if (tehtavaTyyppi.equals("summa")) {
+            return ekaLuku + " + " + tokaLuku + " =";
+
+        }
+        if (tehtavaTyyppi.equals("miinus")) {
+            return ekaLuku + " - " + tokaLuku + " =";
+        }
+        if (tehtavaTyyppi.equals("kerto")) {
+            return ekaLuku + " * " + tokaLuku + " =";
+        }
+        return virhePaluuArvo;
+    }
 }

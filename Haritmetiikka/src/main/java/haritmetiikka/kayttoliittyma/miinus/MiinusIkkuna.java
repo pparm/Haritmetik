@@ -8,8 +8,8 @@ package haritmetiikka.kayttoliittyma.miinus;
 import haritmetiikka.rajapinta.Tehtava;
 
 /**
+ * Miinusharjoitukset kysymysikkuna.
  *
- * @author poplinus
  */
 public class MiinusIkkuna extends javax.swing.JFrame {
 
@@ -20,23 +20,27 @@ public class MiinusIkkuna extends javax.swing.JFrame {
     /**
      * Konstruktori joka muotoilee MiinusVastausIkkunan johon tuodaan olemassa
      * oleva Tehtava-luokka.
+     *
+     * @param tehtava Tehtava-luokan olio, joka pitää sisällään tarvitattavat
+     * arvot.
      */
     public MiinusIkkuna(Tehtava tehtava) {
         initComponents();
         vastausTextField.requestFocus();
         this.tehtava = tehtava;
-        
-        kysymys.setText(this.tehtava.getEkaLuku() + " - " + this.tehtava.getMiinusTokaLuku()+ " = ");
+
+        kysymys.setText(this.tehtava.getEkaLuku() + " - " + this.tehtava.getMiinusTokaLuku() + " = ");
     }
 
     /**
-     * Konsistori joka muotoilee SuommaVastausIkkunan.
+     *
+     * Konsistori joka muotoilee MiinusVastausIkkunan.
      */
     public MiinusIkkuna() {
         initComponents();
         vastausTextField.requestFocus();
         kysymys.setText(tehtava.getEkaLuku() + " - " + tehtava.getMiinusTokaLuku() + " = ");
-    
+
     }
 
     /**
@@ -153,8 +157,8 @@ public class MiinusIkkuna extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     /**
-     * Metodi avaa uuden summaikkunan ja sulkee olemassa olevan. Näin alkaa uusi
-     * lasku.
+     * Metodi avaa uuden miinusikkunan ja sulkee olemassa olevan. Näin alkaa
+     * uusi lasku.
      *
      * @param evt
      */
@@ -173,7 +177,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            new MiinusVastausIkkuna(this.tehtava, this.vastaus,"miinus").setVisible(true);
+            new MiinusVastausIkkuna(this.tehtava, this.vastaus, "miinus").setVisible(true);
 
             //  new MiinusIkkuna().setVisible(true);
 //    
@@ -186,7 +190,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
 
     }//GEN-LAST:event_vastaaJButtonActionPerformed
     /**
-     * Metodi lopettaa Yhteenlaskuharjoituksen.
+     * Nappi lopettaa Vähennyslaskuharjoituksen.
      *
      * @param evt
      */

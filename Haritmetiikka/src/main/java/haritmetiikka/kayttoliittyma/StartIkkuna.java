@@ -6,13 +6,10 @@
 package haritmetiikka.kayttoliittyma;
 
 import haritmetiikka.kayttoliittyma.kerto.KertoIkkuna;
-import haritmetiikka.kayttoliittyma.kerto.KoeKertoIkkuna;
-import haritmetiikka.kayttoliittyma.miinus.KoeMiinusIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 import haritmetiikka.kayttoliittyma.koe.KoeIkkuna;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
-import java.util.ArrayDeque;
 
 /**
  *

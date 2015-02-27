@@ -12,8 +12,10 @@ import java.awt.Color;
 
 /**
  *
- * @author poplinus
+ *Luokka on Vähennyslaskuvastausikkuna. Luokka tarkistaa tuloksen ja ilmoittaa
+ * näyttää sen.
  */
+
 public class SummaVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava tehtava;
@@ -22,10 +24,12 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
     String oikeaVastaus;   
     
     /**
-     * Metodi rakentaa SummaVastausIkkunan
+     ** Metodi rakentaa SummaVastausIkkunan.
      *
-     * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
-     * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
+     * @param tehtava Tehtava-luokan olio, joka pitää sisällään tarvittavat arvot.
+     * @param vastaus SummaIkkunasta tuotu vastaus.
+     * @param kysymysTyyppi Kysymystyyppi, jota käytetään parametrina
+     * metodeille.
      */
     public SummaVastausIkkuna(Tehtava tehtava, int vastaus,String kysymysTyyppi) {
         initComponents();
@@ -139,7 +143,7 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
     /**
-     * Nappi joka sulkee SummaVastausIkkunan
+     * Nappi joka sulkee SummaVastausIkkunan.
      *
      * @param evt
      */
