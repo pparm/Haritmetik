@@ -25,14 +25,18 @@ Kesken projektin tilaaja tarkensi toimeksiantoa ja peliin lisättiin koeosio gra
 	- valitaan lasketaanko uusi lasku, korjataanko vanhaa vaiko lopetetaanko 
 - pelin lopettaminen
 - Yhteen-, vähennys- ja kertolaskukokeet, joissa kysytään 10 kysymyst. Palauteikkuna kertoo kuinka monta tehtävää meni oikein.
--Pelin lopettaminen
+- Pelin lopettaminen
 
-**Pelin rakenne**
+**Ohjelman rakenne**
 
 Pelin luokat on suunniteltu siten, että kutakin laskutyyppiä voidaan kehittää erikseen. Tämä johtaa lievään toistoon,
-mutta selkeyden ja laajennettavuuden vuoksi päädyttiin "luokkapolkuihin" kunkin laskutyypin kohdalla(yhteen-, vähennys- ja kertolasku).
+mutta selkeyden ja laajennettavuuden vuoksi päädyttiin tähän ratkaisuun. Kullakin laskutyypillä on (yhteen-, vähennys- ja kertolasku) oma paketti ohjelmalogiikan ja graafisen käyttöliittymän(GUI) puolella. Laskutyyppien eriyttäminen helpottaa jatkossa uusien ominaisuuksien käyttöön ottoa.
 
-Ohjelman paketit on jaettu siten, että sekä ohjelman logiikkan puolella että graafisen käyttöliittymän puolella on kullekin laskutyypille omat paketit. Tämän lisäksi on tehty rajapinta-paketti, joka sisältää luokan Tehtava. Tehtava-luokka ohjaa logiikka-osiota, ja toimii graafisen käyttöliittymän ja ohjelmalogiikan välisenä ohjausluokkana. Ohjelma sisältää apuLuokat-paketin, jonka luokista muodostetut olioita käytetään sovelluksessa useammassa paikassa.
+Tehtava-luokka toimii ohjaus-luokkana GUIn ja ohjelmalogiikan välillä. Tällä ratkaisulla tarvitsee GUIn puolella muodostaa vain yksi olio luokasta Tehtava.
 
-Rivimääräisesti graafinen käyttöliittymä vie ylivoimaisesti suurimman osan. GUI builder muodostaa erittäin paljon rivejä automaattisesti. Koska graafista käyttöliittymää ei tarvitse testata on koko ohjelman testien kattavuus pieni. Tarkastellessa testejä kannattaa keskittyä logiikka-luokkiin, joiden kattavuus on hyvä. 
+.apuLuokat paketissa sijaitsee luokat joita käytetään useissa eri yhteyksissä, eivätkä paketin luokat kuulu kiinteästi laskutyyppeihin.
+
+Pelin koeosio on kaikilla laskutyypeillä identtinen. kayttoliittyma.koe paketissa tehtävätyyppi ratkeaa StartIkkunan alkuparametrin mukaan.
+
+Rivimääräisesti graafinen käyttöliittymä vie ylivoimaisesti suurimman osan ohjelmasta. GUI-builder muodostaa erittäin paljon rivejä automaattisesti. Koska graafista käyttöliittymää ei tarvitse testata on koko ohjelman testien suhteellinen rivikattavuus pieni. Tarkastellessa testejä kannattaa keskittyä logiikka-luokkiin, joiden kattavuus on hyvä. 
   
