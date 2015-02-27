@@ -13,10 +13,10 @@ public class SummaTarkistaja {
     /**
      * Metodi tarkistaa lukujen summan ja palauttaa totuusarvon.
      *
-     * @param ekaLuku koknaisluku
-     * @param tokaLuku kokonaisluku
-     * @param vastausSumma lukujen summa
-     * @return totuusarvo onko lukujen summa oikein
+     * @param ekaLuku koknaisluku.
+     * @param tokaLuku kokonaisluku.
+     * @param vastausSumma Pelaajan syöttämä vastaus.
+     * @return totuusarvo onko lukujen summa oikein.
      */
     public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastausSumma) {
 
@@ -26,9 +26,9 @@ public class SummaTarkistaja {
     /**
      * Laskee lukujen summan.
      *
-     * @param ekaLuku Kokonaisluku
-     * @param tokaLuku Kokonaisluku
-     * @return Kokonaislukujen summa
+     * @param ekaLuku Kokonaisluku.
+     * @param tokaLuku Kokonaisluku.
+     * @return Kokonaislukujen summa.
      */
     public final int getVastaus(final int ekaLuku, final int tokaLuku) {
         return (ekaLuku + tokaLuku);

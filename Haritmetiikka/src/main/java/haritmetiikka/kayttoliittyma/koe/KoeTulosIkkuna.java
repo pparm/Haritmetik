@@ -9,15 +9,18 @@ import haritmetiikka.kayttoliittyma.StartIkkuna;
 import haritmetiikka.kayttoliittyma.koe.KoeIkkuna;
 
 /**
+ * Ikkuna johon aukeaa kokeen tulokset.
  *
- * @author poplinus
  */
 public class KoeTulosIkkuna extends javax.swing.JFrame {
 
     String vastaukset = null;
 
     /**
-     * Creates new form koeTulosIkkuna
+     * Konstruktori, joka luo kokeen tulosikkunan.
+     *
+     * @param tehtavaNro
+     * @param koeTehtaviaOikein
      */
     public KoeTulosIkkuna(int tehtavaNro, int koeTehtaviaOikein) {
         initComponents();
@@ -25,6 +28,13 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
         oikeinLkmJLabel.setText("Sait " + koeTehtaviaOikein + " oikein " + tehtavaNro + " tehtavasta.");
     }
 
+    /**
+     * Konstruktori, joka luo kokeen tulosikkunan.
+     *
+     * @param tehtavaNro
+     * @param koeTehtaviaOikein
+     * @param vastaukset
+     */
     public KoeTulosIkkuna(int tehtavaNro, int koeTehtaviaOikein, String vastaukset) {
         initComponents();
         this.vastaukset = vastaukset;
@@ -91,7 +101,11 @@ public class KoeTulosIkkuna extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Nappi, jolla kuitataan koetulokset nähdyksi ja joka sulkee tulosikkunan.
+     *
+     * @param evt
+     */
     private void oKButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oKButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_oKButtonActionPerformed

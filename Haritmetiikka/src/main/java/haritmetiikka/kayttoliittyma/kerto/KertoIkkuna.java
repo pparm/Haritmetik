@@ -9,7 +9,7 @@ import haritmetiikka.rajapinta.Tehtava;
 
 /**
  *
- * @author poplinus
+ * Kertoikkuna-luokka ikkuna kysyy laskutoimituksen ja siihen syötetään vastaus.
  */
 public class KertoIkkuna extends javax.swing.JFrame {
 public Tehtava tehtava = new Tehtava();
@@ -27,7 +27,7 @@ public Tehtava tehtava = new Tehtava();
     }
 
     /**
-     * Konsistori joka muotoilee SuommaVastausIkkunan.
+     * Konsistori joka muotoilee KertoVastausIkkunan.
      */
     public KertoIkkuna() {
         initComponents();

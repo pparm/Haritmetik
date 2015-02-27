@@ -9,7 +9,7 @@ import haritmetiikka.rajapinta.Tehtava;
 
 /**
  *
- * @author poplinus
+ * Summaharjoitukset kysymysikkuna.
  */
 public class SummaIkkuna extends javax.swing.JFrame {
 
@@ -17,9 +17,12 @@ public class SummaIkkuna extends javax.swing.JFrame {
 
     int vastaus;
 
-    /**
+ /**
      * Konstruktori joka muotoilee SummaVastausIkkunan johon tuodaan olemassa
      * oleva Tehtava-luokka.
+     *
+     * @param tehtava Tehtava-luokan olio, joka pitää sisällään tarvitattavat
+     * arvot.
      */
     public SummaIkkuna(Tehtava tehtava) {
         initComponents();
@@ -143,7 +146,7 @@ public class SummaIkkuna extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     /**
-     * Metodi avaa uuden summaikkunan ja sulkee olemassa olevan. Näin alkaa uusi
+     * Metodi avaa uuden SummaVastausIkkunan ja sulkee olemassa olevan. Näin alkaa uusi
      * lasku.
      *
      * @param evt

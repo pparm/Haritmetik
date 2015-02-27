@@ -4,31 +4,31 @@
  * and open the template in the editor.
  */
 package haritmetiikka.logiikka.miinus;
+
 /**
  * Luokka laskee summia yhteen.
  */
 public class MiinusTehtava {
 
     /**
-     * Luodaan summan tarkastaja.
+     * Luodaan erotuksen tarkastaja.
      */
     private MiinusTarkistaja miinusTarkistaja = new MiinusTarkistaja();
 
     /**
-     * Palauttaa boolean onko käyttäjän syöttömä summa oikein.
+     * Palauttaa boolean onko käyttäjän syöttömä erotus oikein.
      *
-     * @param ekaLuku luku
-     * @param tokaLuku luku
-     * @param vastaus lukujen summa
-     * @return boolean onko lukujen summa oikein
+     * @param ekaLuku luku.
+     * @param tokaLuku luku.
+     * @param vastaus pelaajan syöttämä vastaus.
+     * @return boolean onko lukujen erotus syötetty oikein.
      */
     public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastaus) {
         return miinusTarkistaja.getOikein(ekaLuku, tokaLuku, vastaus);
     }
 
     /**
-     * Laskee kahden luvun summan.
-     *
+     * Laskee kahden luvun erotuksen.
      *
      * @param ekaLuku kokonaisluku
      * @param tokaLuku kokonaisluku
@@ -39,4 +39,3 @@ public class MiinusTehtava {
         return miinusTarkistaja.getVastaus(ekaLuku, tokaLuku);
     }
 }
-  

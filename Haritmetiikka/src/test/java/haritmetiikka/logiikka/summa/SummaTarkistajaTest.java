@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.summalogiikka;
+package haritmetiikka.logiikka.summa;
 
 import haritmetiikka.logiikka.summa.SummaTarkistaja;
 import org.junit.After;

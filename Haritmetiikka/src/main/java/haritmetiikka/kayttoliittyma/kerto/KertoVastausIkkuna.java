@@ -11,41 +11,45 @@ import haritmetiikka.rajapinta.Tehtava;
 import java.awt.Color;
 
 /**
+ * Luokka tarkistaa kertolaskutehtävän ja tulostaa oikean vastauksen.
  *
- * @author poplinus
  */
 public class KertoVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava tehtava;
     private int vastaus;
     String kysymysTeksti;
-    String oikeaVastaus; 
+    String oikeaVastaus;
+
     /**
-     * Metodi rakentaa KertoVastausIkkunan
+     * Konstruktori rakentaa KertoVastausIkkunan, tarkistaa laskun ja tulostaa
+     * vastaukset.
      *
-     * @param tehtava KertoIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
-     * @param vastaus KertoIkkunassa käyttäjän antama laskun vastaus
+     * @param tehtava KertoIkkunasta tuotu olio Tehtava-luokan olio, jossa on
+     * mm. jo arvotut luvut.
+     * @param vastaus KertoIkkunassa käyttäjän antama laskun vastaus.
      */
-    public KertoVastausIkkuna(Tehtava tehtava, int vastaus,String kysymysTyyppi) {
-          initComponents();
-        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi),kysymysTyyppi);   
-        this.oikeaVastaus =  String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi)));
+    public KertoVastausIkkuna(Tehtava tehtava, int vastaus, String kysymysTyyppi) {
+        initComponents();
+        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), kysymysTyyppi);
+        this.oikeaVastaus = String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi)));
         this.tehtava = tehtava;
         this.vastaus = vastaus;
         if (tehtava.getOikein(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), vastaus)) {
-            oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". ");
+            oikeaVastausLabel.setText("Tehtävän oli " + kysymysTeksti + " " + oikeaVastaus + ". ");
             vastausOikeinLabel.setForeground(Color.green);
             vastausOikeinLabel.setText("%");
-        
+
         } else {
-     vastausOikeinLabel.setForeground(Color.red);
-           
-     oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". "+ "Vastauksesi oli "+vastaus+".");
-           
-     vastausOikeinLabel.setText("X");
-               }
+            vastausOikeinLabel.setForeground(Color.red);
+
+            oikeaVastausLabel.setText("Tehtävän oli " + kysymysTeksti + " " + oikeaVastaus + ". " + "Vastauksesi oli " + vastaus + ".");
+
+            vastausOikeinLabel.setText("X");
+        }
 
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -138,7 +142,7 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_uusiLaskuButtonActionPerformed
     /**
-     * Nappi joka sulkee KertoVastausIkkunan
+     * Nappi jolla voi palata samaan laskuun.
      *
      * @param evt
      */
@@ -146,6 +150,11 @@ public class KertoVastausIkkuna extends javax.swing.JFrame {
         new KertoIkkuna(this.tehtava).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kokeileUudelleenJButtonActionPerformed
+    /**
+     * Nappi jolla lopetetaan kertolaskuharjoitus.
+     *
+     * @param evt
+     */
 
     private void lopetaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaJButtonActionPerformed
         new StartIkkuna().setVisible(true);

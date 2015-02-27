@@ -13,14 +13,14 @@ import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 
 /**
  *
- * @author poplinus
+ * Aloitusikkunaluokka, jolla käynnistetään eri laskutyyppejä.
  */
 public class StartIkkuna extends javax.swing.JFrame {
 
     SummaIkkuna summaIkkuna;
 
     /**
-     * Creates new form StartIkkuna
+     * Luo uuden aloitusikkunan.
      */
     public StartIkkuna() {
         initComponents();
@@ -152,33 +152,53 @@ public class StartIkkuna extends javax.swing.JFrame {
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
         this.dispose();
     }//GEN-LAST:event_lopetaButtonActionPerformed
-
+    /**
+     * Avaa kokeen, jonka parametrina on summalasku.
+     *
+     * @param evt
+     */
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","summa");
-       
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "summa");
+
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
-
+    /**
+     * Avaa vähennyslaskuikkunan.
+     *
+     * @param evt
+     */
     private void vahennuslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vahennuslaskuButtonActionPerformed
         new MiinusIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_vahennuslaskuButtonActionPerformed
-
+    /**
+     * Avaa kertolaskuikkunan.
+     *
+     * @param evt
+     */
     private void kertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kertolaskuButtonActionPerformed
         new KertoIkkuna().setVisible(true);
         this.dispose();
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
-
+    /**
+     * Avaa kokeen, jonka parametrina on miinuslasku.
+     *
+     * @param evt
+     */
     private void koeVahennyslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeVahennyslaskuButtonActionPerformed
-       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","miinus");
-       
-        koeSummaIkkuna.setVisible(true);  
-    }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "miinus");
 
+        koeSummaIkkuna.setVisible(true);
+    }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
+    /**
+     * Avaa kokeen, jonka parametrina on kertolasku.
+     *
+     * @param evt
+     */
     private void koeKertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeKertolaskuButtonActionPerformed
-       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","kerto");
-       
-        koeSummaIkkuna.setVisible(true);  
+        KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0, 0, 4, "", "", "kerto");
+
+        koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeKertolaskuButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

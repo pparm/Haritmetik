@@ -10,7 +10,8 @@ import java.lang.Process.*;
 
 /**
  *
- * Koe ikkuna. Samaa luokkaa käytetään kaikille laskutyypeille. Valinta tapahtuu parametrilla
+ * Koe ikkuna. Samaa luokkaa käytetään kaikille laskutyypeille. Valinta tapahtuu
+ * parametrilla
  */
 public class KoeIkkuna extends javax.swing.JFrame {
 
@@ -20,17 +21,18 @@ public class KoeIkkuna extends javax.swing.JFrame {
     int vastaus;
     int tehtavienMaara;
     String syottoVirheTeksti, vastaukset, tehtavaTyyppi;
-    
+
     /**
      * Konstruktori rakentaa koeikkunan.
+     *
      * @param tehtavaNro Tehtavanumero.
      * @param koeTehtaviaOikein Oikeiden vastausten määrä.
      * @param tehtavienMaara Tehtävien määrä.
-     * @param syottoVirheTeksti virheilmoitus, joka tulee ikkunaan, jos ei syötetä kokonaislukua.
+     * @param syottoVirheTeksti virheilmoitus, joka tulee ikkunaan, jos ei
+     * syötetä kokonaislukua.
      * @param vastaukset vastaukset html-muodossa.
-     * @param tehtavaTyyppi Tehtävätyyppi kuten, summa, miinus tai kerto. 
+     * @param tehtavaTyyppi Tehtävätyyppi kuten, summa, miinus tai kerto.
      */
-
     public KoeIkkuna(int tehtavaNro, int koeTehtaviaOikein, int tehtavienMaara, String syottoVirheTeksti, String vastaukset, String tehtavaTyyppi) {
         initComponents();
         this.tehtavaNro = tehtavaNro;
@@ -44,13 +46,15 @@ public class KoeIkkuna extends javax.swing.JFrame {
         syottoVirheJLabel.setText(this.syottoVirheTeksti);
 
     }
+
     /**
      * Konstruktori rakentaa KoeIkkunan.
-     * 
+     *
      * @param tehtavaNro Tehtavanumero.
      * @param koeTehtaviaOikein oikeiden vastausten määrä.
      * @param tehtavienMaara Tehtävien määrä.
-     * @param syottoVirheTeksti virheilmoitus, joka tulee ikkunaan, jos ei syötetä kokonaislukua.
+     * @param syottoVirheTeksti virheilmoitus, joka tulee ikkunaan, jos ei
+     * syötetä kokonaislukua.
      * @param vastaukset vastaukset html-muodossa.
      * @param koeTehtava Tehtava-luokan olio
      * @param tehtavaTyyppi Tehtävätyyppi kuten, summa, miinus tai kerto.
@@ -175,10 +179,11 @@ public class KoeIkkuna extends javax.swing.JFrame {
     private void vastausTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausTextFieldActionPerformed
 
     }//GEN-LAST:event_vastausTextFieldActionPerformed
-/**
- * Vastausnappimetodi, joka pitää myös kirjaa oikeista vastauksista.
- * @param evt 
- */
+    /**
+     * Vastausnappimetodi, joka pitää myös kirjaa oikeista vastauksista.
+     *
+     * @param evt
+     */
     private void vastausButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastausButtonActionPerformed
         int koeTehtavaTulos = koeTehtava.getOikeaVastaus(tehtavaTyyppi, koeTehtava.getEkaLuku(), koeTehtava.getKoeTokaLuku(tehtavaTyyppi));
         Boolean koeTehtavaOikein = koeTehtava.getOikein(tehtavaTyyppi, koeTehtava.getEkaLuku(), koeTehtava.getKoeTokaLuku(tehtavaTyyppi), vastaus);
@@ -218,10 +223,11 @@ public class KoeIkkuna extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_vastausButtonActionPerformed
-/**
- * Kokeen lopettava nappi.
- * @param evt 
- */
+    /**
+     * Kokeen lopettava nappi.
+     *
+     * @param evt
+     */
     private void lopetaButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lopetaButtonActionPerformed
         this.dispose();
 

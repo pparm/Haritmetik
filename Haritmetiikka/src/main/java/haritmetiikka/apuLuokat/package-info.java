@@ -1,4 +1,4 @@
 /*
-Paketti sisältää ohjelman apuluokkia ja -metodeja.
+ Paketti sisältää ohjelman apuluokkia ja -metodeja.
  */
 package haritmetiikka.apuLuokat;

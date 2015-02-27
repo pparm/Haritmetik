@@ -12,32 +12,36 @@ import haritmetiikka.apuLuokat.TekstiYhdistaja;
 import haritmetiikka.logiikka.kerto.KertoTehtava;
 import haritmetiikka.logiikka.miinus.MiinusTehtava;
 //import haritmetiikka.Koe;
+
 /**
  *
  * @author poplinus
  *
- * Luokka on graafisen käyttöliittymän ja sovelluslogiikan rajapinta.
- *
+ * Luokka on graafisen käyttöliittymän ja sovelluslogiikan välinen ohjausluokka.
+ * Tehtava-luokka kokoo yhteen kaikki tarvittavat metodit.
  *
  */
 public class Tehtava {
+
     String tyyppi;
     int vastaus;
     String vastauslause;
-    public Tehtava(){
+
+    public Tehtava() {
     }
-/**
- * Konsistori jolla voidaan 
- * @param tyyppi
- * @param vastaus 
- */
-    
-    public Tehtava(String tyyppi, int vastaus){
+
+    /**
+     * Konsistori jolla luodaan Tehtava-luokan metodi.
+     *
+     * @param tyyppi
+     * @param vastaus
+     */
+
+    public Tehtava(String tyyppi, int vastaus) {
         this.tyyppi = tyyppi;
         this.vastaus = vastaus;
     }
- 
-    
+
     /**
      * Luodaan kokonaislukuarpoja olio.
      */
@@ -59,21 +63,20 @@ public class Tehtava {
      * Arvotaan toinen kysymyksessä oleva kokonaisluku.
      */
     private int tokaLuku = arpoja.arvottuLuku(ALARAJA, YLARAJA);
-    
+
     /**
      * Arvotaan miinuslaskua varten toinen luku joka on pienempi kuin ekaluku.
-     * 
+     *
      */
     private int tokaLukuMiinus = arpoja.arvottuLuku(ALARAJA, this.getEkaLuku());
-    
-    
-  
+
     /**
      * Luodaan summaLaskuolio.
      */
     private SummaTehtava summaTehtava = new SummaTehtava();
     private KertoTehtava kertoTehtava = new KertoTehtava();
     private MiinusTehtava miinusTehtava = new MiinusTehtava();
+
     /**
      * Palauttaa olion arpoman ensimmäisen kokonaisluvun.
      *
@@ -93,24 +96,34 @@ public class Tehtava {
     public final int getTokaLuku() {
         return tokaLuku;
     }
-    
-    public final int getMiinusTokaLuku() {
-       return tokaLukuMiinus;
-    }
-    public final int getKoeTokaLuku(String laskuTyyppi){
-        if(laskuTyyppi.equals("summa")||laskuTyyppi.equals("kerto")){
-           return tokaLuku; 
-        }
-        if(laskuTyyppi.equals("miinus")){
-           return tokaLukuMiinus; 
-        }
-        return -1;
-            }
-    
-   
 
     /**
-     * Palauttaa oikean vastauksen.
+     * palauttaa luvun joka on pienempi kuin ensimmäinen.
+     *
+     * @return
+     */
+    public final int getMiinusTokaLuku() {
+        return tokaLukuMiinus;
+    }
+
+    /**
+     * Parametrilla hallittava toisen luvun paluuarvo.
+     *
+     * @param laskuTyyppi
+     * @return palauttaa jälkimmäisen luvun
+     */
+    public final int getKoeTokaLuku(String laskuTyyppi) {
+        if (laskuTyyppi.equals("summa") || laskuTyyppi.equals("kerto")) {
+            return tokaLuku;
+        }
+        if (laskuTyyppi.equals("miinus")) {
+            return tokaLukuMiinus;
+        }
+        return -1;
+    }
+
+    /**
+     * Palauttaa tehtävän oikean vastauksen
      *
      * @param tehtavaTyyppi Tehtävätyypin syöttö
      * @param ekaLuku Ensimmäinen kokonaisluku
@@ -121,28 +134,25 @@ public class Tehtava {
         if (tehtavaTyyppi.equals("summa")) {
             return summaTehtava.getVastaus(ekaLuku, tokaLuku);
         }
-        
+
         if (tehtavaTyyppi.equals("kerto")) {
             return kertoTehtava.getVastaus(ekaLuku, tokaLuku);
         }
-        
+
         if (tehtavaTyyppi.equals("miinus")) {
             return miinusTehtava.getVastaus(ekaLuku, tokaLuku);
         }
-        
-        
-        
 
         return -1;
     }
 
     /**
-     * Palauttaa totuusarvon onko tehtävätyyppi ratkaistu oikein.
+     * Palauttaa totuusarvon onko tehtävä ratkaistu oikein.
      *
      * @param tehtavaTyyppi tehtava tyyppi jota ratkaistaan summa/kerto/miinus.
      * @param ekaLuku Ensimmäinen luku kysymyksessä.
      * @param tokaLuku Toinen luku kysymyksessä.
-     * @param vastaus Pelaajan
+     * @param vastaus Pelaajan syöttämä vastaus
      * @return totuusarvo
      */
     public final boolean getOikein(String tehtavaTyyppi, final int ekaLuku, final int tokaLuku, final int vastaus) {
@@ -154,7 +164,7 @@ public class Tehtava {
             return kertoTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
         }
-       
+
         if (tehtavaTyyppi.equals("miinus")) {
             return miinusTehtava.getOikein(ekaLuku, tokaLuku, vastaus);
 
@@ -162,27 +172,34 @@ public class Tehtava {
 
         return false;
     }
-    
-    
-    
-    
-         public static String yhdistaTeksti(String tehtavaTyyppi,String tekstiAlku, String tekstiLoppu){
-      
-         return TekstiYhdistaja.yhdistaTeksti(tekstiAlku, tekstiLoppu);
-          
-    }  
-         
-         public String kysymysTekstiYhdista(int ekaLuku, int tokaLuku, String tehtavaTyyppi){
-             
-          KysymysTekstiYhdistaja kysymysTekstiYhdistaja =   new haritmetiikka.apuLuokat.KysymysTekstiYhdistaja(ekaLuku, tokaLuku, tehtavaTyyppi);
-          return kysymysTekstiYhdistaja.getYhdistettyTeksti(ekaLuku, tokaLuku, tehtavaTyyppi);
-         
-                  }
-         
-         
 
-         
-         
-}    
-         
-         
+    /**
+     * Yhdistää kaksi Stringiä yhteen.
+     *
+     * @param tehtavaTyyppi
+     * @param tekstiAlku
+     * @param tekstiLoppu
+     * @return
+     */
+    public static String yhdistaTeksti(String tehtavaTyyppi, String tekstiAlku, String tekstiLoppu) {
+
+        return TekstiYhdistaja.yhdistaTeksti(tekstiAlku, tekstiLoppu);
+
+    }
+
+    /**
+     * Luo kysymys Stringin, jota käytetään vastaus-Ikkunoissa.
+     *
+     * @param ekaLuku
+     * @param tokaLuku
+     * @param tehtavaTyyppi
+     * @return String paluuarvo esim. 2 + 3 = tai 2 - 3 =
+     */
+    public String kysymysTekstiYhdista(int ekaLuku, int tokaLuku, String tehtavaTyyppi) {
+
+        KysymysTekstiYhdistaja kysymysTekstiYhdistaja = new haritmetiikka.apuLuokat.KysymysTekstiYhdistaja(ekaLuku, tokaLuku, tehtavaTyyppi);
+        return kysymysTekstiYhdistaja.getYhdistettyTeksti(ekaLuku, tokaLuku, tehtavaTyyppi);
+
+    }
+
+}

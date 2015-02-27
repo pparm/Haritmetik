@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package haritmetiikka.logiikka.summa;
+
 /**
  * Luokka laskee summia yhteen ja tarkistaa onko kahden luvun summa oikein.
  */
@@ -15,12 +16,12 @@ public class SummaTehtava {
     private SummaTarkistaja summaTarkistaja = new SummaTarkistaja();
 
     /**
-     * Palauttaa boolean onko käyttäjän syöttömä summa oikein.
+     * Palauttaa boolean onko pelaajan syöttämä summa oikein.
      *
      * @param ekaLuku tarkistettava luku
      * @param tokaLuku tarkistettava luku
-     * @param vastaus lukujen summa
-     * @return boolean onko lukujen summa oikein
+     * @param vastaus pelaajan syöttämä vastaus.
+     * @return boolean onko lukujen summa oikein.
      */
     public final boolean getOikein(final int ekaLuku, final int tokaLuku, final int vastaus) {
         return summaTarkistaja.getOikein(ekaLuku, tokaLuku, vastaus);
@@ -39,4 +40,3 @@ public class SummaTehtava {
         return summaTarkistaja.getVastaus(ekaLuku, tokaLuku);
     }
 }
-  
