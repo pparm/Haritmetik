@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.kertologiikka;
+package haritmetiikka.logiikka.kerto;
 
-import haritmetiikka.kertologiikka.*;
-import haritmetiikka.kertologiikka.KertoTehtava;
+import haritmetiikka.logiikka.kerto.KertoTehtava;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;

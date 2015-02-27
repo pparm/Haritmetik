@@ -9,7 +9,7 @@ import haritmetiikka.kayttoliittyma.kerto.KertoIkkuna;
 import haritmetiikka.kayttoliittyma.kerto.KoeKertoIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.KoeMiinusIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
-import haritmetiikka.kayttoliittyma.summa.KoeSummaIkkuna;
+import haritmetiikka.kayttoliittyma.koe.KoeIkkuna;
 import haritmetiikka.kayttoliittyma.summa.SummaIkkuna;
 import haritmetiikka.kayttoliittyma.miinus.MiinusIkkuna;
 import java.util.ArrayDeque;
@@ -157,7 +157,7 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_lopetaButtonActionPerformed
 
     private void koeYhteenlaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeYhteenlaskuButtonActionPerformed
-       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","summa");
+       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","summa");
        
         koeSummaIkkuna.setVisible(true);
     }//GEN-LAST:event_koeYhteenlaskuButtonActionPerformed
@@ -173,13 +173,13 @@ public class StartIkkuna extends javax.swing.JFrame {
     }//GEN-LAST:event_kertolaskuButtonActionPerformed
 
     private void koeVahennyslaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeVahennyslaskuButtonActionPerformed
-       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","miinus");
+       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","miinus");
        
         koeSummaIkkuna.setVisible(true);  
     }//GEN-LAST:event_koeVahennyslaskuButtonActionPerformed
 
     private void koeKertolaskuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_koeKertolaskuButtonActionPerformed
-       KoeSummaIkkuna koeSummaIkkuna = new KoeSummaIkkuna(0,0,4,"","","kerto");
+       KoeIkkuna koeSummaIkkuna = new KoeIkkuna(0,0,4,"","","kerto");
        
         koeSummaIkkuna.setVisible(true);  
     }//GEN-LAST:event_koeKertolaskuButtonActionPerformed

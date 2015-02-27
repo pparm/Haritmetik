@@ -6,11 +6,11 @@
 package haritmetiikka.rajapinta;
 
 import haritmetiikka.apuLuokat.KysymysTekstiYhdistaja;
-import haritmetiikka.summalogiikka.SummaTehtava;
+import haritmetiikka.logiikka.summa.SummaTehtava;
 import haritmetiikka.apuLuokat.LukuArpoja;
 import haritmetiikka.apuLuokat.TekstiYhdistaja;
-import haritmetiikka.kertologiikka.KertoTehtava;
-import haritmetiikka.miinuslogiikka.MiinusTehtava;
+import haritmetiikka.logiikka.kerto.KertoTehtava;
+import haritmetiikka.logiikka.miinus.MiinusTehtava;
 //import haritmetiikka.Koe;
 /**
  *
@@ -178,6 +178,8 @@ public class Tehtava {
           return kysymysTekstiYhdistaja.getYhdistettyTeksti(ekaLuku, tokaLuku, tehtavaTyyppi);
          
                   }
+         
+         
 
          
          

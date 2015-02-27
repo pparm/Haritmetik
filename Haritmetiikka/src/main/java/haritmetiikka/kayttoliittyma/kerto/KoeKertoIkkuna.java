@@ -6,7 +6,7 @@
 package haritmetiikka.kayttoliittyma.kerto;
 
 import haritmetiikka.kayttoliittyma.summa.*;
-import haritmetiikka.kayttoliittyma.KoeTulosIkkuna;
+import haritmetiikka.kayttoliittyma.koe.KoeTulosIkkuna;
 import haritmetiikka.rajapinta.Tehtava;
 import java.lang.Process.*;
 

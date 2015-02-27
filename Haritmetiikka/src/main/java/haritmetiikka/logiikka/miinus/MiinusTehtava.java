@@ -3,8 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package haritmetiikka.miinuslogiikka;
-import haritmetiikka.miinuslogiikka.*;
+package haritmetiikka.logiikka.miinus;
 import haritmetiikka.rajapinta.RajapintaTehtava;
 /**
  * Luokka laskee summia yhteen.
