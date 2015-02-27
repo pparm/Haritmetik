@@ -23,8 +23,7 @@ Kesken projektin tilaaja tarkensi toimeksiantoa ja peliin lisättiin koeosio gra
 - vastauksen syöttö
 	- ilmoitus oliko vastaus oikein vai väärin
 	- valitaan lasketaanko uusi lasku, korjataanko vanhaa vaiko lopetetaanko 
-- pelin lopettaminen
-- Yhteen-, vähennys- ja kertolaskukokeet, joissa kysytään 10 kysymyst. Palauteikkuna kertoo kuinka monta tehtävää meni oikein.
+- Yhteen-, vähennys- ja kertolaskukokeet, joissa kysytään 10 kysymystä. Palauteikkuna kertoo kuinka monta tehtävää meni oikein.
 - Pelin lopettaminen
 
 **Ohjelman rakenne**
