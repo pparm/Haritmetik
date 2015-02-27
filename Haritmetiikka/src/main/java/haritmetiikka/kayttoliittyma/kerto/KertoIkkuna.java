@@ -12,11 +12,9 @@ import haritmetiikka.rajapinta.Tehtava;
  * @author poplinus
  */
 public class KertoIkkuna extends javax.swing.JFrame {
-
-    public Tehtava tehtava = new Tehtava();
-
-    int vastaus;
-
+public Tehtava tehtava = new Tehtava();
+   int vastaus;  
+    /**
     /**
      * Konstruktori joka muotoilee KertoVastausIkkunan johon tuodaan olemassa
      * oleva Tehtava-luokka.
@@ -25,7 +23,7 @@ public class KertoIkkuna extends javax.swing.JFrame {
         initComponents();
         vastausTextField.requestFocus();
         this.tehtava = tehtava;
-         syottoJLabel.setText(this.tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
+         syottoJLabel.setText(this.tehtava.getEkaLuku() + " * " + tehtava.getKoeTokaLuku("kerto") + " = ");
     }
 
     /**
@@ -34,7 +32,7 @@ public class KertoIkkuna extends javax.swing.JFrame {
     public KertoIkkuna() {
         initComponents();
         vastausTextField.requestFocus();
-        syottoJLabel.setText(tehtava.getEkaLuku() + " * " + tehtava.getTokaLuku() + " = ");
+        syottoJLabel.setText(tehtava.getEkaLuku() + " * " + tehtava.getKoeTokaLuku("kerto") + " = ");
     }
 
     /**
@@ -169,7 +167,7 @@ public class KertoIkkuna extends javax.swing.JFrame {
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            new KertoVastausIkkuna(this.tehtava, this.vastaus).setVisible(true);
+            new KertoVastausIkkuna(this.tehtava, this.vastaus,"kerto").setVisible(true);
 
             this.dispose();
         } catch (Exception e) {

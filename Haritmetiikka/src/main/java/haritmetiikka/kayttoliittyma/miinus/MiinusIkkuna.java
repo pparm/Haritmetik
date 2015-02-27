@@ -36,6 +36,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
         initComponents();
         vastausTextField.requestFocus();
         kysymys.setText(tehtava.getEkaLuku() + " - " + tehtava.getMiinusTokaLuku() + " = ");
+    
     }
 
     /**
@@ -172,7 +173,7 @@ public class MiinusIkkuna extends javax.swing.JFrame {
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            new MiinusVastausIkkuna(this.tehtava, this.vastaus).setVisible(true);
+            new MiinusVastausIkkuna(this.tehtava, this.vastaus,"miinus").setVisible(true);
 
             //  new MiinusIkkuna().setVisible(true);
 //    

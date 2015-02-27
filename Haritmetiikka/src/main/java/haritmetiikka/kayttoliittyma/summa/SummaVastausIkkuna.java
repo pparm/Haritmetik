@@ -18,26 +18,34 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
 
     private Tehtava tehtava;
     private int vastaus;
-
+    String kysymysTeksti;
+    String oikeaVastaus;   
+    
     /**
      * Metodi rakentaa SummaVastausIkkunan
      *
      * @param tehtava SummaIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
      * @param vastaus SummaIkkunassa käyttäjän antama laskun vastaus
      */
-    public SummaVastausIkkuna(Tehtava tehtava, int vastaus) {
+    public SummaVastausIkkuna(Tehtava tehtava, int vastaus,String kysymysTyyppi) {
         initComponents();
+        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi),kysymysTyyppi);   
+        this.oikeaVastaus =  String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku("summa")));
         this.tehtava = tehtava;
         this.vastaus = vastaus;
-        oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku())));
-        if (tehtava.getOikein("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)) {
-           vastausOikeinLabel.setForeground(Color.green);
-            vastausOikeinLabel.setText("%" + " Vastasit oikein");
+       if (tehtava.getOikein(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), vastaus)) {
+            oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". ");
+            vastausOikeinLabel.setForeground(Color.green);
+            vastausOikeinLabel.setText("%");
+        
         } else {
-            vastausOikeinLabel.setForeground(Color.red);
-            vastausOikeinLabel.setText("X"+" Vastasit väärin");
-        }
-//      vastausOikeinLabel.setText(String.valueOf(tehtava.getOikein("summa", tehtava.getEkaLuku(), tehtava.getTokaLuku(), vastaus)));
+     vastausOikeinLabel.setForeground(Color.red);
+           
+     oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". "+ "Vastauksesi oli "+vastaus+".");
+           
+     vastausOikeinLabel.setText("X");
+               }
+
     }
 
     /**
@@ -59,7 +67,7 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
 
         oikeaVastausLabel.setText("jLabel1");
 
-        vastausOikeinLabel.setFont(new java.awt.Font("Ubuntu", 1, 18)); // NOI18N
+        vastausOikeinLabel.setFont(new java.awt.Font("Ubuntu", 1, 120)); // NOI18N
         vastausOikeinLabel.setText("jLabel2");
 
         uusiLaskuButton.setText("Uusi Lasku");
@@ -89,29 +97,33 @@ public class SummaVastausIkkuna extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lopetaJButton)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lopetaJButton)
+                        .addGap(72, 72, 72)
+                        .addComponent(vastausOikeinLabel))
                     .addComponent(kokeileUudelleenJButton)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(47, 47, 47)
-                        .addComponent(oikeaVastausLabel)
-                        .addGap(48, 48, 48)
-                        .addComponent(vastausOikeinLabel))
+                        .addComponent(oikeaVastausLabel))
                     .addComponent(uusiLaskuButton))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(kokeileUudelleenJButton)
-                .addGap(22, 22, 22)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(oikeaVastausLabel)
-                    .addComponent(vastausOikeinLabel))
+                .addGap(25, 25, 25)
+                .addComponent(oikeaVastausLabel)
                 .addGap(18, 18, 18)
                 .addComponent(uusiLaskuButton)
-                .addGap(31, 31, 31)
-                .addComponent(lopetaJButton)
-                .addContainerGap(106, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addComponent(lopetaJButton))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(13, 13, 13)
+                        .addComponent(vastausOikeinLabel)))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
 
         pack();

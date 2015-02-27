@@ -93,9 +93,9 @@ public class SummaIkkuna extends javax.swing.JFrame {
                         .addGap(252, 252, 252)
                         .addComponent(syottoVirheJLabel))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addContainerGap()
                         .addComponent(kysymysJLabel)
-                        .addGap(18, 18, 18)
+                        .addGap(26, 26, 26)
                         .addComponent(vastausTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(vastaaJButton)))
@@ -163,7 +163,7 @@ public class SummaIkkuna extends javax.swing.JFrame {
     private void vastaaJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_vastaaJButtonActionPerformed
         try {
             this.vastaus = Integer.parseInt(vastausTextField.getText());
-            new SummaVastausIkkuna(this.tehtava, this.vastaus).setVisible(true);
+            new SummaVastausIkkuna(this.tehtava, this.vastaus,"summa").setVisible(true);
 
             //  new SummaIkkuna().setVisible(true);
 //    

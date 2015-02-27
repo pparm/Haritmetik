@@ -26,14 +26,13 @@ public class MiinusVastausIkkuna extends javax.swing.JFrame {
      * @param tehtava MiinusIkkunasta tuotu olio, jossa on mm. jo arvotut luvut
      * @param vastaus MiinusIkkunassa käyttäjän antama laskun vastaus
      */
-    public MiinusVastausIkkuna(Tehtava tehtava, int vastaus) {
+    public MiinusVastausIkkuna(Tehtava tehtava, int vastaus,String kysymysTyyppi) {
         initComponents();
-        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku("miinus"),"miinus");   
-        this.oikeaVastaus =  String.valueOf(tehtava.getOikeaVastaus("miinus", tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku()));
+        this.kysymysTeksti = tehtava.kysymysTekstiYhdista(tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi),kysymysTyyppi);   
+        this.oikeaVastaus =  String.valueOf(tehtava.getOikeaVastaus(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku()));
         this.tehtava = tehtava;
         this.vastaus = vastaus;
-        //oikeaVastausLabel.setText("Oikea vastaus: " + String.valueOf(tehtava.getOikeaVastaus("miinus", tehtava.getEkaLuku(), tehtava.getMiinusTokaLuku())));
-        if (tehtava.getOikein("miinus", tehtava.getEkaLuku(), tehtava.getKoeTokaLuku("miinus"), vastaus)) {
+        if (tehtava.getOikein(kysymysTyyppi, tehtava.getEkaLuku(), tehtava.getKoeTokaLuku(kysymysTyyppi), vastaus)) {
             oikeaVastausLabel.setText("Tehtävän oli "+kysymysTeksti+" "+oikeaVastaus+". ");
             vastausOikeinLabel.setForeground(Color.green);
             vastausOikeinLabel.setText("%");
